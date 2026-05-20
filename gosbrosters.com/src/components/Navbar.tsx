@@ -58,7 +58,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="md:hidden hover:opacity-60 transition-opacity"
+            className="md:hidden hover:opacity-60 transition-opacity uppercase font-display text-[14px] tracking-widest"
             onClick={() => setIsOpen(true)}
             data-cursor-hover
           >
@@ -77,18 +77,19 @@ export default function Navbar() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="fixed inset-0 z-50 bg-black text-white px-6 py-6 flex flex-col"
           >
-            {/* Menu Header */}
-            <div className="flex justify-between items-center font-display uppercase text-[22px] tracking-widest">
+            {/* Menu Header — 3-column grid to center ES/EN */}
+            <div className="grid grid-cols-3 items-center font-display uppercase text-[14px] tracking-widest">
               <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center" data-cursor-hover>
-                 <Image 
+                <Image 
                   src="/gosbros-logo.svg" 
                   alt="GOSBROS. Logo" 
                   width={123} 
                   height={35} 
-                  className="h-[32px] w-auto"
+                  className="h-[28px] w-auto"
                 />
               </Link>
-              <div className="flex items-center gap-6">
+              {/* Language toggle — perfectly centred */}
+              <div className="flex justify-center">
                 <button 
                   onClick={toggleLanguage}
                   className="flex items-center gap-2 font-sans text-[12px] uppercase font-bold tracking-widest hover:opacity-80 transition-opacity"
@@ -98,9 +99,12 @@ export default function Navbar() {
                   <span>/</span>
                   <span className={language === 'en' ? 'opacity-100' : 'opacity-30 line-through'}>EN</span>
                 </button>
+              </div>
+              {/* Close button — right-aligned */}
+              <div className="flex justify-end">
                 <button 
                   onClick={() => setIsOpen(false)}
-                  className="hover:opacity-60 transition-opacity"
+                  className="hover:opacity-60 transition-opacity uppercase"
                   data-cursor-hover
                 >
                   {t('nav.close')}
@@ -109,19 +113,11 @@ export default function Navbar() {
             </div>
 
             {/* Menu Links */}
-            <div className="flex-1 flex flex-col justify-center items-center gap-6 text-[12vw] sm:text-7xl uppercase">
-              <Link 
-                href="/" 
-                onClick={() => setIsOpen(false)}
-                className="font-serif italic capitalize text-[10vw] sm:text-6xl mb-2 hover:opacity-60 transition-opacity"
-                data-cursor-hover
-              >
-                {t('nav.home')}
-              </Link>
+            <div className="flex-1 flex flex-col justify-center items-center gap-1 text-[12vw] sm:text-7xl uppercase">
               <Link 
                 href="/works" 
                 onClick={() => setIsOpen(false)}
-                className="font-display font-bold hover:opacity-60 transition-opacity"
+                className="font-display font-bold hover:opacity-60 transition-opacity leading-none py-2"
                 data-cursor-hover
               >
                 {t('nav.works')}
@@ -129,7 +125,7 @@ export default function Navbar() {
               <Link 
                 href="/about" 
                 onClick={() => setIsOpen(false)}
-                className="font-display font-bold hover:opacity-60 transition-opacity"
+                className="font-display font-bold hover:opacity-60 transition-opacity leading-none py-2"
                 data-cursor-hover
               >
                 {t('nav.about')}
@@ -137,7 +133,7 @@ export default function Navbar() {
               <Link 
                 href="/archive" 
                 onClick={() => setIsOpen(false)}
-                className="font-display font-bold hover:opacity-60 transition-opacity"
+                className="font-display font-bold hover:opacity-60 transition-opacity leading-none py-2"
                 data-cursor-hover
               >
                 {t('nav.archive')}
@@ -145,7 +141,7 @@ export default function Navbar() {
               <Link 
                 href="/contact" 
                 onClick={() => setIsOpen(false)}
-                className="font-display font-bold hover:opacity-60 transition-opacity"
+                className="font-serif italic capitalize text-[10vw] sm:text-6xl hover:opacity-60 transition-opacity leading-none py-2"
                 data-cursor-hover
               >
                 {t('nav.contact')}
