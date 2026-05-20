@@ -24,7 +24,7 @@ export const translations = {
     },
     // Home Page
     home: {
-      locationTag: 'ESTÁS EN\nGOSBROS.',
+      locationTag: 'ESTÁS EN\nGOSBROS',
       heroTitle: 'ALTA EFICIENCIA.\nQUÉ REFRESCANTE.',
       moreAboutUs: 'Más Sobre Nosotros',
       view: 'VER',
@@ -102,7 +102,7 @@ export const translations = {
     },
     // Home Page
     home: {
-      locationTag: 'YOU ARE IN\nGOSBROS.',
+      locationTag: 'YOU ARE IN\nGOSBROS',
       heroTitle: 'HIGH EFFICIENCY.\nHOW REFRESHING.',
       moreAboutUs: 'More About Us',
       view: 'VIEW',
