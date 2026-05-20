@@ -38,7 +38,7 @@ export default function AboutPage() {
 
         <div className="max-w-[1800px] w-full mx-auto relative z-10 flex flex-col justify-center h-full">
           <div className="flex-grow flex flex-col justify-center">
-            <div className="h-[24vw] md:h-[22vw] relative">
+            <div className="relative" style={{ height: 'clamp(6rem, 26vw, 32rem)' }}>
               <AnimatePresence mode="wait">
                 <motion.h1 
                   key={phraseIndex}
@@ -46,8 +46,8 @@ export default function AboutPage() {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -40, opacity: 0 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
-                  className="absolute inset-0 text-[var(--font-size-hero)] leading-[0.85] font-sans font-black tracking-tighter uppercase text-left w-full text-white mix-blend-difference"
-                  style={{ whiteSpace: "pre-line" }}
+                  className="absolute inset-0 font-display font-black tracking-tighter uppercase text-left w-full text-white"
+                  style={{ whiteSpace: "pre-line", fontSize: 'clamp(3rem, 12vw, 15rem)', lineHeight: '0.85' }}
                 >
                   {phrases[phraseIndex]}
                 </motion.h1>
