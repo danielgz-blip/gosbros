@@ -63,7 +63,14 @@ export const translations = {
       ],
       capabilitiesTag: 'NUESTRAS\nCAPACIDADES',
       mainText: 'Somos un estudio híbrido especializado en Arquitectura, Diseño y Estrategia. \n\nCreemos que el diseño excepcional es un derecho, no un lujo. Inspirados en las paradas de autobús soviéticas — funcionales pero hermosas — democratizamos el acceso a una calidad implacable.',
-      tags: 'Visualización 3D , Experiencia Espacial , Identidad de Marca , Naming , Arquitectura Comercial , Diseño de Interiores , Empaque , Editorial , Innovación de Producto , Urbanismo Modular .'
+      tags: 'Visualización 3D , Experiencia Espacial , Identidad de Marca , Naming , Arquitectura Comercial , Diseño de Interiores , Empaque , Editorial , Innovación de Producto , Urbanismo Modular .',
+      valuesLabel: 'VALORES',
+      valuesTitle: 'DEMOCRATIZANDO\nEL BUEN DISEÑO.',
+      valuesList: [
+        { title: 'Transparencia Radical', desc: 'Nuestros presupuestos son abiertos. Nuestras decisiones son lógicas. No hay misterio ni cargos ocultos.' },
+        { title: 'Eficiencia Despiadada', desc: 'Eliminamos lo innecesario. Optimizamos recursos para ofrecer resultados de primera línea a costos accesibles.' },
+        { title: 'Derecho Público', desc: 'El buen diseño no es un lujo. Es una utilidad pública. Diseñamos para elevar el estándar, no el precio.' }
+      ]
     },
     // Contact Page
     contact: {
@@ -141,7 +148,14 @@ export const translations = {
       ],
       capabilitiesTag: 'OUR\nCAPABILITIES',
       mainText: 'We are a hybrid studio specializing in Architecture, Design, and Strategy. \n\nWe believe outstanding design is a right, not a luxury. Inspired by Soviet bus stops — functional yet beautiful — we democratize access to relentless quality.',
-      tags: '3D Visualization , Spatial Experience , Brand Identity , Naming , Commercial Architecture , Interior Design , Packaging , Publishing , Product Innovation , Modular Urbanism .'
+      tags: '3D Visualization , Spatial Experience , Brand Identity , Naming , Commercial Architecture , Interior Design , Packaging , Publishing , Product Innovation , Modular Urbanism .',
+      valuesLabel: 'VALUES',
+      valuesTitle: 'DEMOCRATIZING\nGOOD DESIGN.',
+      valuesList: [
+        { title: 'Radical Transparency', desc: 'Our budgets are open. Our decisions are logical. No mystery, no hidden agency fees.' },
+        { title: 'Ruthless Efficiency', desc: 'We strip the unnecessary. We optimize resources to deliver top-tier results at accessible costs.' },
+        { title: 'Public Right', desc: 'Good design is not a luxury. It is a public utility. We design to raise the standard, not the price.' }
+      ]
     },
     // Contact Page
     contact: {

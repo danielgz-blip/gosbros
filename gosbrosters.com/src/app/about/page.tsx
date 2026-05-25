@@ -11,6 +11,8 @@ export default function AboutPage() {
   const phrases = t('about.phrases') as string[];
   const [phraseIndex, setPhraseIndex] = useState(0);
 
+  const valuesList = t('about.valuesList') as { title: string, desc: string }[];
+
   useEffect(() => {
     const interval = setInterval(() => {
       setPhraseIndex((prev) => (prev + 1) % phrases.length);
@@ -67,16 +69,49 @@ export default function AboutPage() {
           </div>
           
           {/* Content Column */}
-          <div className="w-full md:w-[65%]">
-            <h2 className="font-sans text-[var(--font-size-h3)] leading-[1.1] font-medium tracking-tight mb-8 text-black whitespace-pre-line">
+          <div className="w-full md:w-[65%] text-[clamp(1.5rem,3vw,3rem)] leading-[1.1] text-black tracking-tight font-medium">
+            <h2 className="mb-8 whitespace-pre-line">
               {t('about.mainText').split('\n')[0]}
             </h2>
-            <p className="font-sans text-[var(--font-size-body)] text-[#999] leading-[1.2] tracking-tight mb-12 whitespace-pre-line">
+            <p className="text-[#999] mb-12 whitespace-pre-line">
               {t('about.mainText').split('\n')[2]}
             </p>
-            <p className="font-sans text-xl md:text-3xl text-black leading-[1.2] tracking-tight">
+            <p className="whitespace-pre-line">
               {t('about.tags')}
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full bg-white py-16 md:py-32 px-4 md:px-8 border-t border-black">
+        <div className="max-w-[1800px] mx-auto flex flex-col md:flex-row justify-between gap-8 md:gap-12">
+          {/* Label Column */}
+          <div className="w-full md:w-[35%]">
+            <div className="text-[10px] md:text-xs font-sans uppercase font-bold tracking-widest leading-tight whitespace-pre-line">
+               {t('about.valuesLabel')}
+            </div>
+          </div>
+          
+          {/* Content Column */}
+          <div className="w-full md:w-[65%]">
+            <h2 className="font-display font-black tracking-tighter uppercase text-black leading-[0.85] mb-16 whitespace-pre-line" style={{ fontSize: 'clamp(3rem, 10vw, 12rem)' }}>
+              {t('about.valuesTitle')}
+            </h2>
+            
+            <div className="flex flex-col gap-12 border-t border-black pt-12">
+              {valuesList.map((val, idx) => (
+                <div key={idx} className="flex flex-col md:flex-row gap-4 md:gap-8">
+                  <div className="w-full md:w-1/3">
+                    <h3 className="text-[10px] md:text-xs font-bold uppercase tracking-widest leading-tight">{val.title}</h3>
+                  </div>
+                  <div className="w-full md:w-2/3">
+                    <p className="text-xl md:text-2xl text-[#999] leading-[1.2] tracking-tight font-medium">
+                      {val.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
