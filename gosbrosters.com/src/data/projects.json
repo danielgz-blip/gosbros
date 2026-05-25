@@ -15,9 +15,9 @@
     "desc_es": "Descifra el código. Confía en lo desconocido. ¿Te atreves a vivir en Casa Brutale? Una obra arquitectónica que elimina el exceso decorativo en favor de la pureza estructural.",
     "desc_en": "Crack the code. Trust the unknown. Do you dare to live in Casa Brutale? An architectural work that strips decorative excess in favor of structural purity.",
     "image": "/Architecture_Remodel_01.jpg",
-    "gallery": [],
     "featured": true,
-    "size": "large"
+    "size": "large",
+    "gallery": []
   },
   {
     "id": "auge-identity",
@@ -35,9 +35,9 @@
     "desc_es": "Reacondicionado como símbolo de estatus: cómo reposicionamos una categoría entera con grillas asimétricas radicales y transparencia total.",
     "desc_en": "Refurbished as a status symbol: how we repositioned an entire category using radical asymmetric grids and total transparency.",
     "image": "/Branding_Project_01.jpg",
-    "gallery": [],
     "featured": true,
-    "size": "small"
+    "size": "small",
+    "gallery": []
   },
   {
     "id": "don-molinico",
@@ -55,9 +55,9 @@
     "desc_es": "Rediseño de empaque enfocado en colores primarios vibrantes y tipografía rústica. La máxima atención con la mínima inversión.",
     "desc_en": "Packaging redesign focused on vibrant primary colors and rustic typography. Maximum attention with minimal investment.",
     "image": "/Hero_Placeholder.jpg",
-    "gallery": [],
     "featured": true,
-    "size": "large"
+    "size": "large",
+    "gallery": []
   },
   {
     "id": "via-publica",
@@ -75,9 +75,9 @@
     "desc_es": "Activación de espacio público diseñada para proporcionar mobiliario urbano modular de alta utilidad con un costo municipal mínimo.",
     "desc_en": "A public space activation designed to provide high-utility modular urban furniture at minimal municipal cost.",
     "image": "/Architecture_Remodel_01.jpg",
-    "gallery": [],
     "featured": true,
-    "size": "small"
+    "size": "small",
+    "gallery": []
   },
   {
     "id": "estudio-cero",
@@ -95,8 +95,8 @@
     "desc_es": "Un estudio creativo modular, de bajo costo y ultrarfuncional, integrado de manera nativa con su propia identidad industrial personalizada.",
     "desc_en": "A low-cost, ultra-functional modular creative studio natively integrated with its own custom industrial identity.",
     "image": "/Branding_Project_01.jpg",
-    "gallery": [],
     "featured": false,
-    "size": "large"
+    "size": "large",
+    "gallery": []
   }
 ]

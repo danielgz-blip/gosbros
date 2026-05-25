@@ -75,7 +75,7 @@ export default function ArchivePage() {
               <Link 
                 href={`/works/${project.id}`}
                 key={project.id} 
-                className="flex flex-col md:flex-row w-full border-b border-[#c0c0c0] py-6 md:py-4 md:items-center hover:bg-white transition-colors cursor-pointer group block"
+                className="flex flex-col md:flex-row w-full border-b border-[#c0c0c0] py-6 md:py-4 md:items-center hover:bg-white transition-colors cursor-pointer group"
                 data-cursor-text={t('works.view')}
               >
                 <div className="w-full md:w-[30%] font-sans font-bold text-lg md:text-base uppercase mb-2 md:mb-0 group-hover:pl-2 transition-all">

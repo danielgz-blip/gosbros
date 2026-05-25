@@ -8,6 +8,55 @@ import Footer from "@/components/Footer";
 export default function AdminPage() {
   const { language, t } = useLanguage();
   const [status, setStatus] = useState<string | null>(null);
+  const [heroImage, setHeroImage] = useState<string>("/Hero_Placeholder.jpg");
+  const [galleryImages, setGalleryImages] = useState<string[]>([]);
+
+  const handleHeroUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setStatus("Uploading hero image...");
+    try {
+      const res = await fetch(`/api/upload?filename=${file.name}`, {
+        method: 'POST',
+        body: file,
+      });
+      const blob = await res.json();
+      if (blob.url) {
+        setHeroImage(blob.url);
+        setStatus("Hero image uploaded.");
+      } else {
+        setStatus("Error uploading hero image.");
+      }
+    } catch (err) {
+      setStatus("Error uploading hero image.");
+    }
+  };
+
+  const handleGalleryUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+    setStatus("Uploading gallery images...");
+    try {
+      const uploadedUrls: string[] = [];
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const res = await fetch(`/api/upload?filename=${file.name}`, {
+          method: 'POST',
+          body: file,
+        });
+        const blob = await res.json();
+        if (blob.url) uploadedUrls.push(blob.url);
+      }
+      setGalleryImages(prev => [...prev, ...uploadedUrls]);
+      setStatus("Gallery images uploaded.");
+    } catch (err) {
+      setStatus("Error uploading gallery images.");
+    }
+  };
+
+  const removeGalleryImage = (index: number) => {
+    setGalleryImages(prev => prev.filter((_, i) => i !== index));
+  };
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -18,14 +67,8 @@ export default function AdminPage() {
     // Basic normalization for id
     data.id = data.title_en.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-');
     data.featured = data.featured === "on";
-    
-    // Parse gallery URLs
-    if (data.gallery_raw && typeof data.gallery_raw === "string") {
-      data.gallery = data.gallery_raw.split(',').map(url => url.trim()).filter(url => url.length > 0);
-    } else {
-      data.gallery = [];
-    }
-    delete data.gallery_raw;
+    data.image = heroImage;
+    data.gallery = galleryImages;
 
     try {
       const res = await fetch("/api/projects", {
@@ -37,6 +80,8 @@ export default function AdminPage() {
       if (res.ok) {
         setStatus(t('admin.success'));
         (e.target as HTMLFormElement).reset();
+        setHeroImage("/Hero_Placeholder.jpg");
+        setGalleryImages([]);
       } else {
         setStatus(t('admin.error'));
       }
@@ -92,6 +137,17 @@ export default function AdminPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="flex flex-col gap-2">
+                <label className="text-xs uppercase font-bold tracking-widest">Sector (ES)</label>
+                <input required name="sector_es" placeholder="e.g. Residencial" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-xs uppercase font-bold tracking-widest">Sector (EN)</label>
+                <input required name="sector_en" placeholder="e.g. Residential" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase font-bold tracking-widest">Material (ES)</label>
                 <input required name="material_es" placeholder="e.g. Concreto Expuesto" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
@@ -128,26 +184,45 @@ export default function AdminPage() {
                 <input required name="year" type="number" defaultValue={2026} className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
               <div className="flex flex-col gap-2">
-                <label className="text-xs uppercase font-bold tracking-widest">Cover Image</label>
-                <input required name="image" placeholder="/image.jpg" defaultValue="/Hero_Placeholder.jpg" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
-              </div>
-              <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase font-bold tracking-widest">Size (Works Page Grid)</label>
                 <select name="size" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors">
                   <option value="large">Large (65%)</option>
                   <option value="small">Small (35%)</option>
                 </select>
               </div>
+              <div className="flex items-center gap-4">
+                <input type="checkbox" name="featured" id="featured" defaultChecked className="w-5 h-5 accent-black" />
+                <label htmlFor="featured" className="text-xs uppercase font-bold tracking-widest">Featured on Home Page?</label>
+              </div>
             </div>
 
-            <div className="flex flex-col gap-2">
-              <label className="text-xs uppercase font-bold tracking-widest">Gallery Images (Comma-separated URLs)</label>
-              <textarea name="gallery_raw" placeholder="/gallery1.jpg, https://example.com/gallery2.jpg" rows={2} className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+            <div className="flex flex-col gap-4 border border-black p-4">
+              <label className="text-xs uppercase font-bold tracking-widest">Hero Image (Required)</label>
+              <input type="file" accept="image/*,video/*" onChange={handleHeroUpload} className="text-sm" />
+              {heroImage && heroImage !== "/Hero_Placeholder.jpg" && (
+                <div className="h-24 w-auto object-cover relative overflow-hidden inline-block max-w-[150px] border border-black">
+                  <img src={heroImage} alt="Hero preview" className="h-full w-full object-cover" />
+                </div>
+              )}
             </div>
 
-            <div className="flex items-center gap-4">
-              <input type="checkbox" name="featured" id="featured" defaultChecked className="w-5 h-5 accent-black" />
-              <label htmlFor="featured" className="text-xs uppercase font-bold tracking-widest">Featured on Home Page?</label>
+            <div className="flex flex-col gap-4 border border-black p-4">
+              <label className="text-xs uppercase font-bold tracking-widest">Gallery Media (Optional)</label>
+              <input type="file" multiple accept="image/*,video/*" onChange={handleGalleryUpload} className="text-sm" />
+              <div className="flex flex-wrap gap-4 mt-2">
+                {galleryImages.map((url, i) => (
+                  <div key={i} className="h-24 w-24 relative overflow-hidden border border-black group cursor-pointer" onClick={() => removeGalleryImage(i)}>
+                    {url.match(/\.(mp4|webm|mov)$/i) ? (
+                      <video src={url} className="h-full w-full object-cover" muted />
+                    ) : (
+                      <img src={url} alt="Gallery item" className="h-full w-full object-cover" />
+                    )}
+                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                      <span className="text-white text-xs font-bold uppercase">Remove</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="pt-8 border-t border-black flex justify-between items-center">

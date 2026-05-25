@@ -34,7 +34,7 @@ export default function WorksPage() {
               <Link 
                 href={`/works/${project.id}`}
                 key={project.id} 
-                className={`${colClass} flex flex-col gap-4 group cursor-pointer block`}
+                className={`${colClass} flex flex-col gap-4 group cursor-pointer`}
                 data-cursor-text={t('works.view')}
               >
                 <div className={`relative w-full overflow-hidden bg-gray-200 ${isLarge ? 'aspect-[4/3] md:aspect-[16/10]' : 'aspect-[4/3]'}`}>
