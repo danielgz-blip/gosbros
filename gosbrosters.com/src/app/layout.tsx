@@ -1,26 +1,28 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import CustomCursor from "@/components/CustomCursor";
 import { LanguageProvider } from "@/components/LanguageContext";
 
-const neueMontreal = localFont({
-  src: "../fonts/NeueMontreal-Medium.woff2",
+const interSans = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
   variable: "--font-sans",
   display: "swap",
 });
 
-const greed = localFont({
-  src: "../fonts/Greed-Bold.woff2",
-  weight: "700",
-  style: "normal",
+const interDisplay = Inter({
+  subsets: ["latin"],
+  weight: "900",
   variable: "--font-display",
   display: "swap",
 });
 
-const augeFarnham = localFont({
-  src: "../fonts/AUGEFarnhamDisplay-Italic.woff2",
+const interSerif = Inter({
+  subsets: ["latin"],
+  style: "italic",
+  weight: "400",
   variable: "--font-serif",
   display: "swap",
 });
@@ -38,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body
-        className={`${neueMontreal.variable} ${greed.variable} ${augeFarnham.variable} min-h-full font-sans selection:bg-black selection:text-white`}
+        className={`${interSans.variable} ${interDisplay.variable} ${interSerif.variable} min-h-full font-sans selection:bg-black selection:text-white`}
       >
         <LanguageProvider>
           <CustomCursor />
