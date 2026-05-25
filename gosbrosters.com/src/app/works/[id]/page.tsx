@@ -83,20 +83,41 @@ export default function ProjectDetail() {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      {project.gallery && project.gallery.length > 0 && (
-        <section className="w-full bg-[#f4f4f4] py-8 md:py-16 px-4 md:px-8">
+      {/* Content Section */}
+      {project.content && project.content.length > 0 && (
+        <section className="w-full bg-[#f4f4f4] py-16 md:py-32 px-4 md:px-8">
           <div className="max-w-[1800px] mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-              {(project.gallery as string[]).map((url, index) => (
-                <div key={index} className="w-full relative overflow-hidden bg-white border border-black group">
-                  {url.match(/\.(mp4|webm|mov)$/i) ? (
-                    <video src={url} autoPlay loop muted playsInline className="w-full h-auto object-cover" />
-                  ) : (
-                    <img src={url} alt={`${title} gallery image ${index + 1}`} className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" />
-                  )}
-                </div>
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+              {(project.content as any[]).map((block, index) => {
+                
+                if (block.type === 'text') {
+                  return (
+                    <div key={block.id || index} className="w-full md:col-span-2 py-8 md:py-16">
+                      <p className="font-serif text-[clamp(2rem,5vw,4rem)] leading-[1.1] tracking-tight text-center max-w-[1200px] mx-auto text-black">
+                        {language === 'es' ? block.text_es : block.text_en}
+                      </p>
+                    </div>
+                  );
+                }
+
+                if (block.type === 'media' && block.url) {
+                  const isHorizontal = block.mediaFormat === 'horizontal';
+                  const colSpanClass = isHorizontal ? 'md:col-span-2' : 'md:col-span-1';
+                  const aspectClass = isHorizontal ? 'aspect-video' : 'aspect-[9/16]';
+                  
+                  return (
+                    <div key={block.id || index} className={`w-full relative overflow-hidden bg-white border border-black group ${colSpanClass} ${aspectClass}`}>
+                      {block.url.match(/\.(mp4|webm|mov)$/i) ? (
+                        <video src={block.url} autoPlay loop muted playsInline className="w-full h-full object-cover" />
+                      ) : (
+                        <img src={block.url} alt={`${title} content ${index + 1}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" />
+                      )}
+                    </div>
+                  );
+                }
+
+                return null;
+              })}
             </div>
           </div>
         </section>

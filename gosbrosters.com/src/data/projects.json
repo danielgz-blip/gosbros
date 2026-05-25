@@ -17,7 +17,7 @@
     "image": "/Architecture_Remodel_01.jpg",
     "featured": true,
     "size": "large",
-    "gallery": []
+    "content": []
   },
   {
     "id": "auge-identity",
@@ -37,7 +37,7 @@
     "image": "/Branding_Project_01.jpg",
     "featured": true,
     "size": "small",
-    "gallery": []
+    "content": []
   },
   {
     "id": "don-molinico",
@@ -57,7 +57,7 @@
     "image": "/Hero_Placeholder.jpg",
     "featured": true,
     "size": "large",
-    "gallery": []
+    "content": []
   },
   {
     "id": "via-publica",
@@ -77,7 +77,7 @@
     "image": "/Architecture_Remodel_01.jpg",
     "featured": true,
     "size": "small",
-    "gallery": []
+    "content": []
   },
   {
     "id": "estudio-cero",
