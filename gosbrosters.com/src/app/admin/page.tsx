@@ -18,6 +18,14 @@ export default function AdminPage() {
     // Basic normalization for id
     data.id = data.title_en.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-');
     data.featured = data.featured === "on";
+    
+    // Parse gallery URLs
+    if (data.gallery_raw && typeof data.gallery_raw === "string") {
+      data.gallery = data.gallery_raw.split(',').map(url => url.trim()).filter(url => url.length > 0);
+    } else {
+      data.gallery = [];
+    }
+    delete data.gallery_raw;
 
     try {
       const res = await fetch("/api/projects", {
@@ -120,7 +128,7 @@ export default function AdminPage() {
                 <input required name="year" type="number" defaultValue={2026} className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
               <div className="flex flex-col gap-2">
-                <label className="text-xs uppercase font-bold tracking-widest">Image Path</label>
+                <label className="text-xs uppercase font-bold tracking-widest">Cover Image</label>
                 <input required name="image" placeholder="/image.jpg" defaultValue="/Hero_Placeholder.jpg" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
               <div className="flex flex-col gap-2">
@@ -130,6 +138,11 @@ export default function AdminPage() {
                   <option value="small">Small (35%)</option>
                 </select>
               </div>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <label className="text-xs uppercase font-bold tracking-widest">Gallery Images (Comma-separated URLs)</label>
+              <textarea name="gallery_raw" placeholder="/gallery1.jpg, https://example.com/gallery2.jpg" rows={2} className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
             </div>
 
             <div className="flex items-center gap-4">

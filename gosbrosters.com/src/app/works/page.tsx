@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useLanguage } from "@/components/LanguageContext";
 import MaskReveal from "@/components/MaskReveal";
 import Footer from "@/components/Footer";
@@ -30,9 +31,10 @@ export default function WorksPage() {
             const colClass = isLarge ? "w-full md:w-[65%]" : "w-full md:w-[30%]";
             
             return (
-              <div 
+              <Link 
+                href={`/works/${project.id}`}
                 key={project.id} 
-                className={`${colClass} flex flex-col gap-4 group cursor-pointer`}
+                className={`${colClass} flex flex-col gap-4 group cursor-pointer block`}
                 data-cursor-text={t('works.view')}
               >
                 <div className={`relative w-full overflow-hidden bg-gray-200 ${isLarge ? 'aspect-[4/3] md:aspect-[16/10]' : 'aspect-[4/3]'}`}>
@@ -58,7 +60,7 @@ export default function WorksPage() {
                     {language === 'es' ? project.desc_es : project.desc_en}
                   </p>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>
