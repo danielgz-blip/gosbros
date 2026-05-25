@@ -1,28 +1,24 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto_Flex } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import CustomCursor from "@/components/CustomCursor";
 import { LanguageProvider } from "@/components/LanguageContext";
 
-const interSans = Inter({
+const robotoFlexSans = Roboto_Flex({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
   variable: "--font-sans",
   display: "swap",
 });
 
-const interDisplay = Inter({
+const robotoFlexDisplay = Roboto_Flex({
   subsets: ["latin"],
-  weight: "900",
   variable: "--font-display",
   display: "swap",
 });
 
-const interSerif = Inter({
+const robotoFlexSerif = Roboto_Flex({
   subsets: ["latin"],
-  style: "italic",
-  weight: "400",
   variable: "--font-serif",
   display: "swap",
 });
@@ -40,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body
-        className={`${interSans.variable} ${interDisplay.variable} ${interSerif.variable} min-h-full font-sans selection:bg-black selection:text-white`}
+        className={`${robotoFlexSans.variable} ${robotoFlexDisplay.variable} ${robotoFlexSerif.variable} min-h-full font-sans selection:bg-black selection:text-white`}
       >
         <LanguageProvider>
           <CustomCursor />
