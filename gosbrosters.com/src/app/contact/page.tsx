@@ -13,13 +13,13 @@ export default function ContactPage() {
       <section className="px-4 md:px-8 mb-16 md:mb-32 flex-grow">
         <div className="max-w-[1800px] mx-auto h-full flex flex-col justify-center">
           <MaskReveal>
-            <h1 className="text-[var(--font-size-hero)] leading-[0.85] font-sans font-black tracking-tighter uppercase text-left w-full mb-12 md:mb-24 whitespace-pre-line">
+            <h1 className="text-[var(--font-size-hero)] leading-[0.85] font-display font-black tracking-tighter uppercase text-left w-full mb-12 md:mb-24 whitespace-pre-line">
               {t('contact.title')}
             </h1>
           </MaskReveal>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
-             <div className="text-[10px] md:text-xs font-sans uppercase font-bold tracking-widest leading-tight">
+             <div className="text-xs font-sans uppercase font-bold tracking-widest leading-tight">
                {t('contact.getInTouch')}
              </div>
              

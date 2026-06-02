@@ -16,7 +16,7 @@ export default function WorksPage() {
       <section className="px-4 md:px-8 mb-16 md:mb-32">
         <div className="max-w-[1800px] mx-auto h-full flex flex-col justify-center">
           <MaskReveal>
-            <h1 className="text-[var(--font-size-hero)] leading-[0.85] font-sans font-black tracking-tighter uppercase text-left w-full">
+            <h1 className="text-[var(--font-size-hero)] leading-[0.85] font-display font-black tracking-tighter uppercase text-left w-full">
               {t('works.title')}
             </h1>
           </MaskReveal>

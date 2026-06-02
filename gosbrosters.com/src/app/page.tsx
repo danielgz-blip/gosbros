@@ -22,12 +22,12 @@ export default function Home() {
         <div className="max-w-[1800px] mx-auto">
           {/* Top Text Section */}
           <div className="flex flex-col md:flex-row justify-between items-start mb-16 md:mb-24">
-            <div className="text-[10px] md:text-xs font-sans uppercase font-bold tracking-widest mb-8 md:mb-0 leading-tight whitespace-pre-line">
+            <div className="text-xs font-sans uppercase font-bold tracking-widest mb-8 md:mb-0 leading-tight whitespace-pre-line">
               {t('home.locationTag')}
             </div>
             <div className="w-full md:w-[75%] flex flex-col items-end">
               <MaskReveal>
-                <h2 className="text-[12vw] md:text-[8.5vw] leading-[0.85] font-sans font-black tracking-tighter uppercase text-left w-full whitespace-pre-line">
+                <h2 className="text-[var(--font-size-hero)] leading-[0.85] font-display font-black tracking-tighter uppercase text-left w-full whitespace-pre-line">
                   {t('home.heroTitle')}
                 </h2>
               </MaskReveal>
@@ -87,7 +87,7 @@ export default function Home() {
       <section className="py-[var(--spacing-6)] px-4 bg-white grid-line border-black">
         <div className="max-w-4xl mx-auto">
           <MaskReveal>
-            <h2 className="text-[var(--font-size-h3)] font-display leading-[0.9] mb-[var(--spacing-4)] whitespace-pre-line">
+            <h2 className="text-[var(--font-size-h2)] font-display font-black tracking-tighter leading-[0.9] mb-[var(--spacing-4)] whitespace-pre-line">
               {t('home.missionTitle1')} <br />
               <span className="text-gray-400">{t('home.missionTitle2')}</span>
             </h2>
@@ -97,15 +97,15 @@ export default function Home() {
               {t('home.missionText')}
             </p>
             <div className="flex flex-col gap-[var(--spacing-3)]">
-              <div className="flex justify-between items-center py-[var(--spacing-2)] grid-line-light uppercase text-[12.54px]">
+              <div className="flex justify-between items-center py-[var(--spacing-2)] grid-line-light uppercase text-xs font-sans font-bold tracking-widest">
                 <span>{t('home.strategy')}</span>
                 <span className="font-serif">01</span>
               </div>
-              <div className="flex justify-between items-center py-[var(--spacing-2)] grid-line-light uppercase text-[12.54px]">
+              <div className="flex justify-between items-center py-[var(--spacing-2)] grid-line-light uppercase text-xs font-sans font-bold tracking-widest">
                 <span>{t('home.architecture')}</span>
                 <span className="font-serif">02</span>
               </div>
-              <div className="flex justify-between items-center py-[var(--spacing-2)] grid-line-light uppercase text-[12.54px]">
+              <div className="flex justify-between items-center py-[var(--spacing-2)] grid-line-light uppercase text-xs font-sans font-bold tracking-widest">
                 <span>{t('home.branding')}</span>
                 <span className="font-serif">03</span>
               </div>

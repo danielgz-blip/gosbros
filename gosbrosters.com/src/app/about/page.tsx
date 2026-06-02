@@ -63,14 +63,14 @@ export default function AboutPage() {
         <div className="max-w-[1800px] mx-auto flex flex-col md:flex-row justify-between gap-8 md:gap-12">
           {/* Label Column */}
           <div className="w-full md:w-[35%]">
-            <div className="text-[10px] md:text-xs font-sans uppercase font-bold tracking-widest leading-tight whitespace-pre-line">
+            <div className="text-xs font-sans uppercase font-bold tracking-widest leading-tight whitespace-pre-line">
                {t('about.capabilitiesTag')}
             </div>
           </div>
           
           {/* Content Column */}
-          <div className="w-full md:w-[65%] text-[clamp(1.5rem,3vw,3rem)] leading-[1.1] text-black tracking-tight font-medium">
-            <h2 className="mb-8 whitespace-pre-line">
+          <div className="w-full md:w-[65%]">
+            <h2 className="text-[var(--font-size-h2)] font-display font-black tracking-tighter uppercase leading-[0.85] mb-8 whitespace-pre-line">
               {t('about.mainText').split('\n')[0]}
             </h2>
             <p className="text-[#999] mb-12 whitespace-pre-line">
@@ -87,14 +87,14 @@ export default function AboutPage() {
         <div className="max-w-[1800px] mx-auto flex flex-col md:flex-row justify-between gap-8 md:gap-12">
           {/* Label Column */}
           <div className="w-full md:w-[35%]">
-            <div className="text-[10px] md:text-xs font-sans uppercase font-bold tracking-widest leading-tight whitespace-pre-line">
+            <div className="text-xs font-sans uppercase font-bold tracking-widest leading-tight whitespace-pre-line">
                {t('about.valuesLabel')}
             </div>
           </div>
           
           {/* Content Column */}
           <div className="w-full md:w-[65%]">
-            <h2 className="font-display font-black tracking-tighter uppercase text-black leading-[0.85] mb-16 whitespace-pre-line" style={{ fontSize: 'clamp(3rem, 10vw, 12rem)' }}>
+            <h2 className="text-[var(--font-size-h2)] font-display font-black tracking-tighter uppercase text-black leading-[0.85] mb-16 whitespace-pre-line">
               {t('about.valuesTitle')}
             </h2>
             
@@ -102,10 +102,10 @@ export default function AboutPage() {
               {valuesList.map((val, idx) => (
                 <div key={idx} className="flex flex-col md:flex-row gap-4 md:gap-8">
                   <div className="w-full md:w-1/3">
-                    <h3 className="text-[10px] md:text-xs font-bold uppercase tracking-widest leading-tight">{val.title}</h3>
+                    <h3 className="text-xs font-sans font-bold uppercase tracking-widest leading-tight">{val.title}</h3>
                   </div>
                   <div className="w-full md:w-2/3">
-                    <p className="text-xl md:text-2xl text-[#999] leading-[1.2] tracking-tight font-medium">
+                    <p className="text-[var(--font-size-body)] text-[#999] leading-[1.2] tracking-tight font-medium">
                       {val.desc}
                     </p>
                   </div>

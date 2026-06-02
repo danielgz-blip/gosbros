@@ -16,7 +16,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-40 px-6 py-6 flex justify-between items-center text-white mix-blend-difference font-display uppercase text-[22px] tracking-widest pointer-events-none">
+      <nav className="fixed top-0 left-0 w-full z-40 px-6 py-6 flex justify-between items-center text-white mix-blend-difference font-sans uppercase text-xs tracking-widest pointer-events-none">
         <div className="flex items-center gap-8 md:gap-12 pointer-events-auto">
           <Link href="/" className="flex items-center" data-cursor-hover>
             <Image 
@@ -34,7 +34,7 @@ export default function Navbar() {
           </div>
         </div>
         
-        <div className="pointer-events-auto flex items-center gap-6">
+        <div className="pointer-events-auto flex items-center gap-6 text-xs">
           {/* Language Toggle */}
           <button 
             onClick={toggleLanguage}
@@ -58,7 +58,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="md:hidden hover:opacity-60 transition-opacity uppercase font-display text-[14px] tracking-widest"
+            className="md:hidden hover:opacity-60 transition-opacity uppercase font-display tracking-widest"
             onClick={() => setIsOpen(true)}
             data-cursor-hover
           >
@@ -78,7 +78,7 @@ export default function Navbar() {
             className="fixed inset-0 z-50 bg-black text-white px-6 py-6 flex flex-col"
           >
             {/* Menu Header — 3-column grid to center ES/EN */}
-            <div className="grid grid-cols-3 items-center font-display uppercase text-[14px] tracking-widest">
+            <div className="grid grid-cols-3 items-center font-sans uppercase text-xs tracking-widest">
               <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center" data-cursor-hover>
                 <Image 
                   src="/gosbros-logo.svg" 
@@ -117,7 +117,7 @@ export default function Navbar() {
               <Link 
                 href="/works" 
                 onClick={() => setIsOpen(false)}
-                className="font-display font-bold hover:opacity-60 transition-opacity leading-none py-2"
+                className="font-display font-black hover:opacity-60 transition-opacity leading-none py-2"
                 data-cursor-hover
               >
                 {t('nav.works')}
@@ -125,7 +125,7 @@ export default function Navbar() {
               <Link 
                 href="/about" 
                 onClick={() => setIsOpen(false)}
-                className="font-display font-bold hover:opacity-60 transition-opacity leading-none py-2"
+                className="font-display font-black hover:opacity-60 transition-opacity leading-none py-2"
                 data-cursor-hover
               >
                 {t('nav.about')}
@@ -133,7 +133,7 @@ export default function Navbar() {
               <Link 
                 href="/archive" 
                 onClick={() => setIsOpen(false)}
-                className="font-display font-bold hover:opacity-60 transition-opacity leading-none py-2"
+                className="font-display font-black hover:opacity-60 transition-opacity leading-none py-2"
                 data-cursor-hover
               >
                 {t('nav.archive')}
@@ -141,7 +141,7 @@ export default function Navbar() {
               <Link 
                 href="/contact" 
                 onClick={() => setIsOpen(false)}
-                className="font-serif italic capitalize text-[10vw] sm:text-6xl hover:opacity-60 transition-opacity leading-none py-2"
+                className="font-serif italic lowercase text-[10vw] sm:text-6xl hover:opacity-60 transition-opacity leading-none py-2"
                 data-cursor-hover
               >
                 {t('nav.contact')}
@@ -149,7 +149,7 @@ export default function Navbar() {
             </div>
 
             {/* Menu Footer */}
-            <div className="flex justify-between items-center text-[12px] uppercase font-sans tracking-widest">
+            <div className="flex justify-between items-center text-xs uppercase font-sans font-bold tracking-widest">
               <Link href="#" className="hover:opacity-60 transition-opacity" data-cursor-hover>Linkedin</Link>
               <Link href="#" className="hover:opacity-60 transition-opacity" data-cursor-hover>Instagram</Link>
             </div>

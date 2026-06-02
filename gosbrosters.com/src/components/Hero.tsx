@@ -69,7 +69,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex justify-center overflow-hidden"
               >
-                <h1 className="text-[12vw] md:text-[14vw] leading-[0.8] font-display tracking-tighter text-white uppercase text-center">
+                <h1 className="text-[var(--font-size-hero)] leading-[0.8] font-display font-black tracking-tighter text-white uppercase text-center">
                   WE ARE
                 </h1>
               </motion.div>
@@ -83,7 +83,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="absolute top-[25vh] left-0 w-full flex justify-center overflow-hidden"
               >
-                <h1 className="text-[12vw] md:text-[14vw] leading-[0.8] font-logo tracking-tighter text-white uppercase text-center">
+                <h1 className="text-[var(--font-size-hero)] leading-[0.8] font-logo tracking-tighter text-white uppercase text-center">
                   GOSBROS
                 </h1>
               </motion.div>
@@ -95,7 +95,7 @@ export default function Hero() {
 
       <div className="absolute bottom-8 left-6 z-20 pointer-events-auto mix-blend-difference text-white">
         <MaskReveal delay={0.4}>
-          <div className="flex items-center gap-4 text-[11px] uppercase font-sans tracking-widest">
+          <div className="flex items-center gap-4 text-xs uppercase font-sans font-bold tracking-widest">
             <span>Scroll</span>
             <div className="w-8 h-[1px] bg-white"></div>
           </div>

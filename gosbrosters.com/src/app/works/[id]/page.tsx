@@ -48,11 +48,11 @@ export default function ProjectDetail() {
           {/* Left Col - Title & Desc */}
           <div className="w-full lg:w-1/2 flex flex-col gap-8">
             <MaskReveal>
-              <h1 className="text-[clamp(3rem,8vw,8rem)] font-display font-black tracking-tighter uppercase leading-[0.85] text-black whitespace-pre-line">
+              <h1 className="text-[var(--font-size-h2)] font-display font-black tracking-tighter uppercase leading-[0.85] text-black whitespace-pre-line">
                 {title}
               </h1>
             </MaskReveal>
-            <p className="text-xl md:text-3xl font-sans text-gray-500 leading-[1.2] tracking-tight">
+            <p className="text-[var(--font-size-body)] font-sans text-gray-500 leading-[1.2] tracking-tight">
               {desc}
             </p>
           </div>
@@ -60,23 +60,23 @@ export default function ProjectDetail() {
           {/* Right Col - Meta Details */}
           <div className="w-full lg:w-1/2 grid grid-cols-2 gap-x-8 gap-y-12 font-sans pt-4">
             <div className="flex flex-col gap-2">
-              <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest border-b border-black pb-2 mb-2">Year</span>
+              <span className="text-xs font-sans font-bold uppercase tracking-widest border-b border-black pb-2 mb-2">Year</span>
               <span className="text-sm md:text-lg text-black font-medium">{project.year}</span>
             </div>
             <div className="flex flex-col gap-2">
-              <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest border-b border-black pb-2 mb-2">{language === 'es' ? 'Categoría' : 'Category'}</span>
+              <span className="text-xs font-sans font-bold uppercase tracking-widest border-b border-black pb-2 mb-2">{language === 'es' ? 'Categoría' : 'Category'}</span>
               <span className="text-sm md:text-lg text-black font-medium">{category}</span>
             </div>
             <div className="flex flex-col gap-2">
-              <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest border-b border-black pb-2 mb-2">Sector</span>
+              <span className="text-xs font-sans font-bold uppercase tracking-widest border-b border-black pb-2 mb-2">Sector</span>
               <span className="text-sm md:text-lg text-black font-medium">{sector}</span>
             </div>
             <div className="flex flex-col gap-2">
-              <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest border-b border-black pb-2 mb-2">Material</span>
+              <span className="text-xs font-sans font-bold uppercase tracking-widest border-b border-black pb-2 mb-2">Material</span>
               <span className="text-sm md:text-lg text-black font-medium">{material}</span>
             </div>
             <div className="flex flex-col gap-2 col-span-2">
-              <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest border-b border-black pb-2 mb-2">Ethos</span>
+              <span className="text-xs font-sans font-bold uppercase tracking-widest border-b border-black pb-2 mb-2">Ethos</span>
               <span className="text-sm md:text-lg text-black font-medium">{costEthos}</span>
             </div>
           </div>

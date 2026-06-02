@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-black text-white px-4 pt-20 pb-4 overflow-hidden">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 text-[12.54px] uppercase text-gray-400">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 text-xs font-sans font-bold tracking-widest uppercase text-gray-400">
         <div className="flex flex-col gap-2">
           <span className="text-white">{t('footer.social')}</span>
           <a href="#" className="hover:text-white transition-colors">Instagram</a>
@@ -29,7 +29,7 @@ export default function Footer() {
       
       <div className="w-full">
         <MaskReveal className="w-full">
-          <h2 className="text-[15vw] md:text-[20vw] leading-[0.8] font-logo text-white tracking-tighter text-center">
+          <h2 className="text-[var(--font-size-h2)] leading-[0.8] font-logo text-white tracking-tighter text-center">
             GOSBROS
           </h2>
         </MaskReveal>

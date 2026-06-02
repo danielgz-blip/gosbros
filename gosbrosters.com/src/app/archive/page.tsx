@@ -26,7 +26,7 @@ export default function ArchivePage() {
       <section className="px-4 md:px-8 mb-16 md:mb-32">
         <div className="max-w-[1800px] mx-auto h-full flex flex-col md:flex-row justify-between md:items-end gap-8">
           <MaskReveal>
-            <h1 className="text-[var(--font-size-hero)] leading-[0.85] font-sans font-black tracking-tighter uppercase text-left">
+            <h1 className="text-[var(--font-size-hero)] leading-[0.85] font-display font-black tracking-tighter uppercase text-left">
               {t('archive.title')}
             </h1>
           </MaskReveal>
@@ -61,7 +61,7 @@ export default function ArchivePage() {
       <section className="px-4 md:px-8 pb-32">
         <div className="max-w-[1800px] mx-auto w-full">
           {/* Table Header (Hidden on small mobile) */}
-          <div className="hidden md:flex w-full border-t border-b border-black py-4 uppercase font-sans text-[11px] font-bold tracking-widest text-gray-500">
+          <div className="hidden md:flex w-full border-t border-b border-black py-4 uppercase font-sans text-xs font-bold tracking-widest text-gray-500">
             <div className="w-[30%]">{t('archive.colTitle')}</div>
             <div className="w-[20%]">{t('archive.colDiscipline')}</div>
             <div className="w-[25%]">{t('archive.colMaterial')}</div>

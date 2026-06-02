@@ -56,7 +56,6 @@ export const translations = {
     // About Page
     about: {
       phrases: [
-        "SOMOS\nGOSBROS",
         "CONSTRUIMOS\nEL FUTURO.",
         "DISEÑAMOS\nCON IMPACTO.",
         "ALTA\nEFICIENCIA."
@@ -141,7 +140,6 @@ export const translations = {
     // About Page
     about: {
       phrases: [
-        "WE ARE\nGOSBROS",
         "WE BUILD\nTHE FUTURE.",
         "WE DESIGN\nWITH IMPACT.",
         "HIGH\nEFFICIENCY."
