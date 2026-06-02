@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto_Flex } from "next/font/google";
+import { Roboto_Flex, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import CustomCursor from "@/components/CustomCursor";
@@ -23,6 +23,13 @@ const robotoFlexSerif = Roboto_Flex({
   display: "swap",
 });
 
+const interLogo = Inter({
+  subsets: ["latin"],
+  weight: "900",
+  variable: "--font-logo",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "GOSBROS | High-Efficiency Architecture & Visual Identity",
   description: "High-Efficiency Architecture & Visual Identity based in Mexico City.",
@@ -36,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body
-        className={`${robotoFlexSans.variable} ${robotoFlexDisplay.variable} ${robotoFlexSerif.variable} min-h-full font-sans selection:bg-black selection:text-white`}
+        className={`${robotoFlexSans.variable} ${robotoFlexDisplay.variable} ${robotoFlexSerif.variable} ${interLogo.variable} min-h-full font-sans selection:bg-black selection:text-white`}
       >
         <LanguageProvider>
           <CustomCursor />

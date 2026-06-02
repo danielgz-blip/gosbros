@@ -29,7 +29,7 @@ export default function Footer() {
       
       <div className="w-full">
         <MaskReveal className="w-full">
-          <h2 className="text-[15vw] md:text-[20vw] leading-[0.8] font-display text-white tracking-tighter text-center">
+          <h2 className="text-[15vw] md:text-[20vw] leading-[0.8] font-logo text-white tracking-tighter text-center">
             GOSBROS
           </h2>
         </MaskReveal>

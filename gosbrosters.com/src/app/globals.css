@@ -4,6 +4,7 @@
   --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-display), sans-serif;
   --font-serif: var(--font-serif), serif;
+  --font-logo: var(--font-logo), sans-serif;
 
   --color-primary-dark: #000000;
   --color-primary-light: #ffffff;
@@ -131,6 +132,11 @@ h1, h2, h3, .font-display {
 
 .font-serif {
   font-family: var(--font-serif);
+}
+
+.font-logo {
+  font-family: var(--font-logo), sans-serif;
+  letter-spacing: -0.083333em;
 }
 
 /* Mask Reveal Animation */

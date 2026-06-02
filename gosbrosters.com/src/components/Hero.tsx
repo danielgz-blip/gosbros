@@ -83,7 +83,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="absolute top-[25vh] left-0 w-full flex justify-center overflow-hidden"
               >
-                <h1 className="text-[12vw] md:text-[14vw] leading-[0.8] font-display tracking-tighter text-white uppercase text-center">
+                <h1 className="text-[12vw] md:text-[14vw] leading-[0.8] font-logo tracking-tighter text-white uppercase text-center">
                   GOSBROS
                 </h1>
               </motion.div>

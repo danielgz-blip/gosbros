@@ -19,13 +19,9 @@ export default function Navbar() {
       <nav className="fixed top-0 left-0 w-full z-40 px-6 py-6 flex justify-between items-center text-white mix-blend-difference font-display uppercase text-[22px] tracking-widest pointer-events-none">
         <div className="flex items-center gap-8 md:gap-12 pointer-events-auto">
           <Link href="/" className="flex items-center" data-cursor-hover>
-            <Image 
-              src="/gosbros-logo.svg" 
-              alt="GOSBROS Logo" 
-              width={123} 
-              height={35} 
-              className="h-[32px] w-auto"
-            />
+            <span className="font-logo text-[28px] md:text-[32px] leading-none">
+              GOSBROS
+            </span>
           </Link>
           <div className="hidden md:flex gap-8">
             <Link href="/works" className="hover:opacity-60 transition-opacity" data-cursor-hover>{t('nav.works')}</Link>
@@ -80,13 +76,9 @@ export default function Navbar() {
             {/* Menu Header — 3-column grid to center ES/EN */}
             <div className="grid grid-cols-3 items-center font-display uppercase text-[14px] tracking-widest">
               <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center" data-cursor-hover>
-                <Image 
-                  src="/gosbros-logo.svg" 
-                  alt="GOSBROS Logo" 
-                  width={123} 
-                  height={35} 
-                  className="h-[28px] w-auto"
-                />
+                <span className="font-logo text-[28px] leading-none">
+                  GOSBROS
+                </span>
               </Link>
               {/* Language toggle — perfectly centred */}
               <div className="flex justify-center">
