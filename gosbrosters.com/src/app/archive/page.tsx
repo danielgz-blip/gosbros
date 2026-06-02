@@ -26,7 +26,7 @@ export default function ArchivePage() {
       <section className="px-4 md:px-8 mb-16 md:mb-32">
         <div className="max-w-[1800px] mx-auto h-full flex flex-col md:flex-row justify-between md:items-end gap-8">
           <MaskReveal>
-            <h1 className="text-[var(--font-size-hero)] leading-[0.85] font-display font-black tracking-tighter uppercase text-left">
+            <h1 className="text-hero leading-[0.85] font-display font-black tracking-tighter uppercase text-left">
               {t('archive.title')}
             </h1>
           </MaskReveal>

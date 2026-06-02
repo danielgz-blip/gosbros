@@ -27,7 +27,7 @@ export default function Home() {
             </div>
             <div className="w-full md:w-[75%] flex flex-col items-end">
               <MaskReveal>
-                <h2 className="text-[var(--font-size-h2)] leading-[0.85] font-display font-black tracking-tighter uppercase text-left w-full whitespace-pre-line">
+                <h2 className="text-h2 leading-[0.85] font-display font-black tracking-tighter uppercase text-left w-full whitespace-pre-line">
                   {t('home.heroTitle')}
                 </h2>
               </MaskReveal>
@@ -63,7 +63,7 @@ export default function Home() {
                   </div>
                   <div className="flex flex-col mt-2">
                     <div className="flex justify-between items-baseline mb-1">
-                      <h3 className="text-[var(--font-size-h2)] font-display font-black tracking-tighter uppercase leading-[0.85]">
+                      <h3 className="text-h2 font-display font-black tracking-tighter uppercase leading-[0.85]">
                         {language === 'es' ? project.title_es : project.title_en}
                       </h3>
                       <span className="font-sans font-bold text-xs md:text-sm">({project.year})</span>
@@ -71,7 +71,7 @@ export default function Home() {
                     <p className="font-serif italic text-gray-500 text-sm mb-3">
                       {language === 'es' ? project.category_es : project.category_en}
                     </p>
-                    <p className={`font-sans text-[var(--font-size-body)] font-medium leading-[1.2] tracking-tight ${isLarge ? 'md:max-w-[75%]' : ''}`}>
+                    <p className={`font-sans text-body font-medium leading-[1.2] tracking-tight ${isLarge ? 'md:max-w-[75%]' : ''}`}>
                       {language === 'es' ? project.desc_es : project.desc_en}
                     </p>
                   </div>
@@ -87,13 +87,13 @@ export default function Home() {
       <section className="py-[var(--spacing-6)] px-4 bg-white grid-line border-black">
         <div className="max-w-4xl mx-auto">
           <MaskReveal>
-            <h2 className="text-[var(--font-size-h2)] font-display font-black tracking-tighter leading-[0.9] mb-[var(--spacing-4)] whitespace-pre-line">
+            <h2 className="text-h2 font-display font-black tracking-tighter leading-[0.9] mb-[var(--spacing-4)] whitespace-pre-line">
               {t('home.missionTitle1')} <br />
               <span className="text-gray-400">{t('home.missionTitle2')}</span>
             </h2>
           </MaskReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-4)] mt-[var(--spacing-6)]">
-            <p className="text-[var(--font-size-body)] text-gray-600">
+            <p className="text-body text-gray-600">
               {t('home.missionText')}
             </p>
             <div className="flex flex-col gap-[var(--spacing-3)]">

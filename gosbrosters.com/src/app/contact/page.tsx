@@ -13,7 +13,7 @@ export default function ContactPage() {
       <section className="px-4 md:px-8 mb-16 md:mb-32 flex-grow">
         <div className="max-w-[1800px] mx-auto h-full flex flex-col justify-center">
           <MaskReveal>
-            <h1 className="text-[var(--font-size-hero)] leading-[0.85] font-display font-black tracking-tighter uppercase text-left w-full mb-12 md:mb-24 whitespace-pre-line">
+            <h1 className="text-hero leading-[0.85] font-display font-black tracking-tighter uppercase text-left w-full mb-12 md:mb-24 whitespace-pre-line">
               {t('contact.title')}
             </h1>
           </MaskReveal>

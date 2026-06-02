@@ -16,7 +16,7 @@ export default function WorksPage() {
       <section className="px-4 md:px-8 mb-16 md:mb-32">
         <div className="max-w-[1800px] mx-auto h-full flex flex-col justify-center">
           <MaskReveal>
-            <h1 className="text-[var(--font-size-hero)] leading-[0.85] font-display font-black tracking-tighter uppercase text-left w-full">
+            <h1 className="text-hero leading-[0.85] font-display font-black tracking-tighter uppercase text-left w-full">
               {t('works.title')}
             </h1>
           </MaskReveal>
@@ -48,7 +48,7 @@ export default function WorksPage() {
                 </div>
                 <div className="flex flex-col mt-2">
                   <div className="flex justify-between items-baseline mb-1">
-                    <h3 className="text-[var(--font-size-h2)] font-display font-black tracking-tighter uppercase leading-[0.85]">
+                    <h3 className="text-h2 font-display font-black tracking-tighter uppercase leading-[0.85]">
                       {language === 'es' ? project.title_es : project.title_en}
                     </h3>
                     <span className="font-sans font-bold text-xs md:text-sm">({project.year})</span>
@@ -56,7 +56,7 @@ export default function WorksPage() {
                   <p className="font-serif italic text-gray-500 text-sm mb-3">
                     {language === 'es' ? project.category_es : project.category_en}
                   </p>
-                  <p className={`font-sans text-[var(--font-size-body)] font-medium leading-[1.2] tracking-tight ${isLarge ? 'md:max-w-[75%]' : ''}`}>
+                  <p className={`font-sans text-body font-medium leading-[1.2] tracking-tight ${isLarge ? 'md:max-w-[75%]' : ''}`}>
                     {language === 'es' ? project.desc_es : project.desc_en}
                   </p>
                 </div>

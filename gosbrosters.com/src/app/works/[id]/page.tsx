@@ -48,11 +48,11 @@ export default function ProjectDetail() {
           {/* Left Col - Title & Desc */}
           <div className="w-full lg:w-1/2 flex flex-col gap-8">
             <MaskReveal>
-              <h1 className="text-[var(--font-size-h2)] font-display font-black tracking-tighter uppercase leading-[0.85] text-black whitespace-pre-line">
+              <h1 className="text-h2 font-display font-black tracking-tighter uppercase leading-[0.85] text-black whitespace-pre-line">
                 {title}
               </h1>
             </MaskReveal>
-            <p className="text-[var(--font-size-body)] font-sans text-gray-500 leading-[1.2] tracking-tight">
+            <p className="text-body font-sans text-gray-500 leading-[1.2] tracking-tight">
               {desc}
             </p>
           </div>

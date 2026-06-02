@@ -70,7 +70,7 @@ export default function AboutPage() {
           
           {/* Content Column */}
           <div className="w-full md:w-[65%]">
-            <h2 className="text-[var(--font-size-h2)] font-display font-black tracking-tighter uppercase leading-[0.85] mb-8 whitespace-pre-line">
+            <h2 className="text-h2 font-display font-black tracking-tighter uppercase leading-[0.85] mb-8 whitespace-pre-line">
               {t('about.mainText').split('\n')[0]}
             </h2>
             <p className="text-[#999] mb-12 whitespace-pre-line">
@@ -94,7 +94,7 @@ export default function AboutPage() {
           
           {/* Content Column */}
           <div className="w-full md:w-[65%]">
-            <h2 className="text-[var(--font-size-h2)] font-display font-black tracking-tighter uppercase text-black leading-[0.85] mb-16 whitespace-pre-line">
+            <h2 className="text-h2 font-display font-black tracking-tighter uppercase text-black leading-[0.85] mb-16 whitespace-pre-line">
               {t('about.valuesTitle')}
             </h2>
             
@@ -105,7 +105,7 @@ export default function AboutPage() {
                     <h3 className="text-xs font-sans font-bold uppercase tracking-widest leading-tight">{val.title}</h3>
                   </div>
                   <div className="w-full md:w-2/3">
-                    <p className="text-[var(--font-size-body)] text-[#999] leading-[1.2] tracking-tight font-medium">
+                    <p className="text-body text-[#999] leading-[1.2] tracking-tight font-medium">
                       {val.desc}
                     </p>
                   </div>
