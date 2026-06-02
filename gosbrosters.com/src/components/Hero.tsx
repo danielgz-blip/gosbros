@@ -3,8 +3,10 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import MaskReveal from "@/components/MaskReveal";
+import { useLanguage } from "@/components/LanguageContext";
 
 export default function Hero() {
+  const { language } = useLanguage();
   const containerRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -70,7 +72,7 @@ export default function Hero() {
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex justify-center overflow-hidden"
               >
                 <h1 className="text-[12vw] md:text-[14vw] leading-[0.8] font-display font-black tracking-tighter text-white uppercase text-center">
-                  WE ARE
+                  {language === 'es' ? 'ESTÁS EN' : 'WE ARE'}
                 </h1>
               </motion.div>
             )}
