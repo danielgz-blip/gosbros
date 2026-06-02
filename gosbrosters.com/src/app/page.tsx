@@ -63,7 +63,7 @@ export default function Home() {
                   </div>
                   <div className="flex flex-col mt-2">
                     <div className="flex justify-between items-baseline mb-1">
-                      <h3 className="text-h2 font-display font-black tracking-tighter uppercase leading-[0.85]">
+                      <h3 className="text-h3 font-display font-black tracking-tighter uppercase leading-[0.85]">
                         {language === 'es' ? project.title_es : project.title_en}
                       </h3>
                       <span className="font-sans font-bold text-xs md:text-sm">({project.year})</span>
