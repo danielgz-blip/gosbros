@@ -28,10 +28,10 @@
   --spacing-10: 128px;
 
   /* Fluid typography – GOSBROS design system */
-  --font-size-hero: clamp(3rem, 12vw, 15rem);
-  --font-size-h2: clamp(2.5rem, 8vw, 8rem);
+  --font-size-hero: clamp(4rem, 14vw, 24rem);
+  --font-size-h2: clamp(3rem, 10vw, 16rem);
   --font-size-h3: clamp(1.5rem, 4vw, 3.5rem);
-  --font-size-body: clamp(1rem, 1.2vw, 1.25rem);
+  --font-size-body: clamp(1rem, 1.2vw, 1.5rem);
 }
 
 :root {
