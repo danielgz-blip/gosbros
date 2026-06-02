@@ -27,7 +27,7 @@ export default function Home() {
             </div>
             <div className="w-full md:w-[75%] flex flex-col items-end">
               <MaskReveal>
-                <h2 className="text-[var(--font-size-hero)] leading-[0.85] font-display font-black tracking-tighter uppercase text-left w-full whitespace-pre-line">
+                <h2 className="text-[var(--font-size-h2)] leading-[0.85] font-display font-black tracking-tighter uppercase text-left w-full whitespace-pre-line">
                   {t('home.heroTitle')}
                 </h2>
               </MaskReveal>
@@ -63,7 +63,7 @@ export default function Home() {
                   </div>
                   <div className="flex flex-col mt-2">
                     <div className="flex justify-between items-baseline mb-1">
-                      <h3 className="font-sans font-bold text-sm md:text-base uppercase tracking-tight">
+                      <h3 className="text-[var(--font-size-h2)] font-display font-black tracking-tighter uppercase leading-[0.85]">
                         {language === 'es' ? project.title_es : project.title_en}
                       </h3>
                       <span className="font-sans font-bold text-xs md:text-sm">({project.year})</span>
