@@ -27,17 +27,21 @@
   --spacing-9: 96px;
   --spacing-10: 128px;
 
-  /* Fluid typography – GOSBROS design system */
+}
+
+:root {
+  --background: var(--color-primary-light);
+  --foreground: var(--color-primary-dark);
   --font-size-hero: clamp(4rem, 14vw, 24rem);
   --font-size-h2: clamp(3rem, 10vw, 16rem);
   --font-size-h3: clamp(1.5rem, 4vw, 3.5rem);
   --font-size-body: clamp(1rem, 1.2vw, 1.5rem);
 }
 
-:root {
-  --background: var(--color-primary-light);
-  --foreground: var(--color-primary-dark);
-}
+.text-hero { font-size: var(--font-size-hero); }
+.text-h2 { font-size: var(--font-size-h2); }
+.text-h3 { font-size: var(--font-size-h3); }
+.text-body { font-size: var(--font-size-body); }
 
 * {
   cursor: none !important;
