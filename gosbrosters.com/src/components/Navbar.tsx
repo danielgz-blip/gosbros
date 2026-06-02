@@ -24,10 +24,10 @@ export default function Navbar() {
               alt="GOSBROS Logo" 
               width={123} 
               height={35} 
-              className="h-[64px] w-auto"
+              className="h-[32px] w-auto"
             />
           </Link>
-          <div className="hidden md:flex gap-4">
+          <div className="hidden md:flex gap-6 text-xs">
             <Link href="/works" className="hover:opacity-60 transition-opacity" data-cursor-hover>{t('nav.works')}</Link>
             <Link href="/about" className="hover:opacity-60 transition-opacity" data-cursor-hover>{t('nav.about')}</Link>
             <Link href="/archive" className="hover:opacity-60 transition-opacity" data-cursor-hover>{t('nav.archive')}</Link>
