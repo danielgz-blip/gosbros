@@ -21,7 +21,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center" data-cursor-hover>
             <Image 
               src="/gosbros-logo.svg" 
-              alt="GOSBROS. Logo" 
+              alt="GOSBROS Logo" 
               width={123} 
               height={35} 
               className="h-[32px] w-auto"
@@ -82,7 +82,7 @@ export default function Navbar() {
               <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center" data-cursor-hover>
                 <Image 
                   src="/gosbros-logo.svg" 
-                  alt="GOSBROS. Logo" 
+                  alt="GOSBROS Logo" 
                   width={123} 
                   height={35} 
                   className="h-[28px] w-auto"

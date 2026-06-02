@@ -22,7 +22,7 @@ export default function Hero() {
   useEffect(() => {
     const t1 = setTimeout(() => setStep(1), 500);     // Show "WE ARE"
     const t2 = setTimeout(() => setStep(2), 2200);    // Hide "WE ARE"
-    const t3 = setTimeout(() => setStep(3), 3000);    // Show "GOSBROS." on the left third
+    const t3 = setTimeout(() => setStep(3), 3000);    // Show "GOSBROS" on the left third
     
     return () => {
       clearTimeout(t1);
@@ -84,7 +84,7 @@ export default function Hero() {
                 className="absolute top-[25vh] left-0 w-full flex justify-center overflow-hidden"
               >
                 <h1 className="text-[12vw] md:text-[14vw] leading-[0.8] font-display tracking-tighter text-white uppercase text-center">
-                  GOSBROS.
+                  GOSBROS
                 </h1>
               </motion.div>
             )}

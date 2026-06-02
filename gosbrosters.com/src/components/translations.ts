@@ -30,7 +30,7 @@ export const translations = {
       view: 'VER',
       missionTitle1: 'Trazamos nuestro\npropio camino.',
       missionTitle2: 'Diseño audaz, siempre en auge.',
-      missionText: 'GOSBROS. es un estudio híbrido con sede en la Ciudad de México, eliminando la brecha entre soluciones arquitectónicas de alta eficiencia e identidades visuales radicales. Diseño funcional pero hermoso, al alcance de todos.',
+      missionText: 'GOSBROS es un estudio híbrido con sede en la Ciudad de México, eliminando la brecha entre soluciones arquitectónicas de alta eficiencia e identidades visuales radicales. Diseño funcional pero hermoso, al alcance de todos.',
       strategy: 'Estrategia',
       architecture: 'Arquitectura',
       branding: 'Diseño Gráfico',
@@ -56,7 +56,7 @@ export const translations = {
     // About Page
     about: {
       phrases: [
-        "SOMOS\nGOSBROS.",
+        "SOMOS\nGOSBROS",
         "CONSTRUIMOS\nEL FUTURO.",
         "DISEÑAMOS\nCON IMPACTO.",
         "ALTA\nEFICIENCIA."
@@ -74,7 +74,7 @@ export const translations = {
     },
     // Contact Page
     contact: {
-      title: '¿LISTO PARA ESTAR\nEN GOSBROS.?',
+      title: '¿LISTO PARA ESTAR\nEN GOSBROS?',
       getInTouch: 'CONTACTO'
     },
     // Admin
@@ -115,7 +115,7 @@ export const translations = {
       view: 'VIEW',
       missionTitle1: 'We pave our\nown way.',
       missionTitle2: 'Bold design, always in auge.',
-      missionText: 'GOSBROS. is a hybrid studio based in Mexico City, bridging the gap between high-efficiency architectural solutions and radical visual identities. Functional yet beautiful design, accessible to all.',
+      missionText: 'GOSBROS is a hybrid studio based in Mexico City, bridging the gap between high-efficiency architectural solutions and radical visual identities. Functional yet beautiful design, accessible to all.',
       strategy: 'Strategy',
       architecture: 'Architecture',
       branding: 'Branding',
@@ -141,7 +141,7 @@ export const translations = {
     // About Page
     about: {
       phrases: [
-        "WE ARE\nGOSBROS.",
+        "WE ARE\nGOSBROS",
         "WE BUILD\nTHE FUTURE.",
         "WE DESIGN\nWITH IMPACT.",
         "HIGH\nEFFICIENCY."
@@ -159,7 +159,7 @@ export const translations = {
     },
     // Contact Page
     contact: {
-      title: 'READY TO BE\nIN GOSBROS.?',
+      title: 'READY TO BE\nIN GOSBROS?',
       getInTouch: 'GET IN TOUCH'
     },
     // Admin

@@ -24,7 +24,7 @@ const robotoFlexSerif = Roboto_Flex({
 });
 
 export const metadata: Metadata = {
-  title: "GOSBROS. | High-Efficiency Architecture & Visual Identity",
+  title: "GOSBROS | High-Efficiency Architecture & Visual Identity",
   description: "High-Efficiency Architecture & Visual Identity based in Mexico City.",
 };
 

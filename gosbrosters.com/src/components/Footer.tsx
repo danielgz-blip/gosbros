@@ -23,14 +23,14 @@ export default function Footer() {
         <div className="flex flex-col gap-2 md:col-start-4 text-right">
           <span className="text-white">{t('footer.location')}</span>
           <span>{t('footer.city')}</span>
-          <span>&copy; 2026 GOSBROS.</span>
+          <span>&copy; 2026 GOSBROS</span>
         </div>
       </div>
       
       <div className="w-full">
         <MaskReveal className="w-full">
           <h2 className="text-[15vw] md:text-[20vw] leading-[0.8] font-display text-white tracking-tighter text-center">
-            GOSBROS.
+            GOSBROS
           </h2>
         </MaskReveal>
       </div>
