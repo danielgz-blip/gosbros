@@ -25,7 +25,7 @@ export default function WorksPage() {
 
       {/* Projects Grid Feed */}
       <section className="px-4 md:px-8 pb-32">
-        <div className="max-w-[1800px] mx-auto flex flex-wrap gap-y-24 md:gap-y-32 justify-between">
+        <div className="max-w-[1800px] mx-auto flex flex-wrap gap-y-[var(--spacing-9)] md:gap-y-[var(--spacing-10)] justify-between">
           {projects.map((project, index) => {
             const isLarge = project.size === "large";
             const colClass = isLarge ? "w-full md:w-[65%]" : "w-full md:w-[30%]";

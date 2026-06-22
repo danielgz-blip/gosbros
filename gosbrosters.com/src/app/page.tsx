@@ -18,11 +18,11 @@ export default function Home() {
       <Hero />
 
       {/* Featured Projects Section (AUGE Style) */}
-      <section className="w-full bg-[#f4f4f4] py-16 md:py-32 px-4 md:px-8">
+      <section className="w-full bg-[#f4f4f4] py-[var(--spacing-8)] md:py-[var(--spacing-10)] px-[var(--spacing-4)] md:px-[var(--spacing-8)]">
         <div className="max-w-[1800px] mx-auto">
           {/* Top Text Section */}
-          <div className="flex flex-col md:flex-row justify-between items-start mb-16 md:mb-24">
-            <div className="text-xs font-sans uppercase font-bold tracking-widest mb-8 md:mb-0 leading-tight whitespace-pre-line">
+          <div className="flex flex-col md:flex-row justify-between items-start mb-[var(--spacing-8)] md:mb-[var(--spacing-9)]">
+            <div className="text-xs font-sans uppercase font-bold tracking-widest mb-[var(--spacing-6)] md:mb-0 leading-tight whitespace-pre-line">
               {t('home.locationTag')}
             </div>
             <div className="w-full md:w-[75%] flex flex-col items-end">
@@ -31,7 +31,7 @@ export default function Home() {
                   {t('home.heroTitle')}
                 </h2>
               </MaskReveal>
-              <div className="mt-8 md:mt-12 w-full flex justify-end md:pr-12">
+              <div className="mt-[var(--spacing-6)] md:mt-[var(--spacing-7)] w-full flex justify-end md:pr-12">
                 <a href="/about" className="text-xs md:text-sm font-sans font-bold flex items-center gap-2 hover:opacity-70 transition-opacity uppercase">
                   {t('home.moreAboutUs')} <span className="text-lg leading-none">&rarr;</span>
                 </a>
@@ -40,7 +40,7 @@ export default function Home() {
           </div>
 
           {/* Projects Flex Layout */}
-          <div className="flex flex-col md:flex-row gap-12 md:gap-8 w-full items-start">
+          <div className="flex flex-col md:flex-row gap-[var(--spacing-7)] md:gap-[var(--spacing-6)] w-full items-start">
             
             {featuredProjects.map((project, index) => {
               const isLarge = project.size === "large";

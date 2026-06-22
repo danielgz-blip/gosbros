@@ -48,8 +48,8 @@ export default function AboutPage() {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -40, opacity: 0 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
-                  className="absolute inset-0 font-display font-black tracking-tighter uppercase text-left w-full text-white"
-                  style={{ whiteSpace: "pre-line", fontSize: 'clamp(3rem, 12vw, 15rem)', lineHeight: '0.85' }}
+                  className="absolute inset-0 text-hero font-display font-black tracking-tighter uppercase text-left w-full text-white"
+                  style={{ whiteSpace: "pre-line", lineHeight: '0.85' }}
                 >
                   {phrases[phraseIndex]}
                 </motion.h1>
@@ -73,7 +73,7 @@ export default function AboutPage() {
             <h2 className="text-h2 font-display font-black tracking-tighter uppercase leading-[0.85] mb-8 whitespace-pre-line">
               {t('about.mainText').split('\n')[0]}
             </h2>
-            <p className="text-[#999] mb-12 whitespace-pre-line">
+            <p className="text-gray-3 mb-12 whitespace-pre-line">
               {t('about.mainText').split('\n')[2]}
             </p>
             <p className="whitespace-pre-line">
@@ -105,7 +105,7 @@ export default function AboutPage() {
                     <h3 className="text-xs font-sans font-bold uppercase tracking-widest leading-tight">{val.title}</h3>
                   </div>
                   <div className="w-full md:w-2/3">
-                    <p className="text-body text-[#999] leading-[1.2] tracking-tight font-medium">
+                    <p className="text-body text-gray-3 leading-[1.2] tracking-tight font-medium">
                       {val.desc}
                     </p>
                   </div>

@@ -167,7 +167,7 @@ export default function AdminPage() {
       <section className="px-4 md:px-8 mb-16 md:mb-24">
         <div className="max-w-[1800px] mx-auto h-full flex flex-col justify-center">
           <MaskReveal>
-            <h1 className="text-hero leading-[0.85] font-sans font-black tracking-tighter uppercase text-left w-full">
+            <h1 className="text-hero leading-[0.85] font-display font-black tracking-tighter uppercase text-left w-full">
               {t('admin.title')}
             </h1>
           </MaskReveal>
@@ -179,7 +179,7 @@ export default function AdminPage() {
 
       <section className="px-4 md:px-8 pb-32 flex-grow">
         <div className="max-w-[1000px] mx-auto w-full bg-white border border-black p-8 md:p-12">
-          <h2 className="font-sans font-bold uppercase text-2xl mb-8 border-b border-black pb-4">
+          <h2 className="font-display font-bold uppercase text-h3 mb-8 border-b border-black pb-4">
             {t('admin.addProject')}
           </h2>
 
@@ -290,10 +290,10 @@ export default function AdminPage() {
                     
                     {/* Reorder Buttons */}
                     <div className="flex flex-col gap-1 border-r border-gray-200 pr-4 mt-1">
-                      <button type="button" onClick={() => moveBlock(index, 'up')} disabled={index === 0} className="disabled:opacity-20 hover:text-[#ff0080] transition-colors">
+                      <button type="button" onClick={() => moveBlock(index, 'up')} disabled={index === 0} className="disabled:opacity-20 hover:text-accent-pink transition-colors">
                         ▲
                       </button>
-                      <button type="button" onClick={() => moveBlock(index, 'down')} disabled={index === contentBlocks.length - 1} className="disabled:opacity-20 hover:text-[#ff0080] transition-colors">
+                      <button type="button" onClick={() => moveBlock(index, 'down')} disabled={index === contentBlocks.length - 1} className="disabled:opacity-20 hover:text-accent-pink transition-colors">
                         ▼
                       </button>
                     </div>

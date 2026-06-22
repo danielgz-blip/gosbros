@@ -23,7 +23,7 @@ export default function ContactPage() {
                {t('contact.getInTouch')}
              </div>
              
-             <div className="flex flex-col gap-8 font-display uppercase text-2xl md:text-4xl tracking-tight">
+             <div className="flex flex-col gap-8 font-display uppercase text-h3 tracking-tight">
                <a 
                  href="mailto:business@gosbrosters.com" 
                  className="flex items-center justify-between border-b border-black pb-4 hover:text-gray-500 transition-colors group"

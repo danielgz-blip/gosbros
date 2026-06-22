@@ -38,7 +38,7 @@ export default function Navbar() {
           {/* Language Toggle */}
           <button 
             onClick={toggleLanguage}
-            className="hidden md:flex items-center gap-2 font-sans text-[12px] uppercase font-bold tracking-widest hover:opacity-80 transition-opacity"
+            className="hidden md:flex items-center gap-2 font-sans text-xs uppercase font-bold tracking-widest hover:opacity-80 transition-opacity"
             data-cursor-hover
           >
             <span className={language === 'es' ? 'opacity-100' : 'opacity-30 line-through'}>ES</span>
@@ -92,7 +92,7 @@ export default function Navbar() {
               <div className="flex justify-center">
                 <button 
                   onClick={toggleLanguage}
-                  className="flex items-center gap-2 font-sans text-[12px] uppercase font-bold tracking-widest hover:opacity-80 transition-opacity"
+                  className="flex items-center gap-2 font-sans text-xs uppercase font-bold tracking-widest hover:opacity-80 transition-opacity"
                   data-cursor-hover
                 >
                   <span className={language === 'es' ? 'opacity-100' : 'opacity-30 line-through'}>ES</span>
