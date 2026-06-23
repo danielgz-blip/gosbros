@@ -38,7 +38,7 @@ export const translations = {
     },
     // Quote Calculator
     quote: {
-      heading: 'CALCULA TU\nCOTIZACIÓN',
+      heading: 'COTIZA NUESTROS\nSERVICIOS',
       subheading: 'Transparencia radical. Sin sorpresas.',
       step: 'Paso',
       selectService: '¿Qué servicio necesitas?',

@@ -253,17 +253,17 @@ export default function QuoteCalculator() {
     >
       <div className="max-w-[1800px] mx-auto">
         {/* ---- Header ---- */}
-        <div className="flex flex-col md:flex-row justify-between items-start mb-[var(--spacing-7)] md:mb-[var(--spacing-8)]">
-          <div className="text-xs font-sans uppercase font-bold tracking-widest mb-[var(--spacing-5)] md:mb-0 leading-tight whitespace-pre-line text-gray-400">
-            {t("quote.step")} {step < 4 ? `0${step}` : "03"} / 03
-          </div>
-          <div className="w-full md:w-[75%]">
+        <div className="flex flex-col mb-[var(--spacing-7)] md:mb-[var(--spacing-8)]">
+          <div className="w-full">
             <MaskReveal>
               <h2 className="text-h2 leading-[0.85] font-display font-black tracking-tighter uppercase text-left w-full whitespace-pre-line">
                 {t("quote.heading")}
               </h2>
             </MaskReveal>
-            <p className="mt-[var(--spacing-4)] font-serif italic text-gray-500 text-sm">
+            <div className="text-xs font-sans uppercase font-bold tracking-widest mt-[var(--spacing-4)] mb-[var(--spacing-2)] leading-tight whitespace-pre-line text-gray-400">
+              {t("quote.step")} {step < 4 ? `0${step}` : "03"} / 03
+            </div>
+            <p className="font-serif italic text-gray-500 text-sm">
               {t("quote.subheading")}
             </p>
           </div>
