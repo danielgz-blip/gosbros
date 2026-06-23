@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLanguage } from "@/components/LanguageContext";
 import MaskReveal from "@/components/MaskReveal";
 import Footer from "@/components/Footer";
@@ -195,7 +195,7 @@ export default function AdminPage() {
     }
   }
 
-  const updatePricing = (path: string[], value: any) => {
+  const updatePricing = (path: (string | number)[], value: any) => {
     setPricing((prev: any) => {
       const newData = JSON.parse(JSON.stringify(prev)); // Deep copy
       let current = newData;
