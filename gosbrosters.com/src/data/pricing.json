@@ -1,0 +1,38 @@
+{
+  "exchangeRate": 17.5,
+  "variancePercent": 20,
+  "architecture": {
+    "projectTypes": [
+      { "id": "residential", "label_es": "Residencial", "label_en": "Residential", "baseRate": 850 },
+      { "id": "commercial", "label_es": "Comercial", "label_en": "Commercial", "baseRate": 1200 },
+      { "id": "interior", "label_es": "Remodelación Interior", "label_en": "Interior Renovation", "baseRate": 650 }
+    ],
+    "sizeRanges": [
+      { "id": "xs", "label": "< 50 m²", "min": 20, "max": 50 },
+      { "id": "sm", "label": "50 – 150 m²", "min": 50, "max": 150 },
+      { "id": "md", "label": "150 – 500 m²", "min": 150, "max": 500 },
+      { "id": "lg", "label": "> 500 m²", "min": 500, "max": 1000 }
+    ]
+  },
+  "branding": {
+    "scopes": [
+      { "id": "logo", "label_es": "Solo Logo", "label_en": "Logo Only", "basePrice": 25000 },
+      { "id": "identity", "label_es": "Logo + Paleta + Tipografía", "label_en": "Logo + Palette + Typography", "basePrice": 55000 },
+      { "id": "full", "label_es": "Manual de Marca Completo", "label_en": "Full Brand Manual", "basePrice": 120000 }
+    ],
+    "clientSizes": [
+      { "id": "startup", "label_es": "Startup / Nuevo", "label_en": "Startup / New", "multiplier": 0.7 },
+      { "id": "small", "label_es": "Pequeña (< $5M MXN/año)", "label_en": "Small (< $5M MXN/yr)", "multiplier": 1.0 },
+      { "id": "medium", "label_es": "Mediana ($5M – $50M MXN/año)", "label_en": "Medium ($5M – $50M MXN/yr)", "multiplier": 1.5 },
+      { "id": "large", "label_es": "Grande (> $50M MXN/año)", "label_en": "Large (> $50M MXN/yr)", "multiplier": 2.2 }
+    ]
+  },
+  "strategy": {
+    "types": [
+      { "id": "brand", "label_es": "Estrategia de Marca", "label_en": "Brand Strategy", "basePrice": 45000 },
+      { "id": "business", "label_es": "Estrategia de Negocio", "label_en": "Business Strategy", "basePrice": 65000 },
+      { "id": "marketing", "label_es": "Estrategia de Marketing", "label_en": "Marketing Strategy", "basePrice": 40000 },
+      { "id": "digital", "label_es": "Estrategia Digital", "label_en": "Digital Strategy", "basePrice": 50000 }
+    ]
+  }
+}

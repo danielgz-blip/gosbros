@@ -1,138 +1,206 @@
-# **AUGE Design – Design System Documentation**
+# **GOSBROS – Design System Documentation**
 
-This document outlines the core design language, tokens, and component patterns for the AUGE Design website. The design is characterized by its bold, brutalist-inspired typography, high-contrast layouts, and minimalist grid structures that let the agency's work take center stage.
+This document outlines the core design language, tokens, and component patterns for the GOSBROS website. The site is bilingual (Spanish / English) and draws inspiration from the Auge Design aesthetic — bold brutalist typography, high-contrast layouts, and minimalist grids that let the studio's work take center stage.
 
-## **1\. Color Palette**
+> **Brand Name Rule:** The studio name is always written as **GOSBROS** — no trailing period, no lowercase. In code, translations, and UI copy, never write "GOSBROS." with a dot.
 
-The core palette relies heavily on high-contrast monochromatic tones, punctuated by stark, vibrant background fills for specific narrative sections.
+---
 
-### **Core Tokens (Frequency-Based)**
+## **1. Color Palette**
 
-| Token | Hex Value | Usage / Notes |
-| :---- | :---- | :---- |
-| **Color 1 (Primary Dark)** | \#000000 | Primary text, footer backgrounds, stark section backgrounds. |
-| **Color 2 (Primary Light)** | \#ffffff | Page backgrounds, reversed text on dark/colored backgrounds. |
-| **Color 3 (Gray 1\)** | \#b3b3b3 | Secondary text, subtle borders, muted information. |
-| **Color 4 (Gray 2\)** | \#aca7a7 | Tertiary text, inactive states. |
-| **Color 5 (Gray 3\)** | \#808080 | Image placeholders, deeper borders. |
-| **Color 6 (Gray 4\)** | \#c0c0c0 | Hover states, subtle dividers. |
-| **Color 7 (Gray 5\)** | \#d6d0d0 | Very light dividers and table borders. |
+The palette is high-contrast monochrome with two editorial accent colors used sparingly for narrative impact.
 
-### **Brand Accent Colors (Visual Reference)**
+### **Core Tokens**
 
-While the structural UI is predominantly monochrome, large blocks of color are used for editorial impact:
+| Token                | Hex       | CSS Variable             | Usage                                              |
+| :------------------- | :-------- | :----------------------- | :------------------------------------------------- |
+| Primary Dark         | `#000000` | `--color-primary-dark`   | Text, footer backgrounds, section fills             |
+| Primary Light        | `#FFFFFF` | `--color-primary-light`  | Page backgrounds, reversed text on dark sections    |
+| Gray 1               | `#B3B3B3` | `--color-gray-1`         | Secondary text, muted labels                        |
+| Gray 2               | `#ACA7A7` | `--color-gray-2`         | Tertiary text, inactive states                      |
+| Gray 3               | `#808080` | `--color-gray-3`         | Placeholders, deeper borders                        |
+| Gray 4               | `#C0C0C0` | `--color-gray-4`         | Hover states, subtle dividers, table borders        |
+| Gray 5               | `#D6D0D0` | `--color-gray-5`         | Very light dividers                                 |
+| Surface              | `#F4F4F4` | (Tailwind `bg-[#f4f4f4]`) | Page-level background for content sections         |
 
-* **Vibrant Red**: Used in the "DON MOLINICO" hero section to demand immediate attention.  
-* **Mint Green**: Used in the "WE PAVE OUR OWN WAY." services section for a refreshing, calm contrast.
+### **Brand Accent Colors**
 
-## **2\. Typography**
+| Token              | Hex         | Usage                                                |
+| :----------------- | :---------- | :--------------------------------------------------- |
+| Accent Pink        | `#FF0080`   | Hover overlays on project cards, interactive CTAs     |
+| Accent Red         | `#FF0000`   | Rare editorial emphasis (hero sections)               |
+| Accent Mint        | `#98FF98`   | Refreshing contrast for service / values sections     |
 
-The typographic hierarchy is the defining feature of the AUGE website. It uses a mix of a mechanical sans-serif for utility and a massive, heavy typeface for impact, softened occasionally by a classic serif.
+---
+
+## **2. Typography**
+
+All fonts use a single variable typeface: **Roboto Flex**. Weights and optical sizes are controlled via CSS variable font settings — no additional font files needed.
 
 ### **Font Families**
 
-* **Primary Sans (Utility & Body):** NeueMontreal-Medium  
-* **Display / Hero (Impact):** Greed-Bold  
-* **Accent Serif (Categories/Metadata):** AUGEFarnhamDisplay-Italic
+| Role                  | CSS Variable      | Typeface     | Notes                                                |
+| :-------------------- | :---------------- | :----------- | :--------------------------------------------------- |
+| Sans (Utility & Body) | `--font-sans`     | Roboto Flex  | Body copy, navigation, labels, form inputs            |
+| Display (Hero)        | `--font-display`  | Roboto Flex  | Massive headings, hero text — `font-black` weight     |
+| Serif (Accent)        | `--font-serif`    | Roboto Flex  | Category labels, metadata — italic style              |
 
-### **Typographic Tokens**
+### **Typographic Scale**
 
-| Token | Font Family | Size | Weight | Line Height | Tracking | Usage |
-| :---- | :---- | :---- | :---- | :---- | :---- | :---- |
-| **Type 1** | NeueMontreal-Medium | 12.54px | 400 | 12.54px | Normal | Standard body text, navigation links, small UI labels. |
-| **Type 2** | NeueMontreal-Medium | 15.05px | 400 | 16.55px | \-0.15px | Subheadings, introductory paragraph text, list items. |
-| **Type 3** | NeueMontreal-Medium | 12.54px | 400 | 11.28px | Normal | Dense table data, fine print, metadata. |
-| **Type 4** | AUGEFarnhamDisplay-Italic | 10.03px | 400 | 10.03px | \-0.05px | Accent tags, project categories (e.g., *Identity, Packaging*). |
-| **Type 5** | Greed-Bold | 250.88px | 400 | 200.70px | \-3.76px | Massive hero text, footer logo lockups (e.g., "AUGE", "LATEST NEWS"). |
+All sizes use fluid `clamp()` to scale between mobile and wide desktop. Base values are multiples of 4px.
 
-*Note: Type 5 scales fluidly based on viewport width (vw) to maintain edge-to-edge impact. On mobile viewports, hero typography aggressively scales down using `clamp(3rem, 15vw, 6rem)` to prevent layout breakage while maintaining impact.*
+| Token             | CSS Variable          | Value                              | Usage                                          |
+| :---------------- | :-------------------- | :--------------------------------- | :--------------------------------------------- |
+| Hero              | `--font-size-hero`    | `clamp(3rem, 12vw, 15rem)`        | Page titles, massive headings                   |
+| H2                | `--font-size-h2`      | `clamp(2.5rem, 8vw, 8rem)`        | Section headings, footer CTA text               |
+| H3                | `--font-size-h3`      | `clamp(1.5rem, 4vw, 3.5rem)`      | Sub-section headings                            |
+| Body              | `--font-size-body`    | `clamp(1rem, 1.2vw, 1.25rem)`     | Paragraphs, descriptions                        |
+| Label             | —                     | `12px` (`text-xs`)                 | Navigation, tags, form labels, metadata         |
+| Micro             | —                     | `10px` (`text-[10px]`)             | Smallest annotations, badge labels              |
 
-### **Responsive Consistency**
-To maintain strict functional consistency across devices (inspired by our Soviet bus stops metaphor):
-- **Hero & Headings**: Fluid scaling using CSS `clamp()` (e.g., `--font-size-hero: clamp(3rem, 12vw, 15rem);`).
-- **Body & Metadata**: Fixed scaling (`clamp(1rem, 1.2vw, 1.25rem)`) to guarantee readability without overflowing mobile margins.
+### **Typographic Rules**
 
-## **3\. Spacing & Layout**
+- **Headings (h1–h3)** and `.font-display`: Always `text-transform: uppercase`, `font-black` (900 weight), `tracking-tighter`.
+- **Body text**: `font-sans`, `tracking-tight`, `leading-[1.2]`.
+- **Labels & metadata**: `font-sans`, `uppercase`, `font-bold`, `tracking-widest`, `text-xs`.
+- **Accent/category text**: `font-serif`, `italic`, lowercase, `text-sm`.
+- **Line heights** default to `leading-[0.85]` for hero/display and `leading-[1.2]` for body.
 
-The spatial system embraces both generous, editorial whitespace and tightly packed, tabular data grids.
+---
 
-### **Spacing Tokens**
+## **3. Spacing & Layout**
 
-* space-1: 38.4px  
-* space-2: 12.5px  
-* space-3: 6.3px  
-* space-4: 12.8px  
-* space-5: 5px  
-* space-6: 94.1px (Large section gaps)  
-* space-7: 37.6px  
-* space-8: 28.2px  
-* space-9: 16px  
-* space-10: 62.7px
+All spacing values are multiples of **4px** (minor) and **8px** (major). This ensures vertical rhythm and horizontal alignment across every component and breakpoint.
+
+### **Spacing Scale**
+
+| Token       | Value   | Usage                                                |
+| :---------- | :------ | :--------------------------------------------------- |
+| `space-1`   | `4px`   | Minimum gap, icon padding, inline gaps               |
+| `space-2`   | `8px`   | Tight component gaps, tag padding                    |
+| `space-3`   | `12px`  | Small form gaps, label spacing                       |
+| `space-4`   | `16px`  | Standard component gap, card padding                 |
+| `space-5`   | `24px`  | Section inner padding, grid gaps                     |
+| `space-6`   | `32px`  | Major section padding, grid gaps on desktop          |
+| `space-7`   | `48px`  | Section vertical padding (mobile)                    |
+| `space-8`   | `64px`  | Section vertical padding (desktop), large whitespace |
+| `space-9`   | `96px`  | Major section separators                             |
+| `space-10`  | `128px` | Hero-level vertical whitespace, page top padding     |
+
+### **Page-Level Padding**
+
+| Context         | Mobile          | Desktop          |
+| :-------------- | :-------------- | :--------------- |
+| Horizontal      | `px-4` (16px)   | `px-8` (32px)    |
+| Page top        | `pt-32` (128px) | `pt-48` (192px)  |
+| Section bottom  | `pb-16` (64px)  | `pb-32` (128px)  |
 
 ### **Layout Principles**
 
-* **Fluid Containers:** Content stretches across a wide, almost edge-to-edge container, with tight margins on the extreme left and right.  
-* **Harsh Grid Lines:** Sections like "GOOD IDEAS NEVER GET OLD" (Archive) and "AWARDS" use visible, 1px solid black (or light gray) horizontal lines to separate items, reminiscent of a spreadsheet or brutalist ledger.  
-* **Asymmetry:** Project modules and text blocks often use asymmetrical grid placement (e.g., one large image paired with a smaller image, or heavily indented text blocks).
+- **Max container width:** `max-w-[1800px]` with `mx-auto`.
+- **Asymmetric grids:** Project cards alternate between 65% / 35% widths to create visual tension.
+- **Harsh grid lines:** 1px solid `#000` or `#C0C0C0` horizontal borders separate archive and table rows — a brutalist ledger aesthetic.
+- **Edge-to-edge media:** Project images and hero banners bleed to full viewport width with no border-radius.
 
-## **4\. Component Patterns**
+---
+
+## **4. Component Patterns**
 
 ### **4.1. Navigation**
 
-* Fixed/Sticky at the top.  
-* Minimalist: Just the 'A' logo mark on the left, primary links (WORKS, ABOUT, ARCHIVE), and a CTA (GET IN TOUCH) on the right.  
-* All caps, using the NeueMontreal utility font.
+- Fixed at top, `z-40`, `mix-blend-difference` for color inversion over content.
+- Left: GOSBROS logo (SVG). Right: nav links + language toggle + CTA.
+- Mobile: fullscreen overlay menu (`z-50`), black background, centered oversized links.
+- Language toggle: `ES / EN` with the active language at full opacity and the inactive one at 30% opacity with `line-through`.
+- All text: `uppercase`, `font-display`, `tracking-widest`.
 
-### **4.2. Project Cards (Work Feed)**
+### **4.2. Hero**
 
-* **Media:** Edge-to-edge photography or video. No rounded corners on main portfolio items.  
-* **Caption:** Positioned directly below the media.  
-* **Title:** Bold, left-aligned (NeueMontreal).  
-* **Category:** Italicized, subtle grey (AUGEFarnhamDisplay-Italic).  
-* **Year:** Right-aligned, enclosed in parentheses (e.g., ( 2026 )).
+- Full-viewport-height section (`h-screen`) with a cinematic image/video reveal sequence.
+- Three animated steps: video fill → "YOU ARE IN" / "ESTÁS EN" → "GOSBROS" logo reveal.
+- Typography uses `--font-size-hero` for maximum impact.
 
-### **4.3. Archive / Data Lists**
+### **4.3. Project Cards (Works Feed)**
 
-* Used for awards and project archives.  
-* 100% width rows.  
-* Separated by fine \#000000 or \#c0c0c0 top/bottom borders.  
-* Data is organized into strict columns (Title, Category, Sector, Year).
+- **Media:** Full-width images, `aspect-[4/3]` on mobile, `aspect-[16/10]` on desktop. Grayscale by default, color on hover.
+- **Hover overlay:** `bg-[#ff0080]/90` with centered "View Project" / "Ver Proyecto" text.
+- **Caption:** Title (`font-sans`, `font-bold`, `uppercase`, `tracking-tighter`), category (`font-serif`, `italic`, `text-gray-500`), year.
 
-### **4.4. Buttons & Links**
+### **4.4. Project Detail Pages (`/works/[id]`)**
 
-* Inline links feature a simple, thin underline or an arrow suffix (e.g., More Works \-\>, Load More ↓).  
-* Hover states typically rely on opacity shifts or striking a line through the text, maintaining the raw, unpolished aesthetic.
+- **Hero:** Full-bleed media locked to `aspect-video` (16:9).
+- **Metadata section:** White background, two-column layout (title+desc left, specs right).
+- **Content blocks:** Mixed media (images, video) and text, in a `grid-cols-1 md:grid-cols-2` grid.
+  - Horizontal media (16:9): `md:col-span-2`, full width.
+  - Vertical media (9:16): `md:col-span-1`, two fit side-by-side on desktop.
+  - Text blocks: `md:col-span-2`, centered serif typography.
+- **Bottom CTA:** Full-width black bar → pink on hover, linking back to `/works`.
 
-### **4.5. Footer**
+### **4.5. Archive / Data Lists**
 
-* Characterized by a gigantic, screen-filling implementation of the word "AUGE" using Greed-Bold.  
-* Includes minimal legal text, copyright, and social links organized in a strict 4-column sub-grid above the massive logo.
+- Full-width rows separated by `1px` borders (`#C0C0C0`).
+- Columns: Title (30%), Category (20%), Material (25%), Ethos (20%), Year (5%).
+- Hover: `bg-white` transition, left-padding indent animation.
 
-## **5\. Shape & Radii**
+### **4.6. About Page**
 
-The design is overwhelmingly rectilinear, favoring sharp corners to maintain an editorial, print-like feel.
+- Two-column layout: massive rotating phrases on the left, studio description on the right.
+- Values section: large hero title + 3-column values grid.
 
-* **radius-1 (100px):** Rarely used, reserved for specific badge elements or circular UI toggles (if any).  
-* **radius-2 (4px):** Used sparingly for subtle softening of interactive elements or form fields. Main media assets have 0px border-radius.
+### **4.7. Buttons & Links**
 
-## **6\. Animation & Interaction**
+- Primary buttons: `bg-black text-white` with `hover:bg-white hover:text-black` border swap.
+- Inline links: thin underline that scales to 0 on hover.
+- All interactive elements: `data-cursor-hover` attribute for custom cursor expansion.
 
-The animation style is deliberate, bold, and tightly tied to scroll position, reinforcing the brutalist, editorial aesthetic of the site.
+### **4.8. Footer**
+
+- Massive GOSBROS wordmark (`--font-size-hero`) spanning full width.
+- Above: 4-column sub-grid with contact info and social links.
+- Copyright: `© 2026 GOSBROS`
+
+---
+
+## **5. Shape & Radii**
+
+The design is overwhelmingly rectilinear. Sharp corners reinforce the editorial, print-like feel.
+
+- **Default:** `border-radius: 0` on all media, cards, and containers.
+- **Exception:** Circular elements only for the custom cursor dot and rare UI toggles.
+- **Borders:** `1px solid #000` for structural borders, `1px solid #C0C0C0` for subtle dividers.
+
+---
+
+## **6. Animation & Interaction**
 
 ### **6.1. Custom Cursor**
 
-* **Behavior:** The default system cursor is replaced by a persistent, custom black dot (\#000000).  
-* **Interaction:** It smoothly follows the mouse pointer, providing a tactile, continuous connection to the interface as the user navigates over stark whitespace and large imagery.
+- System cursor hidden globally (`cursor: none`).
+- Replaced by a small white dot (8px) with `mix-blend-difference`.
+- On `[data-cursor-hover]` elements: dot shrinks to 0, a 90px circle expands behind it.
+- Easing: `cubic-bezier(0.16, 1, 0.3, 1)`.
 
-### **6.2. Scroll-Triggered Text Reveals (Masking)**
+### **6.2. Scroll-Triggered Text Reveals (Mask Reveal)**
 
-* **Behavior:** Large typographic headings (e.g., "BOLD DESIGN, ALWAYS IN AUGE.", "INDEPENDENCE. HOW REFRESHING.") do not simply fade in. They use a hard mask reveal technique.  
-* **Mechanics:** Text blocks are wrapped in containers with overflow: hidden. The text starts translated vertically downwards (transform: translateY(100%)) and quickly slides up into its container (translateY(0)) as it enters the viewport. This gives the illusion of text rising decisively out of an invisible baseline.
+- Headings wrapped in `overflow: hidden` containers.
+- Inner `<span>` starts at `translateY(100%)`, slides to `translateY(0)` when visible.
+- Duration: `0.8s`, easing: `cubic-bezier(0.16, 1, 0.3, 1)`.
 
-### **6.3. Hero Media Reels**
+### **6.3. Hero Media Sequence**
 
-* **Behavior:** In certain high-impact sections, massive static typography (like the white "AUGE" logo text) is juxtaposed over a rapid-fire sequence of full-screen project images or video clips. This creates a highly dynamic background while maintaining typographic clarity in the foreground.
+- Three-step animation: fullscreen video → text overlay → logo reveal.
+- Each step is timed with `setTimeout` intervals (1s, 2s, 3s).
 
-### **6.4. Snappy Easing**
+### **6.4. Easing Curves**
 
-* **Behavior:** When elements animate in, the easing curves feel sharp and confident (likely an ease-out or custom cubic-bezier) rather than slow or floaty. This matches the mechanical, architectural tone of the typography.
+- All animations use the same sharp, confident easing: `cubic-bezier(0.16, 1, 0.3, 1)`.
+- Transitions default to `300ms` for hover states, `500ms–800ms` for reveals.
+
+---
+
+## **7. Bilingual (ES/EN) Implementation**
+
+- Language state managed via React Context (`LanguageContext`).
+- All user-facing strings stored in `translations.ts` with `es` and `en` keys.
+- Language toggle accessible in both desktop navbar and mobile menu.
+- URL structure is identical for both languages (no `/es/` or `/en/` prefix — state is client-side).

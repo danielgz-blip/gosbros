@@ -4,6 +4,7 @@ import Image from "next/image";
 import MaskReveal from "@/components/MaskReveal";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import QuoteCalculator from "@/components/QuoteCalculator";
 import { useLanguage } from "@/components/LanguageContext";
 import projects from "@/data/projects.json";
 
@@ -83,36 +84,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Mission / Statement Section */}
-      <section className="py-[var(--spacing-6)] px-4 bg-white grid-line border-black">
-        <div className="max-w-4xl mx-auto">
-          <MaskReveal>
-            <h2 className="text-h2 font-display font-black tracking-tighter leading-[0.9] mb-[var(--spacing-4)] whitespace-pre-line">
-              {t('home.missionTitle1')} <br />
-              <span className="text-gray-400">{t('home.missionTitle2')}</span>
-            </h2>
-          </MaskReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-4)] mt-[var(--spacing-6)]">
-            <p className="text-body text-gray-600">
-              {t('home.missionText')}
-            </p>
-            <div className="flex flex-col gap-[var(--spacing-3)]">
-              <div className="flex justify-between items-center py-[var(--spacing-2)] grid-line-light uppercase text-xs font-sans font-bold tracking-widest">
-                <span>{t('home.strategy')}</span>
-                <span className="font-serif">01</span>
-              </div>
-              <div className="flex justify-between items-center py-[var(--spacing-2)] grid-line-light uppercase text-xs font-sans font-bold tracking-widest">
-                <span>{t('home.architecture')}</span>
-                <span className="font-serif">02</span>
-              </div>
-              <div className="flex justify-between items-center py-[var(--spacing-2)] grid-line-light uppercase text-xs font-sans font-bold tracking-widest">
-                <span>{t('home.branding')}</span>
-                <span className="font-serif">03</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Quotation Calculator Section */}
+      <QuoteCalculator />
 
       <Footer />
     </div>

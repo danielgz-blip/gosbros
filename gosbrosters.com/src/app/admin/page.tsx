@@ -17,8 +17,19 @@ type ContentBlock = {
 export default function AdminPage() {
   const { language, t } = useLanguage();
   const [status, setStatus] = useState<string | null>(null);
+  const [pricingStatus, setPricingStatus] = useState<string | null>(null);
   const [heroImage, setHeroImage] = useState<string>("/Hero_Placeholder.jpg");
   const [contentBlocks, setContentBlocks] = useState<ContentBlock[]>([]);
+  
+  // Pricing State
+  const [pricing, setPricing] = useState<any>(null);
+
+  useEffect(() => {
+    fetch("/api/pricing")
+      .then(res => res.json())
+      .then(data => setPricing(data))
+      .catch(err => console.error("Error loading pricing", err));
+  }, []);
 
   const handleHeroUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -161,6 +172,40 @@ export default function AdminPage() {
       setStatus(t('admin.error'));
     }
   }
+
+  async function handlePricingSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (!pricing) return;
+    
+    setPricingStatus("Saving pricing...");
+    try {
+      const res = await fetch("/api/pricing", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(pricing),
+      });
+
+      if (res.ok) {
+        setPricingStatus("Pricing updated successfully.");
+      } else {
+        setPricingStatus("Error saving pricing.");
+      }
+    } catch (err) {
+      setPricingStatus("Error saving pricing.");
+    }
+  }
+
+  const updatePricing = (path: string[], value: any) => {
+    setPricing((prev: any) => {
+      const newData = JSON.parse(JSON.stringify(prev)); // Deep copy
+      let current = newData;
+      for (let i = 0; i < path.length - 1; i++) {
+        current = current[path[i]];
+      }
+      current[path[path.length - 1]] = value;
+      return newData;
+    });
+  };
 
   return (
     <div className="flex flex-col min-h-screen pt-32 md:pt-48 bg-[#f4f4f4]">
@@ -380,6 +425,134 @@ export default function AdminPage() {
 
           </form>
         </div>
+
+        {/* PRICING CONFIGURATION PANEL */}
+        {pricing && (
+        <div className="max-w-[1000px] mx-auto w-full bg-white border border-black p-8 md:p-12 mt-16">
+          <h2 className="font-display font-bold uppercase text-h3 mb-8 border-b border-black pb-4">
+            PRICING CONFIGURATION
+          </h2>
+
+          <form onSubmit={handlePricingSubmit} className="flex flex-col gap-8 font-sans">
+            
+            {/* Global Settings */}
+            <div className="border border-black p-6 bg-[#fafafa]">
+              <h3 className="font-display font-bold uppercase text-lg mb-4 border-b border-gray-300 pb-2">Global Settings</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="flex flex-col gap-2">
+                  <label className="text-xs uppercase font-bold tracking-widest">USD Exchange Rate (MXN)</label>
+                  <input 
+                    type="number" step="0.01" 
+                    value={pricing.exchangeRate} 
+                    onChange={(e) => updatePricing(['exchangeRate'], Number(e.target.value))}
+                    className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" 
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-xs uppercase font-bold tracking-widest">Variance (+/- %)</label>
+                  <input 
+                    type="number" 
+                    value={pricing.variancePercent} 
+                    onChange={(e) => updatePricing(['variancePercent'], Number(e.target.value))}
+                    className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" 
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Architecture Settings */}
+            <div className="border border-black p-6">
+              <h3 className="font-display font-bold uppercase text-lg mb-4 border-b border-gray-300 pb-2">Architecture Rates (per m²)</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {pricing.architecture.projectTypes.map((pt: any, idx: number) => (
+                  <div key={pt.id} className="flex flex-col gap-2">
+                    <label className="text-xs uppercase font-bold tracking-widest">{pt.label_en}</label>
+                    <div className="relative">
+                      <span className="absolute left-3 top-3 font-bold">$</span>
+                      <input 
+                        type="number" 
+                        value={pt.baseRate} 
+                        onChange={(e) => updatePricing(['architecture', 'projectTypes', idx, 'baseRate'], Number(e.target.value))}
+                        className="border border-black p-3 pl-8 outline-none focus:bg-black focus:text-white transition-colors w-full" 
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Branding Settings */}
+            <div className="border border-black p-6 bg-[#fafafa]">
+              <h3 className="font-display font-bold uppercase text-lg mb-4 border-b border-gray-300 pb-2">Branding Base Prices</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                {pricing.branding.scopes.map((scope: any, idx: number) => (
+                  <div key={scope.id} className="flex flex-col gap-2">
+                    <label className="text-xs uppercase font-bold tracking-widest">{scope.label_en}</label>
+                    <div className="relative">
+                      <span className="absolute left-3 top-3 font-bold">$</span>
+                      <input 
+                        type="number" 
+                        value={scope.basePrice} 
+                        onChange={(e) => updatePricing(['branding', 'scopes', idx, 'basePrice'], Number(e.target.value))}
+                        className="border border-black p-3 pl-8 outline-none focus:bg-black focus:text-white transition-colors w-full" 
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              <h4 className="text-sm font-bold uppercase tracking-widest mb-4">Client Size Multipliers</h4>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {pricing.branding.clientSizes.map((cs: any, idx: number) => (
+                  <div key={cs.id} className="flex flex-col gap-2">
+                    <label className="text-xs uppercase font-bold tracking-widest text-gray-500">{cs.label_en}</label>
+                    <input 
+                      type="number" step="0.1" 
+                      value={cs.multiplier} 
+                      onChange={(e) => updatePricing(['branding', 'clientSizes', idx, 'multiplier'], Number(e.target.value))}
+                      className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors w-full" 
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Strategy Settings */}
+            <div className="border border-black p-6">
+              <h3 className="font-display font-bold uppercase text-lg mb-4 border-b border-gray-300 pb-2">Strategy Flat Rates</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {pricing.strategy.types.map((st: any, idx: number) => (
+                  <div key={st.id} className="flex flex-col gap-2">
+                    <label className="text-xs uppercase font-bold tracking-widest">{st.label_en}</label>
+                    <div className="relative">
+                      <span className="absolute left-3 top-3 font-bold">$</span>
+                      <input 
+                        type="number" 
+                        value={st.basePrice} 
+                        onChange={(e) => updatePricing(['strategy', 'types', idx, 'basePrice'], Number(e.target.value))}
+                        className="border border-black p-3 pl-8 outline-none focus:bg-black focus:text-white transition-colors w-full" 
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="pt-8 border-t border-black flex justify-between items-center">
+              <span className="font-bold text-sm">{pricingStatus}</span>
+              <button 
+                type="submit" 
+                className="bg-black text-white px-8 py-4 uppercase font-bold tracking-widest hover:bg-white hover:text-black hover:border-black border border-black transition-colors"
+                data-cursor-hover
+              >
+                SAVE PRICING
+              </button>
+            </div>
+
+          </form>
+        </div>
+        )}
+
       </section>
 
       <Footer />
