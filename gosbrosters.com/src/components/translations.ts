@@ -25,7 +25,7 @@ export const translations = {
     // Home Page
     home: {
       locationTag: 'ESTÁS EN\nGOSBROS',
-      heroTitle: 'ALTA EFICIENCIA.\nQUÉ REFRESCANTE.',
+      heroTitle: 'BUENO, BONITO\NY A UN PRECIO\nJUSTO.',
       moreAboutUs: 'Más Sobre Nosotros',
       view: 'VER',
       missionTitle1: 'Trazamos nuestro\npropio camino.',
@@ -101,7 +101,7 @@ export const translations = {
     },
     // Contact Page
     contact: {
-      title: '¿LISTO PARA ESTAR\nEN GOSBROS?',
+      title: 'EL BUEN DISEÑO\nA TU ALCANCE.',
       getInTouch: 'CONTACTO'
     },
     // Admin
@@ -137,7 +137,7 @@ export const translations = {
     // Home Page
     home: {
       locationTag: 'YOU ARE IN\nGOSBROS',
-      heroTitle: 'HIGH EFFICIENCY.\nHOW REFRESHING.',
+      heroTitle: 'GOOD, BEAUTIFUL,\nAND FAIRLY\nPRICED.',
       moreAboutUs: 'More About Us',
       view: 'VIEW',
       missionTitle1: 'We pave our\nown way.',
@@ -213,7 +213,7 @@ export const translations = {
     },
     // Contact Page
     contact: {
-      title: 'READY TO BE\nIN GOSBROS?',
+      title: 'GOOD DESIGN\nWITHIN YOUR\nREACH.',
       getInTouch: 'GET IN TOUCH'
     },
     // Admin
