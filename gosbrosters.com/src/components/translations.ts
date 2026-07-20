@@ -25,7 +25,7 @@ export const translations = {
     // Home Page
     home: {
       locationTag: 'ESTÁS EN\nGOSBROS',
-      heroTitle: 'BUENO, BONITO\NY A UN PRECIO\nJUSTO.',
+      heroTitle: 'BUENO, BONITO\nY A UN PRECIO\nJUSTO.',
       moreAboutUs: 'Más Sobre Nosotros',
       view: 'VER',
       missionTitle1: 'Trazamos nuestro\npropio camino.',
