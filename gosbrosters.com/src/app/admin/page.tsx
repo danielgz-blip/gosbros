@@ -315,7 +315,12 @@ export default function AdminPage() {
 
             <div className="flex flex-col gap-4 border border-black p-4">
               <label className="text-xs uppercase font-bold tracking-widest">Imagen Hero (Obligatorio)</label>
-              <input type="file" accept="image/*,video/*" onChange={handleHeroUpload} className="text-sm" />
+              <div className="relative w-fit">
+                <input type="file" accept="image/*,video/*" onChange={handleHeroUpload} className="absolute inset-0 opacity-0 cursor-pointer z-10" />
+                <button type="button" className="border border-black px-4 py-2 text-xs uppercase font-bold tracking-widest hover:bg-black hover:text-white transition-colors pointer-events-none">
+                  + Seleccionar Archivo
+                </button>
+              </div>
               <div className="text-xs text-gray-500 italic mt-[-10px]">Nota: La imagen hero será forzada a una proporción de 16:9 en la página del proyecto.</div>
               {heroImage && heroImage !== "/Hero_Placeholder.jpg" && (
                 <div className="aspect-video w-full object-cover relative overflow-hidden max-w-[300px] border border-black">
