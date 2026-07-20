@@ -34,7 +34,7 @@ export default function AdminPage() {
   const handleHeroUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
-    setStatus("Uploading hero image...");
+    setStatus("Subiendo imagen hero...");
     try {
       const res = await fetch(`/api/upload?filename=${file.name}`, {
         method: 'POST',
@@ -43,19 +43,19 @@ export default function AdminPage() {
       const blob = await res.json();
       if (blob.url) {
         setHeroImage(blob.url);
-        setStatus("Hero image uploaded.");
+        setStatus("Imagen hero subida.");
       } else {
-        setStatus("Error uploading hero image.");
+        setStatus("Error al subir imagen hero.");
       }
     } catch (err) {
-      setStatus("Error uploading hero image.");
+      setStatus("Error al subir imagen hero.");
     }
   };
 
   const handleAddMedia = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (!files || files.length === 0) return;
-    setStatus("Uploading media...");
+    setStatus("Subiendo medios...");
     
     try {
       const newBlocks: ContentBlock[] = [];
@@ -98,9 +98,9 @@ export default function AdminPage() {
         }
       }
       setContentBlocks(prev => [...prev, ...newBlocks]);
-      setStatus("Media added.");
+      setStatus("Medios agregados.");
     } catch (err) {
-      setStatus("Error uploading media.");
+      setStatus("Error al subir medios.");
     }
     
     // Reset input
@@ -143,7 +143,7 @@ export default function AdminPage() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("Saving...");
+    setStatus("Guardando...");
     const formData = new FormData(e.currentTarget);
     const data: Record<string, any> = Object.fromEntries(formData.entries());
 
@@ -177,7 +177,7 @@ export default function AdminPage() {
     e.preventDefault();
     if (!pricing) return;
     
-    setPricingStatus("Saving pricing...");
+    setPricingStatus("Guardando precios...");
     try {
       const res = await fetch("/api/pricing", {
         method: "PUT",
@@ -186,12 +186,12 @@ export default function AdminPage() {
       });
 
       if (res.ok) {
-        setPricingStatus("Pricing updated successfully.");
+        setPricingStatus("Precios actualizados exitosamente.");
       } else {
-        setPricingStatus("Error saving pricing.");
+        setPricingStatus("Error al guardar precios.");
       }
     } catch (err) {
-      setPricingStatus("Error saving pricing.");
+      setPricingStatus("Error al guardar precios.");
     }
   }
 
@@ -217,7 +217,7 @@ export default function AdminPage() {
             </h1>
           </MaskReveal>
           <p className="mt-4 font-sans text-sm text-gray-500 uppercase tracking-widest">
-            Local CMS Mode - Zero Database Architecture
+            Modo CMS Local - Arquitectura sin base de datos
           </p>
         </div>
       </section>
@@ -232,91 +232,91 @@ export default function AdminPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="flex flex-col gap-2">
-                <label className="text-xs uppercase font-bold tracking-widest">Title (ES)</label>
+                <label className="text-xs uppercase font-bold tracking-widest">Título (ES)</label>
                 <input required name="title_es" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
               <div className="flex flex-col gap-2">
-                <label className="text-xs uppercase font-bold tracking-widest">Title (EN)</label>
+                <label className="text-xs uppercase font-bold tracking-widest">Título (EN)</label>
                 <input required name="title_en" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="flex flex-col gap-2">
-                <label className="text-xs uppercase font-bold tracking-widest">Category (ES)</label>
-                <input required name="category_es" placeholder="e.g. Arquitectura, Interiores" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+                <label className="text-xs uppercase font-bold tracking-widest">Categoría (ES)</label>
+                <input required name="category_es" placeholder="ej. Arquitectura, Interiores" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
               <div className="flex flex-col gap-2">
-                <label className="text-xs uppercase font-bold tracking-widest">Category (EN)</label>
-                <input required name="category_en" placeholder="e.g. Architecture, Interior" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+                <label className="text-xs uppercase font-bold tracking-widest">Categoría (EN)</label>
+                <input required name="category_en" placeholder="ej. Architecture, Interior" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase font-bold tracking-widest">Sector (ES)</label>
-                <input required name="sector_es" placeholder="e.g. Residencial" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+                <input required name="sector_es" placeholder="ej. Residencial" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase font-bold tracking-widest">Sector (EN)</label>
-                <input required name="sector_en" placeholder="e.g. Residential" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+                <input required name="sector_en" placeholder="ej. Residential" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase font-bold tracking-widest">Material (ES)</label>
-                <input required name="material_es" placeholder="e.g. Concreto Expuesto" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+                <input required name="material_es" placeholder="ej. Concreto Expuesto" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase font-bold tracking-widest">Material (EN)</label>
-                <input required name="material_en" placeholder="e.g. Exposed Concrete" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+                <input required name="material_en" placeholder="ej. Exposed Concrete" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="flex flex-col gap-2">
-                <label className="text-xs uppercase font-bold tracking-widest">Cost Ethos (ES)</label>
-                <input required name="cost_ethos_es" placeholder="e.g. Modularidad extrema" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+                <label className="text-xs uppercase font-bold tracking-widest">Filosofía de Costo (ES)</label>
+                <input required name="cost_ethos_es" placeholder="ej. Modularidad extrema" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
               <div className="flex flex-col gap-2">
-                <label className="text-xs uppercase font-bold tracking-widest">Cost Ethos (EN)</label>
-                <input required name="cost_ethos_en" placeholder="e.g. Extreme Modularity" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+                <label className="text-xs uppercase font-bold tracking-widest">Filosofía de Costo (EN)</label>
+                <input required name="cost_ethos_en" placeholder="ej. Extreme Modularity" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
             </div>
 
             <div className="flex flex-col gap-2">
-              <label className="text-xs uppercase font-bold tracking-widest">Description (ES)</label>
+              <label className="text-xs uppercase font-bold tracking-widest">Descripción (ES)</label>
               <textarea required name="desc_es" rows={3} className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
             </div>
 
             <div className="flex flex-col gap-2">
-              <label className="text-xs uppercase font-bold tracking-widest">Description (EN)</label>
+              <label className="text-xs uppercase font-bold tracking-widest">Descripción (EN)</label>
               <textarea required name="desc_en" rows={3} className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="flex flex-col gap-2">
-                <label className="text-xs uppercase font-bold tracking-widest">Year</label>
+                <label className="text-xs uppercase font-bold tracking-widest">Año</label>
                 <input required name="year" type="number" defaultValue={2026} className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
               <div className="flex flex-col gap-2">
-                <label className="text-xs uppercase font-bold tracking-widest">Size (Works Page Grid)</label>
+                <label className="text-xs uppercase font-bold tracking-widest">Tamaño (Cuadrícula de Proyectos)</label>
                 <select name="size" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors">
-                  <option value="large">Large (65%)</option>
-                  <option value="small">Small (35%)</option>
+                  <option value="large">Grande (65%)</option>
+                  <option value="small">Pequeño (35%)</option>
                 </select>
               </div>
               <div className="flex items-center gap-4">
                 <input type="checkbox" name="featured" id="featured" defaultChecked className="w-5 h-5 accent-black" />
-                <label htmlFor="featured" className="text-xs uppercase font-bold tracking-widest">Featured on Home Page?</label>
+                <label htmlFor="featured" className="text-xs uppercase font-bold tracking-widest">¿Destacado en el Inicio?</label>
               </div>
             </div>
 
             <div className="flex flex-col gap-4 border border-black p-4">
-              <label className="text-xs uppercase font-bold tracking-widest">Hero Image (Required)</label>
+              <label className="text-xs uppercase font-bold tracking-widest">Imagen Hero (Obligatorio)</label>
               <input type="file" accept="image/*,video/*" onChange={handleHeroUpload} className="text-sm" />
-              <div className="text-xs text-gray-500 italic mt-[-10px]">Note: Hero image will be forced to 16:9 on the project page.</div>
+              <div className="text-xs text-gray-500 italic mt-[-10px]">Nota: La imagen hero será forzada a una proporción de 16:9 en la página del proyecto.</div>
               {heroImage && heroImage !== "/Hero_Placeholder.jpg" && (
                 <div className="aspect-video w-full object-cover relative overflow-hidden max-w-[300px] border border-black">
                   <img src={heroImage} alt="Hero preview" className="h-full w-full object-cover" />
@@ -326,7 +326,7 @@ export default function AdminPage() {
 
             {/* Project Content Builder */}
             <div className="flex flex-col gap-4 border border-black p-4 bg-[#fafafa]">
-              <label className="text-sm uppercase font-black tracking-widest border-b border-black pb-2">Project Content Builder</label>
+              <label className="text-sm uppercase font-black tracking-widest border-b border-black pb-2">Constructor de Contenido del Proyecto</label>
               
               {/* Content List */}
               <div className="flex flex-col gap-2 mt-4">
@@ -347,10 +347,10 @@ export default function AdminPage() {
                     <div className="flex-grow flex flex-col gap-2">
                       <div className="flex justify-between items-center mb-2">
                         <span className="text-[10px] font-bold uppercase tracking-widest bg-black text-white px-2 py-1">
-                          {block.type === 'media' ? `${block.mediaFormat} Media` : 'Text Block'}
+                          {block.type === 'media' ? `Medio ${block.mediaFormat === 'vertical' ? 'Vertical' : 'Horizontal'}` : 'Bloque de Texto'}
                         </span>
                         <button type="button" onClick={() => removeBlock(block.id)} className="text-[10px] uppercase font-bold text-red-500 hover:text-red-700">
-                          Remove
+                          Eliminar
                         </button>
                       </div>
 
@@ -370,14 +370,14 @@ export default function AdminPage() {
                       {block.type === 'text' && (
                         <div className="flex flex-col gap-4">
                           <textarea 
-                            placeholder="Text (ES)" 
+                            placeholder="Texto (ES)" 
                             value={block.text_es} 
                             onChange={(e) => updateTextBlock(block.id, 'text_es', e.target.value)}
                             className="border border-gray-300 p-2 text-sm w-full outline-none focus:border-black"
                             rows={2}
                           />
                           <textarea 
-                            placeholder="Text (EN)" 
+                            placeholder="Texto (EN)" 
                             value={block.text_en} 
                             onChange={(e) => updateTextBlock(block.id, 'text_en', e.target.value)}
                             className="border border-gray-300 p-2 text-sm w-full outline-none focus:border-black"
@@ -392,21 +392,26 @@ export default function AdminPage() {
 
                 {contentBlocks.length === 0 && (
                   <div className="text-center py-8 text-gray-400 text-sm font-bold uppercase tracking-widest border border-dashed border-gray-300">
-                    No content yet. Add text or media below.
+                    Sin contenido aún. Agrega texto o medios abajo.
                   </div>
                 )}
               </div>
 
               {/* Add Content Buttons */}
-              <div className="flex flex-wrap gap-4 mt-4 border-t border-black pt-4">
-                <button type="button" onClick={handleAddText} className="border border-black px-4 py-2 text-xs uppercase font-bold tracking-widest hover:bg-black hover:text-white transition-colors">
-                  + Add Text
-                </button>
-                <div className="relative">
-                  <input type="file" multiple accept="image/*,video/*" onChange={handleAddMedia} className="absolute inset-0 opacity-0 cursor-pointer" />
-                  <button type="button" className="border border-black px-4 py-2 text-xs uppercase font-bold tracking-widest hover:bg-black hover:text-white transition-colors pointer-events-none">
-                    + Add Media (Images/Video)
+              <div className="flex flex-col gap-2 mt-4 border-t border-black pt-4">
+                <div className="flex flex-wrap gap-4">
+                  <button type="button" onClick={handleAddText} className="border border-black px-4 py-2 text-xs uppercase font-bold tracking-widest hover:bg-black hover:text-white transition-colors">
+                    + Agregar Texto
                   </button>
+                  <div className="relative flex-grow max-w-[300px]">
+                    <input type="file" multiple accept="image/*,video/*" onChange={handleAddMedia} className="absolute inset-0 opacity-0 cursor-pointer" />
+                    <button type="button" className="w-full border border-black px-4 py-2 text-xs uppercase font-bold tracking-widest hover:bg-black hover:text-white transition-colors pointer-events-none text-left">
+                      + Agregar Medios (Imágenes/Video)
+                    </button>
+                  </div>
+                </div>
+                <div className="text-xs text-gray-500 italic">
+                  Nota: Las imágenes subidas para los medios deben tener una proporción de 16:9 (horizontal) o 9:16 (vertical).
                 </div>
               </div>
 
@@ -430,17 +435,17 @@ export default function AdminPage() {
         {pricing && (
         <div className="max-w-[1000px] mx-auto w-full bg-white border border-black p-8 md:p-12 mt-16">
           <h2 className="font-display font-bold uppercase text-h3 mb-8 border-b border-black pb-4">
-            PRICING CONFIGURATION
+            CONFIGURACIÓN DE PRECIOS
           </h2>
 
           <form onSubmit={handlePricingSubmit} className="flex flex-col gap-8 font-sans">
             
             {/* Global Settings */}
             <div className="border border-black p-6 bg-[#fafafa]">
-              <h3 className="font-display font-bold uppercase text-lg mb-4 border-b border-gray-300 pb-2">Global Settings</h3>
+              <h3 className="font-display font-bold uppercase text-lg mb-4 border-b border-gray-300 pb-2">Configuración Global</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex flex-col gap-2">
-                  <label className="text-xs uppercase font-bold tracking-widest">USD Exchange Rate (MXN)</label>
+                  <label className="text-xs uppercase font-bold tracking-widest">Tipo de Cambio USD (MXN)</label>
                   <input 
                     type="number" step="0.01" 
                     value={pricing.exchangeRate} 
@@ -449,7 +454,7 @@ export default function AdminPage() {
                   />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-xs uppercase font-bold tracking-widest">Variance (+/- %)</label>
+                  <label className="text-xs uppercase font-bold tracking-widest">Varianza (+/- %)</label>
                   <input 
                     type="number" 
                     value={pricing.variancePercent} 
@@ -462,7 +467,7 @@ export default function AdminPage() {
 
             {/* Architecture Settings */}
             <div className="border border-black p-6">
-              <h3 className="font-display font-bold uppercase text-lg mb-4 border-b border-gray-300 pb-2">Architecture Rates (per m²)</h3>
+              <h3 className="font-display font-bold uppercase text-lg mb-4 border-b border-gray-300 pb-2">Tarifas de Arquitectura (por m²)</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {pricing.architecture.projectTypes.map((pt: any, idx: number) => (
                   <div key={pt.id} className="flex flex-col gap-2">
@@ -483,7 +488,7 @@ export default function AdminPage() {
 
             {/* Branding Settings */}
             <div className="border border-black p-6 bg-[#fafafa]">
-              <h3 className="font-display font-bold uppercase text-lg mb-4 border-b border-gray-300 pb-2">Branding Base Prices</h3>
+              <h3 className="font-display font-bold uppercase text-lg mb-4 border-b border-gray-300 pb-2">Precios Base de Branding</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 {pricing.branding.scopes.map((scope: any, idx: number) => (
                   <div key={scope.id} className="flex flex-col gap-2">
@@ -501,7 +506,7 @@ export default function AdminPage() {
                 ))}
               </div>
               
-              <h4 className="text-sm font-bold uppercase tracking-widest mb-4">Client Size Multipliers</h4>
+              <h4 className="text-sm font-bold uppercase tracking-widest mb-4">Multiplicadores por Tamaño de Cliente</h4>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {pricing.branding.clientSizes.map((cs: any, idx: number) => (
                   <div key={cs.id} className="flex flex-col gap-2">
@@ -519,7 +524,7 @@ export default function AdminPage() {
 
             {/* Strategy Settings */}
             <div className="border border-black p-6">
-              <h3 className="font-display font-bold uppercase text-lg mb-4 border-b border-gray-300 pb-2">Strategy Flat Rates</h3>
+              <h3 className="font-display font-bold uppercase text-lg mb-4 border-b border-gray-300 pb-2">Tarifas Fijas de Estrategia</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {pricing.strategy.types.map((st: any, idx: number) => (
                   <div key={st.id} className="flex flex-col gap-2">
@@ -545,7 +550,7 @@ export default function AdminPage() {
                 className="bg-black text-white px-8 py-4 uppercase font-bold tracking-widest hover:bg-white hover:text-black hover:border-black border border-black transition-colors"
                 data-cursor-hover
               >
-                SAVE PRICING
+                GUARDAR PRECIOS
               </button>
             </div>
 
