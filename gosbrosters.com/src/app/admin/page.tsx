@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "@/components/LanguageContext";
 import MaskReveal from "@/components/MaskReveal";
 import Footer from "@/components/Footer";
@@ -14,23 +14,159 @@ type ContentBlock = {
   text_en?: string;
 };
 
+type Project = {
+  id: string;
+  title_es: string;
+  title_en: string;
+  category_es: string;
+  category_en: string;
+  sector_es: string;
+  sector_en: string;
+  material_es: string;
+  material_en: string;
+  cost_ethos_es: string;
+  cost_ethos_en: string;
+  desc_es: string;
+  desc_en: string;
+  year: number;
+  size: string;
+  featured: boolean;
+  image: string;
+  content: ContentBlock[];
+};
+
 export default function AdminPage() {
   const { language, t } = useLanguage();
+  const formRef = useRef<HTMLFormElement>(null);
+
+  // --- Project List State ---
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loadingProjects, setLoadingProjects] = useState(true);
+
+  // --- Form / Editor State ---
+  const [editingProject, setEditingProject] = useState<Project | null>(null);
   const [status, setStatus] = useState<string | null>(null);
-  const [pricingStatus, setPricingStatus] = useState<string | null>(null);
   const [heroImage, setHeroImage] = useState<string>("/Hero_Placeholder.jpg");
   const [contentBlocks, setContentBlocks] = useState<ContentBlock[]>([]);
-  
+
+  // Controlled form field state (needed so we can populate when editing)
+  const [formFields, setFormFields] = useState({
+    title_es: '', title_en: '',
+    category_es: '', category_en: '',
+    sector_es: '', sector_en: '',
+    material_es: '', material_en: '',
+    cost_ethos_es: '', cost_ethos_en: '',
+    desc_es: '', desc_en: '',
+    year: 2026,
+    size: 'large',
+    featured: true,
+  });
+
   // Pricing State
+  const [pricingStatus, setPricingStatus] = useState<string | null>(null);
   const [pricing, setPricing] = useState<any>(null);
 
+  // --- Load projects & pricing on mount ---
   useEffect(() => {
+    fetchProjects();
     fetch("/api/pricing")
       .then(res => res.json())
       .then(data => setPricing(data))
       .catch(err => console.error("Error loading pricing", err));
   }, []);
 
+  async function fetchProjects() {
+    setLoadingProjects(true);
+    try {
+      const res = await fetch("/api/projects");
+      if (res.ok) {
+        const data = await res.json();
+        setProjects(data);
+      }
+    } catch (err) {
+      console.error("Error loading projects", err);
+    }
+    setLoadingProjects(false);
+  }
+
+  // --- Form field updater ---
+  function updateField(field: string, value: any) {
+    setFormFields(prev => ({ ...prev, [field]: value }));
+  }
+
+  // --- Load a project into the form for editing ---
+  function handleEdit(project: Project) {
+    setEditingProject(project);
+    setFormFields({
+      title_es: project.title_es || '',
+      title_en: project.title_en || '',
+      category_es: project.category_es || '',
+      category_en: project.category_en || '',
+      sector_es: project.sector_es || '',
+      sector_en: project.sector_en || '',
+      material_es: project.material_es || '',
+      material_en: project.material_en || '',
+      cost_ethos_es: project.cost_ethos_es || '',
+      cost_ethos_en: project.cost_ethos_en || '',
+      desc_es: project.desc_es || '',
+      desc_en: project.desc_en || '',
+      year: project.year || 2026,
+      size: project.size || 'large',
+      featured: project.featured ?? true,
+    });
+    setHeroImage(project.image || "/Hero_Placeholder.jpg");
+    setContentBlocks(project.content ? project.content.map((b, i) => ({ ...b, id: b.id || Date.now().toString() + i })) : []);
+    setStatus(null);
+
+    // Scroll to form
+    formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // --- Cancel editing, reset form ---
+  function handleCancelEdit() {
+    setEditingProject(null);
+    setFormFields({
+      title_es: '', title_en: '',
+      category_es: '', category_en: '',
+      sector_es: '', sector_en: '',
+      material_es: '', material_en: '',
+      cost_ethos_es: '', cost_ethos_en: '',
+      desc_es: '', desc_en: '',
+      year: 2026, size: 'large', featured: true,
+    });
+    setHeroImage("/Hero_Placeholder.jpg");
+    setContentBlocks([]);
+    setStatus(null);
+  }
+
+  // --- Delete a project ---
+  async function handleDelete(projectId: string, projectTitle: string) {
+    const confirmed = window.confirm(`¿Estás seguro de que deseas eliminar el proyecto "${projectTitle}"? Esta acción no se puede deshacer.`);
+    if (!confirmed) return;
+
+    try {
+      const res = await fetch("/api/projects", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id: projectId }),
+      });
+
+      if (res.ok) {
+        // If we were editing this project, cancel the edit
+        if (editingProject?.id === projectId) {
+          handleCancelEdit();
+        }
+        await fetchProjects();
+        setStatus("Proyecto eliminado exitosamente.");
+      } else {
+        setStatus("Error al eliminar el proyecto.");
+      }
+    } catch (err) {
+      setStatus("Error al eliminar el proyecto.");
+    }
+  }
+
+  // --- Hero upload ---
   const handleHeroUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -52,6 +188,7 @@ export default function AdminPage() {
     }
   };
 
+  // --- Media upload ---
   const handleAddMedia = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (!files || files.length === 0) return;
@@ -62,7 +199,6 @@ export default function AdminPage() {
       for (let i = 0; i < files.length; i++) {
         const file = files[i];
         
-        // Auto-detect dimensions for images
         let mediaFormat: 'horizontal' | 'vertical' = 'horizontal';
         if (file.type.startsWith('image/')) {
           const objectUrl = URL.createObjectURL(file);
@@ -79,7 +215,6 @@ export default function AdminPage() {
           });
           URL.revokeObjectURL(objectUrl);
         } else if (file.type.startsWith('video/')) {
-          // Simplistic video check - could be improved by loading video metadata
           mediaFormat = 'horizontal';
         }
 
@@ -103,19 +238,14 @@ export default function AdminPage() {
       setStatus("Error al subir medios.");
     }
     
-    // Reset input
     e.target.value = '';
   };
 
+  // --- Text block ---
   const handleAddText = () => {
     setContentBlocks(prev => [
       ...prev,
-      {
-        id: Date.now().toString(),
-        type: 'text',
-        text_es: '',
-        text_en: ''
-      }
+      { id: Date.now().toString(), type: 'text', text_es: '', text_en: '' }
     ]);
   };
 
@@ -141,30 +271,38 @@ export default function AdminPage() {
     });
   };
 
+  // --- Submit (create or update) ---
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("Guardando...");
-    const formData = new FormData(e.currentTarget);
-    const data: Record<string, any> = Object.fromEntries(formData.entries());
 
-    // Basic normalization for id
-    data.id = data.title_en.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-');
-    data.featured = data.featured === "on";
+    const data: Record<string, any> = { ...formFields };
+
+    if (editingProject) {
+      // Editing — keep the original id
+      data.id = editingProject.id;
+    } else {
+      // Creating — generate id from English title
+      data.id = data.title_en.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    }
+
     data.image = heroImage;
     data.content = contentBlocks;
 
     try {
+      const method = editingProject ? "PUT" : "POST";
       const res = await fetch("/api/projects", {
-        method: "POST",
+        method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
       if (res.ok) {
-        setStatus(t('admin.success'));
-        (e.target as HTMLFormElement).reset();
-        setHeroImage("/Hero_Placeholder.jpg");
-        setContentBlocks([]);
+        setStatus(editingProject ? "Proyecto actualizado exitosamente." : t('admin.success'));
+        if (!editingProject) {
+          handleCancelEdit(); // Reset form after creating
+        }
+        await fetchProjects(); // Refresh the list
       } else {
         setStatus(t('admin.error'));
       }
@@ -173,6 +311,7 @@ export default function AdminPage() {
     }
   }
 
+  // --- Pricing submit ---
   async function handlePricingSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!pricing) return;
@@ -223,92 +362,190 @@ export default function AdminPage() {
       </section>
 
       <section className="px-4 md:px-8 pb-32 flex-grow">
-        <div className="max-w-[1000px] mx-auto w-full bg-white border border-black p-8 md:p-12">
+
+        {/* ========== EXISTING PROJECTS LIST ========== */}
+        <div className="max-w-[1000px] mx-auto w-full bg-white border border-black p-8 md:p-12 mb-16">
           <h2 className="font-display font-bold uppercase text-h3 mb-8 border-b border-black pb-4">
-            {t('admin.addProject')}
+            Proyectos Existentes
           </h2>
 
-          <form onSubmit={handleSubmit} className="flex flex-col gap-8 font-sans">
+          {loadingProjects ? (
+            <div className="text-center py-12 text-gray-400 text-sm font-bold uppercase tracking-widest">
+              Cargando proyectos...
+            </div>
+          ) : projects.length === 0 ? (
+            <div className="text-center py-12 text-gray-400 text-sm font-bold uppercase tracking-widest border border-dashed border-gray-300">
+              No hay proyectos aún.
+            </div>
+          ) : (
+            <div className="flex flex-col">
+              {/* Table Header */}
+              <div className="hidden md:flex w-full border-b border-black py-3 uppercase font-sans text-[10px] font-bold tracking-widest text-gray-500">
+                <div className="w-[60px]"></div>
+                <div className="flex-1">Título</div>
+                <div className="w-[100px]">Año</div>
+                <div className="w-[160px]">Categoría</div>
+                <div className="w-[180px] text-right">Acciones</div>
+              </div>
+
+              {/* Project Rows */}
+              {projects.map((project) => (
+                <div
+                  key={project.id}
+                  className={`flex flex-col md:flex-row md:items-center w-full border-b border-gray-200 py-4 gap-3 md:gap-0 transition-colors ${editingProject?.id === project.id ? 'bg-yellow-50' : 'hover:bg-gray-50'}`}
+                >
+                  {/* Thumbnail */}
+                  <div className="w-[60px] shrink-0">
+                    {project.image && project.image !== "/Hero_Placeholder.jpg" ? (
+                      <div className="w-12 h-8 border border-gray-300 overflow-hidden">
+                        <img src={project.image} alt="" className="w-full h-full object-cover" />
+                      </div>
+                    ) : (
+                      <div className="w-12 h-8 border border-dashed border-gray-300 bg-gray-100" />
+                    )}
+                  </div>
+
+                  {/* Title */}
+                  <div className="flex-1 font-sans font-bold text-sm uppercase">
+                    {project.title_es || project.title_en}
+                    {editingProject?.id === project.id && (
+                      <span className="ml-2 text-[10px] font-bold uppercase bg-black text-white px-2 py-0.5 normal-case tracking-widest">
+                        Editando
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Year */}
+                  <div className="w-[100px] font-sans text-sm text-gray-500">
+                    {project.year}
+                  </div>
+
+                  {/* Category */}
+                  <div className="w-[160px] font-serif italic text-sm text-gray-500 truncate">
+                    {project.category_es || project.category_en}
+                  </div>
+
+                  {/* Actions */}
+                  <div className="w-[180px] flex gap-2 justify-end">
+                    <button
+                      type="button"
+                      onClick={() => handleEdit(project)}
+                      className="border border-black px-3 py-1.5 text-[10px] uppercase font-bold tracking-widest hover:bg-black hover:text-white transition-colors"
+                    >
+                      Editar
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleDelete(project.id, project.title_es || project.title_en)}
+                      className="border border-red-500 text-red-500 px-3 py-1.5 text-[10px] uppercase font-bold tracking-widest hover:bg-red-500 hover:text-white transition-colors"
+                    >
+                      Eliminar
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* ========== PROJECT FORM (CREATE / EDIT) ========== */}
+        <div className="max-w-[1000px] mx-auto w-full bg-white border border-black p-8 md:p-12">
+          <div className="flex justify-between items-center mb-8 border-b border-black pb-4">
+            <h2 className="font-display font-bold uppercase text-h3">
+              {editingProject ? `Editando: ${editingProject.title_es || editingProject.title_en}` : t('admin.addProject')}
+            </h2>
+            {editingProject && (
+              <button
+                type="button"
+                onClick={handleCancelEdit}
+                className="border border-black px-4 py-2 text-xs uppercase font-bold tracking-widest hover:bg-black hover:text-white transition-colors"
+              >
+                Cancelar Edición
+              </button>
+            )}
+          </div>
+
+          <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-8 font-sans">
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase font-bold tracking-widest">Título (ES)</label>
-                <input required name="title_es" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+                <input required value={formFields.title_es} onChange={(e) => updateField('title_es', e.target.value)} className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase font-bold tracking-widest">Título (EN)</label>
-                <input required name="title_en" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+                <input required value={formFields.title_en} onChange={(e) => updateField('title_en', e.target.value)} className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase font-bold tracking-widest">Categoría (ES)</label>
-                <input required name="category_es" placeholder="ej. Arquitectura, Interiores" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+                <input required value={formFields.category_es} onChange={(e) => updateField('category_es', e.target.value)} placeholder="ej. Arquitectura, Interiores" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase font-bold tracking-widest">Categoría (EN)</label>
-                <input required name="category_en" placeholder="ej. Architecture, Interior" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+                <input required value={formFields.category_en} onChange={(e) => updateField('category_en', e.target.value)} placeholder="ej. Architecture, Interior" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase font-bold tracking-widest">Sector (ES)</label>
-                <input required name="sector_es" placeholder="ej. Residencial" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+                <input required value={formFields.sector_es} onChange={(e) => updateField('sector_es', e.target.value)} placeholder="ej. Residencial" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase font-bold tracking-widest">Sector (EN)</label>
-                <input required name="sector_en" placeholder="ej. Residential" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+                <input required value={formFields.sector_en} onChange={(e) => updateField('sector_en', e.target.value)} placeholder="ej. Residential" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase font-bold tracking-widest">Material (ES)</label>
-                <input required name="material_es" placeholder="ej. Concreto Expuesto" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+                <input required value={formFields.material_es} onChange={(e) => updateField('material_es', e.target.value)} placeholder="ej. Concreto Expuesto" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase font-bold tracking-widest">Material (EN)</label>
-                <input required name="material_en" placeholder="ej. Exposed Concrete" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+                <input required value={formFields.material_en} onChange={(e) => updateField('material_en', e.target.value)} placeholder="ej. Exposed Concrete" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase font-bold tracking-widest">Filosofía de Costo (ES)</label>
-                <input required name="cost_ethos_es" placeholder="ej. Modularidad extrema" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+                <input required value={formFields.cost_ethos_es} onChange={(e) => updateField('cost_ethos_es', e.target.value)} placeholder="ej. Modularidad extrema" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase font-bold tracking-widest">Filosofía de Costo (EN)</label>
-                <input required name="cost_ethos_en" placeholder="ej. Extreme Modularity" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+                <input required value={formFields.cost_ethos_en} onChange={(e) => updateField('cost_ethos_en', e.target.value)} placeholder="ej. Extreme Modularity" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
             </div>
 
             <div className="flex flex-col gap-2">
               <label className="text-xs uppercase font-bold tracking-widest">Descripción (ES)</label>
-              <textarea required name="desc_es" rows={3} className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+              <textarea required value={formFields.desc_es} onChange={(e) => updateField('desc_es', e.target.value)} rows={3} className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
             </div>
 
             <div className="flex flex-col gap-2">
               <label className="text-xs uppercase font-bold tracking-widest">Descripción (EN)</label>
-              <textarea required name="desc_en" rows={3} className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+              <textarea required value={formFields.desc_en} onChange={(e) => updateField('desc_en', e.target.value)} rows={3} className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase font-bold tracking-widest">Año</label>
-                <input required name="year" type="number" defaultValue={2026} className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+                <input required type="number" value={formFields.year} onChange={(e) => updateField('year', Number(e.target.value))} className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase font-bold tracking-widest">Tamaño (Cuadrícula de Proyectos)</label>
-                <select name="size" className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors">
+                <select value={formFields.size} onChange={(e) => updateField('size', e.target.value)} className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors">
                   <option value="large">Grande (65%)</option>
                   <option value="small">Pequeño (35%)</option>
                 </select>
               </div>
               <div className="flex items-center gap-4">
-                <input type="checkbox" name="featured" id="featured" defaultChecked className="w-5 h-5 accent-black" />
+                <input type="checkbox" id="featured" checked={formFields.featured} onChange={(e) => updateField('featured', e.target.checked)} className="w-5 h-5 accent-black" />
                 <label htmlFor="featured" className="text-xs uppercase font-bold tracking-widest">¿Destacado en el Inicio?</label>
               </div>
             </div>
@@ -424,13 +661,24 @@ export default function AdminPage() {
 
             <div className="pt-8 border-t border-black flex justify-between items-center">
               <span className="font-bold text-sm">{status}</span>
-              <button 
-                type="submit" 
-                className="bg-black text-white px-8 py-4 uppercase font-bold tracking-widest hover:bg-white hover:text-black hover:border-black border border-black transition-colors"
-                data-cursor-hover
-              >
-                {t('admin.save')}
-              </button>
+              <div className="flex gap-4">
+                {editingProject && (
+                  <button
+                    type="button"
+                    onClick={handleCancelEdit}
+                    className="border border-black px-6 py-4 uppercase font-bold tracking-widest hover:bg-gray-100 transition-colors text-sm"
+                  >
+                    Cancelar
+                  </button>
+                )}
+                <button 
+                  type="submit" 
+                  className="bg-black text-white px-8 py-4 uppercase font-bold tracking-widest hover:bg-white hover:text-black hover:border-black border border-black transition-colors"
+                  data-cursor-hover
+                >
+                  {editingProject ? 'Actualizar Proyecto' : t('admin.save')}
+                </button>
+              </div>
             </div>
 
           </form>
