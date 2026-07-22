@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   // Only protect the /admin page and the API routes that modify data (POST, PUT, DELETE)
   const isAdminPage = request.nextUrl.pathname.startsWith('/admin');
   const isProtectedApi = request.nextUrl.pathname.startsWith('/api/') && request.method !== 'GET';
