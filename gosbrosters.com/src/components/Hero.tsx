@@ -4,9 +4,8 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import MaskReveal from "@/components/MaskReveal";
 import { useLanguage } from "@/components/LanguageContext";
-import projects from "@/data/projects.json";
 
-export default function Hero() {
+export default function Hero({ projects }: { projects: any[] }) {
   const { language } = useLanguage();
   const containerRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
