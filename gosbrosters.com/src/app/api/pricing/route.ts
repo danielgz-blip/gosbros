@@ -1,13 +1,11 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
-
-const dataFilePath = path.join(process.cwd(), 'src', 'data', 'pricing.json');
+import { put } from '@vercel/blob';
+import { revalidatePath } from 'next/cache';
+import { getPricing } from '@/lib/data';
 
 export async function GET() {
   try {
-    const fileContents = fs.readFileSync(dataFilePath, 'utf8');
-    const pricing = JSON.parse(fileContents);
+    const pricing = await getPricing();
     return NextResponse.json(pricing);
   } catch (error) {
     console.error('Error reading pricing:', error);
@@ -18,7 +16,17 @@ export async function GET() {
 export async function PUT(request: Request) {
   try {
     const updatedPricing = await request.json();
-    fs.writeFileSync(dataFilePath, JSON.stringify(updatedPricing, null, 2));
+    
+    // Write back to Vercel Blob
+    await put('data/pricing.json', JSON.stringify(updatedPricing, null, 2), {
+      access: 'public',
+      addRandomSuffix: false,
+      contentType: 'application/json'
+    });
+    
+    // Invalidate cache so UI fetches fresh data
+    revalidatePath('/', 'layout');
+    
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Error saving pricing:', error);

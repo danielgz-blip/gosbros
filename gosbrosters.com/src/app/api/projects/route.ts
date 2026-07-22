@@ -1,23 +1,27 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { put } from '@vercel/blob';
+import { revalidatePath } from 'next/cache';
+import { getProjects } from '@/lib/data';
 
 export async function POST(request: Request) {
   try {
     const newProject = await request.json();
     
-    // Path to the centralized projects.json
-    const dataFilePath = path.join(process.cwd(), 'src', 'data', 'projects.json');
+    // Fetch current projects
+    const projects = await getProjects();
     
-    // Read the existing projects
-    const fileContents = fs.readFileSync(dataFilePath, 'utf8');
-    const projects = JSON.parse(fileContents);
-    
-    // Add the new project to the beginning of the array (or end, based on preference)
+    // Add the new project to the beginning of the array
     projects.unshift(newProject);
     
-    // Write back to the file
-    fs.writeFileSync(dataFilePath, JSON.stringify(projects, null, 2));
+    // Write back to Vercel Blob
+    await put('data/projects.json', JSON.stringify(projects, null, 2), {
+      access: 'public',
+      addRandomSuffix: false,
+      contentType: 'application/json'
+    });
+    
+    // Invalidate cache so UI fetches fresh data
+    revalidatePath('/', 'layout');
     
     return NextResponse.json({ success: true, project: newProject }, { status: 201 });
   } catch (error) {
