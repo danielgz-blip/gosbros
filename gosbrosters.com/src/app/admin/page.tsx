@@ -371,7 +371,7 @@ export default function AdminPage() {
             <h2 className="font-display font-bold uppercase text-h3 mb-0 border-0 pb-0">
               Proyectos Existentes
             </h2>
-            <span className="text-xl font-bold">{isOpenProjects ? '−' : '+'}</span>
+            <span className="w-[62px] h-[62px] flex items-center justify-center text-6xl font-light">{isOpenProjects ? '−' : '+'}</span>
           </div>
 
           {isOpenProjects && (
@@ -395,7 +395,7 @@ export default function AdminPage() {
                 </div>
 
                 {/* Project Rows */}
-                {projects.map((project) => (
+                {[...projects].sort((a, b) => (a.title_es || a.title_en).localeCompare(b.title_es || b.title_en)).map((project) => (
                   <div
                     key={project.id}
                     className={`flex flex-col md:flex-row md:items-center w-full border-b border-gray-200 py-4 gap-3 md:gap-0 transition-colors ${editingProject?.id === project.id ? 'bg-yellow-50' : 'hover:bg-gray-50'}`}
@@ -432,7 +432,14 @@ export default function AdminPage() {
                     </div>
 
                     {/* Actions */}
-                    <div className="w-[180px] flex gap-2 justify-end">
+                    <div className="w-[200px] flex gap-2 justify-end">
+                      <a 
+                        href={`/works/${project.id}`}
+                        target="_blank"
+                        className="border border-black px-3 py-1.5 text-[10px] uppercase font-bold tracking-widest hover:bg-black hover:text-white transition-colors flex items-center"
+                      >
+                        Ver
+                      </a>
                       <button
                         type="button"
                         onClick={() => {
@@ -464,15 +471,6 @@ export default function AdminPage() {
             <h2 className="font-display font-bold uppercase text-h3">
               {editingProject ? `Editando: ${editingProject.title_es || editingProject.title_en}` : t('admin.addProject')}
             </h2>
-            {editingProject && (
-              <button
-                type="button"
-                onClick={handleCancelEdit}
-                className="border border-black px-4 py-2 text-xs uppercase font-bold tracking-widest hover:bg-black hover:text-white transition-colors"
-              >
-                Cancelar Edición
-              </button>
-            )}
           </div>
 
           <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-8 font-sans">
@@ -701,7 +699,7 @@ export default function AdminPage() {
             <h2 className="font-display font-bold uppercase text-h3 mb-0 border-0 pb-0">
               CONFIGURACIÓN DE PRECIOS
             </h2>
-            <span className="text-xl font-bold">{isOpenPricing ? '−' : '+'}</span>
+            <span className="w-[62px] h-[62px] flex items-center justify-center text-6xl font-light">{isOpenPricing ? '−' : '+'}</span>
           </div>
 
           {isOpenPricing && (
