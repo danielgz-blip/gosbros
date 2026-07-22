@@ -42,6 +42,7 @@ export default function AdminPage() {
   // --- Project List State ---
   const [projects, setProjects] = useState<Project[]>([]);
   const [loadingProjects, setLoadingProjects] = useState(true);
+  const [isOpenProjects, setIsOpenProjects] = useState(false);
 
   // --- Form / Editor State ---
   const [editingProject, setEditingProject] = useState<Project | null>(null);
@@ -65,6 +66,7 @@ export default function AdminPage() {
   // Pricing State
   const [pricingStatus, setPricingStatus] = useState<string | null>(null);
   const [pricing, setPricing] = useState<any>(null);
+  const [isOpenPricing, setIsOpenPricing] = useState(false);
 
   // --- Load projects & pricing on mount ---
   useEffect(() => {
@@ -365,86 +367,94 @@ export default function AdminPage() {
 
         {/* ========== EXISTING PROJECTS LIST ========== */}
         <div className="max-w-[1000px] mx-auto w-full bg-white border border-black p-8 md:p-12 mb-16">
-          <h2 className="font-display font-bold uppercase text-h3 mb-8 border-b border-black pb-4">
-            Proyectos Existentes
-          </h2>
+          <div className="flex justify-between items-center border-b border-black pb-4 mb-8 cursor-pointer hover:opacity-70 transition-opacity" onClick={() => setIsOpenProjects(!isOpenProjects)}>
+            <h2 className="font-display font-bold uppercase text-h3 mb-0 border-0 pb-0">
+              Proyectos Existentes
+            </h2>
+            <span className="text-xl font-bold">{isOpenProjects ? '−' : '+'}</span>
+          </div>
 
-          {loadingProjects ? (
-            <div className="text-center py-12 text-gray-400 text-sm font-bold uppercase tracking-widest">
-              Cargando proyectos...
-            </div>
-          ) : projects.length === 0 ? (
-            <div className="text-center py-12 text-gray-400 text-sm font-bold uppercase tracking-widest border border-dashed border-gray-300">
-              No hay proyectos aún.
-            </div>
-          ) : (
-            <div className="flex flex-col">
-              {/* Table Header */}
-              <div className="hidden md:flex w-full border-b border-black py-3 uppercase font-sans text-[10px] font-bold tracking-widest text-gray-500">
-                <div className="w-[60px]"></div>
-                <div className="flex-1">Título</div>
-                <div className="w-[100px]">Año</div>
-                <div className="w-[160px]">Categoría</div>
-                <div className="w-[180px] text-right">Acciones</div>
+          {isOpenProjects && (
+            loadingProjects ? (
+              <div className="text-center py-12 text-gray-400 text-sm font-bold uppercase tracking-widest">
+                Cargando proyectos...
               </div>
-
-              {/* Project Rows */}
-              {projects.map((project) => (
-                <div
-                  key={project.id}
-                  className={`flex flex-col md:flex-row md:items-center w-full border-b border-gray-200 py-4 gap-3 md:gap-0 transition-colors ${editingProject?.id === project.id ? 'bg-yellow-50' : 'hover:bg-gray-50'}`}
-                >
-                  {/* Thumbnail */}
-                  <div className="w-[60px] shrink-0">
-                    {project.image && project.image !== "/Hero_Placeholder.jpg" ? (
-                      <div className="w-12 h-8 border border-gray-300 overflow-hidden">
-                        <img src={project.image} alt="" className="w-full h-full object-cover" />
-                      </div>
-                    ) : (
-                      <div className="w-12 h-8 border border-dashed border-gray-300 bg-gray-100" />
-                    )}
-                  </div>
-
-                  {/* Title */}
-                  <div className="flex-1 font-sans font-bold text-sm uppercase">
-                    {project.title_es || project.title_en}
-                    {editingProject?.id === project.id && (
-                      <span className="ml-2 text-[10px] font-bold uppercase bg-black text-white px-2 py-0.5 normal-case tracking-widest">
-                        Editando
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Year */}
-                  <div className="w-[100px] font-sans text-sm text-gray-500">
-                    {project.year}
-                  </div>
-
-                  {/* Category */}
-                  <div className="w-[160px] font-serif italic text-sm text-gray-500 truncate">
-                    {project.category_es || project.category_en}
-                  </div>
-
-                  {/* Actions */}
-                  <div className="w-[180px] flex gap-2 justify-end">
-                    <button
-                      type="button"
-                      onClick={() => handleEdit(project)}
-                      className="border border-black px-3 py-1.5 text-[10px] uppercase font-bold tracking-widest hover:bg-black hover:text-white transition-colors"
-                    >
-                      Editar
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => handleDelete(project.id, project.title_es || project.title_en)}
-                      className="border border-red-500 text-red-500 px-3 py-1.5 text-[10px] uppercase font-bold tracking-widest hover:bg-red-500 hover:text-white transition-colors"
-                    >
-                      Eliminar
-                    </button>
-                  </div>
+            ) : projects.length === 0 ? (
+              <div className="text-center py-12 text-gray-400 text-sm font-bold uppercase tracking-widest border border-dashed border-gray-300">
+                No hay proyectos aún.
+              </div>
+            ) : (
+              <div className="flex flex-col">
+                {/* Table Header */}
+                <div className="hidden md:flex w-full border-b border-black py-3 uppercase font-sans text-[10px] font-bold tracking-widest text-gray-500">
+                  <div className="w-[60px]"></div>
+                  <div className="flex-1">Título</div>
+                  <div className="w-[100px]">Año</div>
+                  <div className="w-[160px]">Categoría</div>
+                  <div className="w-[180px] text-right">Acciones</div>
                 </div>
-              ))}
-            </div>
+
+                {/* Project Rows */}
+                {projects.map((project) => (
+                  <div
+                    key={project.id}
+                    className={`flex flex-col md:flex-row md:items-center w-full border-b border-gray-200 py-4 gap-3 md:gap-0 transition-colors ${editingProject?.id === project.id ? 'bg-yellow-50' : 'hover:bg-gray-50'}`}
+                  >
+                    {/* Thumbnail */}
+                    <div className="w-[60px] shrink-0">
+                      {project.image && project.image !== "/Hero_Placeholder.jpg" ? (
+                        <div className="w-12 h-8 border border-gray-300 overflow-hidden">
+                          <img src={project.image} alt="" className="w-full h-full object-cover" />
+                        </div>
+                      ) : (
+                        <div className="w-12 h-8 border border-dashed border-gray-300 bg-gray-100" />
+                      )}
+                    </div>
+
+                    {/* Title */}
+                    <div className="flex-1 font-sans font-bold text-sm uppercase">
+                      {project.title_es || project.title_en}
+                      {editingProject?.id === project.id && (
+                        <span className="ml-2 text-[10px] font-bold uppercase bg-black text-white px-2 py-0.5 normal-case tracking-widest">
+                          Editando
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Year */}
+                    <div className="w-[100px] font-sans text-sm text-gray-500">
+                      {project.year}
+                    </div>
+
+                    {/* Category */}
+                    <div className="w-[160px] font-serif italic text-sm text-gray-500 truncate">
+                      {project.category_es || project.category_en}
+                    </div>
+
+                    {/* Actions */}
+                    <div className="w-[180px] flex gap-2 justify-end">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setIsOpenProjects(false);
+                          handleEdit(project);
+                        }}
+                        className="border border-black px-3 py-1.5 text-[10px] uppercase font-bold tracking-widest hover:bg-black hover:text-white transition-colors"
+                      >
+                        Editar
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => handleDelete(project.id, project.title_es || project.title_en)}
+                        className="border border-red-500 text-red-500 px-3 py-1.5 text-[10px] uppercase font-bold tracking-widest hover:bg-red-500 hover:text-white transition-colors"
+                      >
+                        Eliminar
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )
           )}
         </div>
 
@@ -687,127 +697,132 @@ export default function AdminPage() {
         {/* PRICING CONFIGURATION PANEL */}
         {pricing && (
         <div className="max-w-[1000px] mx-auto w-full bg-white border border-black p-8 md:p-12 mt-16">
-          <h2 className="font-display font-bold uppercase text-h3 mb-8 border-b border-black pb-4">
-            CONFIGURACIÓN DE PRECIOS
-          </h2>
+          <div className="flex justify-between items-center border-b border-black pb-4 mb-8 cursor-pointer hover:opacity-70 transition-opacity" onClick={() => setIsOpenPricing(!isOpenPricing)}>
+            <h2 className="font-display font-bold uppercase text-h3 mb-0 border-0 pb-0">
+              CONFIGURACIÓN DE PRECIOS
+            </h2>
+            <span className="text-xl font-bold">{isOpenPricing ? '−' : '+'}</span>
+          </div>
 
-          <form onSubmit={handlePricingSubmit} className="flex flex-col gap-8 font-sans">
-            
-            {/* Global Settings */}
-            <div className="border border-black p-6 bg-[#fafafa]">
-              <h3 className="font-display font-bold uppercase text-lg mb-4 border-b border-gray-300 pb-2">Configuración Global</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="flex flex-col gap-2">
-                  <label className="text-xs uppercase font-bold tracking-widest">Tipo de Cambio USD (MXN)</label>
-                  <input 
-                    type="number" step="0.01" 
-                    value={pricing.exchangeRate} 
-                    onChange={(e) => updatePricing(['exchangeRate'], Number(e.target.value))}
-                    className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" 
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label className="text-xs uppercase font-bold tracking-widest">Varianza (+/- %)</label>
-                  <input 
-                    type="number" 
-                    value={pricing.variancePercent} 
-                    onChange={(e) => updatePricing(['variancePercent'], Number(e.target.value))}
-                    className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" 
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Architecture Settings */}
-            <div className="border border-black p-6">
-              <h3 className="font-display font-bold uppercase text-lg mb-4 border-b border-gray-300 pb-2">Tarifas de Arquitectura (por m²)</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {pricing.architecture.projectTypes.map((pt: any, idx: number) => (
-                  <div key={pt.id} className="flex flex-col gap-2">
-                    <label className="text-xs uppercase font-bold tracking-widest">{pt.label_en}</label>
-                    <div className="relative">
-                      <span className="absolute left-3 top-3 font-bold">$</span>
-                      <input 
-                        type="number" 
-                        value={pt.baseRate} 
-                        onChange={(e) => updatePricing(['architecture', 'projectTypes', idx, 'baseRate'], Number(e.target.value))}
-                        className="border border-black p-3 pl-8 outline-none focus:bg-black focus:text-white transition-colors w-full" 
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Branding Settings */}
-            <div className="border border-black p-6 bg-[#fafafa]">
-              <h3 className="font-display font-bold uppercase text-lg mb-4 border-b border-gray-300 pb-2">Precios Base de Branding</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                {pricing.branding.scopes.map((scope: any, idx: number) => (
-                  <div key={scope.id} className="flex flex-col gap-2">
-                    <label className="text-xs uppercase font-bold tracking-widest">{scope.label_en}</label>
-                    <div className="relative">
-                      <span className="absolute left-3 top-3 font-bold">$</span>
-                      <input 
-                        type="number" 
-                        value={scope.basePrice} 
-                        onChange={(e) => updatePricing(['branding', 'scopes', idx, 'basePrice'], Number(e.target.value))}
-                        className="border border-black p-3 pl-8 outline-none focus:bg-black focus:text-white transition-colors w-full" 
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
+          {isOpenPricing && (
+            <form onSubmit={handlePricingSubmit} className="flex flex-col gap-8 font-sans">
               
-              <h4 className="text-sm font-bold uppercase tracking-widest mb-4">Multiplicadores por Tamaño de Cliente</h4>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {pricing.branding.clientSizes.map((cs: any, idx: number) => (
-                  <div key={cs.id} className="flex flex-col gap-2">
-                    <label className="text-xs uppercase font-bold tracking-widest text-gray-500">{cs.label_en}</label>
+              {/* Global Settings */}
+              <div className="border border-black p-6 bg-[#fafafa]">
+                <h3 className="font-display font-bold uppercase text-lg mb-4 border-b border-gray-300 pb-2">Configuración Global</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="flex flex-col gap-2">
+                    <label className="text-xs uppercase font-bold tracking-widest">Tipo de Cambio USD (MXN)</label>
                     <input 
-                      type="number" step="0.1" 
-                      value={cs.multiplier} 
-                      onChange={(e) => updatePricing(['branding', 'clientSizes', idx, 'multiplier'], Number(e.target.value))}
-                      className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors w-full" 
+                      type="number" step="0.01" 
+                      value={pricing.exchangeRate} 
+                      onChange={(e) => updatePricing(['exchangeRate'], Number(e.target.value))}
+                      className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" 
                     />
                   </div>
-                ))}
+                  <div className="flex flex-col gap-2">
+                    <label className="text-xs uppercase font-bold tracking-widest">Varianza (+/- %)</label>
+                    <input 
+                      type="number" 
+                      value={pricing.variancePercent} 
+                      onChange={(e) => updatePricing(['variancePercent'], Number(e.target.value))}
+                      className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" 
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
 
-            {/* Strategy Settings */}
-            <div className="border border-black p-6">
-              <h3 className="font-display font-bold uppercase text-lg mb-4 border-b border-gray-300 pb-2">Tarifas Fijas de Estrategia</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {pricing.strategy.types.map((st: any, idx: number) => (
-                  <div key={st.id} className="flex flex-col gap-2">
-                    <label className="text-xs uppercase font-bold tracking-widest">{st.label_en}</label>
-                    <div className="relative">
-                      <span className="absolute left-3 top-3 font-bold">$</span>
+              {/* Architecture Settings */}
+              <div className="border border-black p-6">
+                <h3 className="font-display font-bold uppercase text-lg mb-4 border-b border-gray-300 pb-2">Tarifas de Arquitectura (por m²)</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {pricing.architecture.projectTypes.map((pt: any, idx: number) => (
+                    <div key={pt.id} className="flex flex-col gap-2">
+                      <label className="text-xs uppercase font-bold tracking-widest">{pt.label_en}</label>
+                      <div className="relative">
+                        <span className="absolute left-3 top-3 font-bold">$</span>
+                        <input 
+                          type="number" 
+                          value={pt.baseRate} 
+                          onChange={(e) => updatePricing(['architecture', 'projectTypes', idx, 'baseRate'], Number(e.target.value))}
+                          className="border border-black p-3 pl-8 outline-none focus:bg-black focus:text-white transition-colors w-full" 
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Branding Settings */}
+              <div className="border border-black p-6 bg-[#fafafa]">
+                <h3 className="font-display font-bold uppercase text-lg mb-4 border-b border-gray-300 pb-2">Precios Base de Branding</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                  {pricing.branding.scopes.map((scope: any, idx: number) => (
+                    <div key={scope.id} className="flex flex-col gap-2">
+                      <label className="text-xs uppercase font-bold tracking-widest">{scope.label_en}</label>
+                      <div className="relative">
+                        <span className="absolute left-3 top-3 font-bold">$</span>
+                        <input 
+                          type="number" 
+                          value={scope.basePrice} 
+                          onChange={(e) => updatePricing(['branding', 'scopes', idx, 'basePrice'], Number(e.target.value))}
+                          className="border border-black p-3 pl-8 outline-none focus:bg-black focus:text-white transition-colors w-full" 
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                
+                <h4 className="text-sm font-bold uppercase tracking-widest mb-4">Multiplicadores por Tamaño de Cliente</h4>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {pricing.branding.clientSizes.map((cs: any, idx: number) => (
+                    <div key={cs.id} className="flex flex-col gap-2">
+                      <label className="text-xs uppercase font-bold tracking-widest text-gray-500">{cs.label_en}</label>
                       <input 
-                        type="number" 
-                        value={st.basePrice} 
-                        onChange={(e) => updatePricing(['strategy', 'types', idx, 'basePrice'], Number(e.target.value))}
-                        className="border border-black p-3 pl-8 outline-none focus:bg-black focus:text-white transition-colors w-full" 
+                        type="number" step="0.1" 
+                        value={cs.multiplier} 
+                        onChange={(e) => updatePricing(['branding', 'clientSizes', idx, 'multiplier'], Number(e.target.value))}
+                        className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors w-full" 
                       />
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
 
-            <div className="pt-8 border-t border-black flex justify-between items-center">
-              <span className="font-bold text-sm">{pricingStatus}</span>
-              <button 
-                type="submit" 
-                className="bg-black text-white px-8 py-4 uppercase font-bold tracking-widest hover:bg-white hover:text-black hover:border-black border border-black transition-colors"
-                data-cursor-hover
-              >
-                GUARDAR PRECIOS
-              </button>
-            </div>
+              {/* Strategy Settings */}
+              <div className="border border-black p-6">
+                <h3 className="font-display font-bold uppercase text-lg mb-4 border-b border-gray-300 pb-2">Tarifas Fijas de Estrategia</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {pricing.strategy.types.map((st: any, idx: number) => (
+                    <div key={st.id} className="flex flex-col gap-2">
+                      <label className="text-xs uppercase font-bold tracking-widest">{st.label_en}</label>
+                      <div className="relative">
+                        <span className="absolute left-3 top-3 font-bold">$</span>
+                        <input 
+                          type="number" 
+                          value={st.basePrice} 
+                          onChange={(e) => updatePricing(['strategy', 'types', idx, 'basePrice'], Number(e.target.value))}
+                          className="border border-black p-3 pl-8 outline-none focus:bg-black focus:text-white transition-colors w-full" 
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-          </form>
+              <div className="pt-8 border-t border-black flex justify-between items-center">
+                <span className="font-bold text-sm">{pricingStatus}</span>
+                <button 
+                  type="submit" 
+                  className="bg-black text-white px-8 py-4 uppercase font-bold tracking-widest hover:bg-white hover:text-black hover:border-black border border-black transition-colors"
+                  data-cursor-hover
+                >
+                  GUARDAR PRECIOS
+                </button>
+              </div>
+
+            </form>
+          )}
         </div>
         )}
 

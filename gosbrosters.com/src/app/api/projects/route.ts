@@ -29,6 +29,7 @@ export async function POST(request: Request) {
     await put('data/projects.json', JSON.stringify(projects, null, 2), {
       access: 'public',
       addRandomSuffix: false,
+      allowOverwrite: true,
       contentType: 'application/json'
     });
     
@@ -64,6 +65,7 @@ export async function PUT(request: Request) {
     await put('data/projects.json', JSON.stringify(projects, null, 2), {
       access: 'public',
       addRandomSuffix: false,
+      allowOverwrite: true,
       contentType: 'application/json'
     });
     
@@ -95,6 +97,7 @@ export async function DELETE(request: Request) {
     await put('data/projects.json', JSON.stringify(filtered, null, 2), {
       access: 'public',
       addRandomSuffix: false,
+      allowOverwrite: true,
       contentType: 'application/json'
     });
     

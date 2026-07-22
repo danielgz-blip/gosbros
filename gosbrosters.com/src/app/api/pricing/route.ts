@@ -17,10 +17,10 @@ export async function PUT(request: Request) {
   try {
     const updatedPricing = await request.json();
     
-    // Write back to Vercel Blob
     await put('data/pricing.json', JSON.stringify(updatedPricing, null, 2), {
       access: 'public',
       addRandomSuffix: false,
+      allowOverwrite: true,
       contentType: 'application/json'
     });
     
