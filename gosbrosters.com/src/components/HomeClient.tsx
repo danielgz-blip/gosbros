@@ -7,14 +7,14 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import QuoteCalculator from "@/components/QuoteCalculator";
 import { useLanguage } from "@/components/LanguageContext";
+import { useDepartment } from "@/components/DepartmentContext";
 
 export default function HomeClient({ projects }: { projects: any[] }) {
   const { language, t } = useLanguage();
-  
-  const [activeDepartment, setActiveDepartment] = useState<'architecture' | 'design'>('architecture');
+  const { department } = useDepartment();
 
   // Filter projects by department, treating missing department as 'architecture'
-  const departmentProjects = projects.filter(p => (p.department || 'architecture') === activeDepartment);
+  const departmentProjects = projects.filter(p => (p.department || 'architecture') === department);
   
   // Get featured projects to show on home page for the active department
   const featuredProjects = departmentProjects.filter((p: any) => p.featured).slice(0, 2);
@@ -40,21 +40,7 @@ export default function HomeClient({ projects }: { projects: any[] }) {
 
               <div className="mt-[var(--spacing-6)] md:mt-[var(--spacing-7)] w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 
-                {/* Department Toggle */}
-                <div className="inline-flex bg-gray-200 rounded-full p-1 self-start">
-                  <button
-                    onClick={() => setActiveDepartment('architecture')}
-                    className={`px-6 py-2 rounded-full text-xs font-sans font-bold uppercase tracking-widest transition-all duration-300 ${activeDepartment === 'architecture' ? 'bg-black text-white shadow-md' : 'text-gray-500 hover:text-black'}`}
-                  >
-                    Arquitectura
-                  </button>
-                  <button
-                    onClick={() => setActiveDepartment('design')}
-                    className={`px-6 py-2 rounded-full text-xs font-sans font-bold uppercase tracking-widest transition-all duration-300 ${activeDepartment === 'design' ? 'bg-black text-white shadow-md' : 'text-gray-500 hover:text-black'}`}
-                  >
-                    Diseño y Estrategia
-                  </button>
-                </div>
+                <div />
 
                 <a href="/about" className="text-xs md:text-sm font-sans font-bold flex items-center gap-2 hover:opacity-70 transition-opacity uppercase md:pr-12">
                   {t('home.moreAboutUs')} <span className="text-lg leading-none">&rarr;</span>
@@ -118,7 +104,7 @@ export default function HomeClient({ projects }: { projects: any[] }) {
       </section>
 
       {/* Quotation Calculator Section */}
-      <QuoteCalculator activeDepartment={activeDepartment} />
+      <QuoteCalculator activeDepartment={department} />
 
       <Footer />
     </div>

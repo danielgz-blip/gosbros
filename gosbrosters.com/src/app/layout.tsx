@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import CustomCursor from "@/components/CustomCursor";
 import { LanguageProvider } from "@/components/LanguageContext";
+import { DepartmentProvider } from "@/components/DepartmentContext";
 
 const robotoFlexSans = Roboto_Flex({
   subsets: ["latin"],
@@ -45,13 +46,15 @@ export default function RootLayout({
       <body
         className={`${robotoFlexSans.variable} ${robotoFlexDisplay.variable} ${robotoFlexSerif.variable} ${interLogo.variable} min-h-full font-sans selection:bg-black selection:text-white`}
       >
-        <LanguageProvider>
-          <CustomCursor />
-          <Navbar />
-          <main className="flex-grow">
-            {children}
-          </main>
-        </LanguageProvider>
+        <DepartmentProvider>
+          <LanguageProvider>
+            <CustomCursor />
+            <Navbar />
+            <main className="flex-grow">
+              {children}
+            </main>
+          </LanguageProvider>
+        </DepartmentProvider>
       </body>
     </html>
   );

@@ -4,9 +4,11 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import MaskReveal from "@/components/MaskReveal";
 import { useLanguage } from "@/components/LanguageContext";
+import { useDepartment } from "@/components/DepartmentContext";
 
 export default function Hero({ projects }: { projects: any[] }) {
   const { language } = useLanguage();
+  const { department, setDepartment } = useDepartment();
   const containerRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -102,9 +104,27 @@ export default function Hero({ projects }: { projects: any[] }) {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="absolute top-[25vh] left-0 w-full flex justify-center overflow-hidden"
               >
-                <h1 className="text-[12vw] md:text-[14vw] leading-[0.8] font-logo tracking-tighter text-white uppercase text-center">
-                  GOSBROS
-                </h1>
+                <div className="flex flex-col items-center">
+                  <h1 className="text-[12vw] md:text-[14vw] leading-[0.8] font-logo tracking-tighter text-white uppercase text-center mb-8">
+                    GOSBROS
+                  </h1>
+                  
+                  {/* Department Toggle */}
+                  <div className="inline-flex bg-white/20 backdrop-blur-md rounded-full p-1 pointer-events-auto">
+                    <button
+                      onClick={() => setDepartment('architecture')}
+                      className={`px-6 py-2 rounded-full text-xs font-sans font-bold uppercase tracking-widest transition-all duration-300 ${department === 'architecture' ? 'bg-white text-black shadow-md' : 'text-white/70 hover:text-white'}`}
+                    >
+                      Arquitectura
+                    </button>
+                    <button
+                      onClick={() => setDepartment('design')}
+                      className={`px-6 py-2 rounded-full text-xs font-sans font-bold uppercase tracking-widest transition-all duration-300 ${department === 'design' ? 'bg-white text-black shadow-md' : 'text-white/70 hover:text-white'}`}
+                    >
+                      Diseño y Estrategia
+                    </button>
+                  </div>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
