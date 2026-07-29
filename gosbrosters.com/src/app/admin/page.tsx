@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "@/components/LanguageContext";
 import MaskReveal from "@/components/MaskReveal";
 import Footer from "@/components/Footer";
+import { Eye, Pencil, Trash2 } from "lucide-react";
 
 type ContentBlock = {
   id: string;
@@ -32,6 +33,7 @@ type Project = {
   size: string;
   featured: boolean;
   image: string;
+  department?: 'architecture' | 'design';
   content: ContentBlock[];
 };
 
@@ -61,6 +63,7 @@ export default function AdminPage() {
     year: 2026,
     size: 'large',
     featured: true,
+    department: 'architecture',
   });
 
   // Pricing State
@@ -115,6 +118,7 @@ export default function AdminPage() {
       year: project.year || 2026,
       size: project.size || 'large',
       featured: project.featured ?? true,
+      department: project.department || 'architecture',
     });
     setHeroImage(project.image || "/Hero_Placeholder.jpg");
     setContentBlocks(project.content ? project.content.map((b, i) => ({ ...b, id: b.id || Date.now().toString() + i })) : []);
@@ -134,7 +138,7 @@ export default function AdminPage() {
       material_es: '', material_en: '',
       cost_ethos_es: '', cost_ethos_en: '',
       desc_es: '', desc_en: '',
-      year: 2026, size: 'large', featured: true,
+      year: 2026, size: 'large', featured: true, department: 'architecture',
     });
     setHeroImage("/Hero_Placeholder.jpg");
     setContentBlocks([]);
@@ -432,13 +436,14 @@ export default function AdminPage() {
                     </div>
 
                     {/* Actions */}
-                    <div className="w-[200px] flex gap-2 justify-end">
+                    <div className="w-[120px] flex gap-2 justify-end">
                       <a 
                         href={`/works/${project.id}`}
                         target="_blank"
-                        className="border border-black px-3 py-1.5 text-[10px] uppercase font-bold tracking-widest hover:bg-black hover:text-white transition-colors flex items-center"
+                        title="Ver"
+                        className="border border-black p-2 text-black hover:bg-black hover:text-white transition-colors flex items-center justify-center"
                       >
-                        Ver
+                        <Eye size={16} strokeWidth={2.5} />
                       </a>
                       <button
                         type="button"
@@ -446,16 +451,18 @@ export default function AdminPage() {
                           setIsOpenProjects(false);
                           handleEdit(project);
                         }}
-                        className="border border-black px-3 py-1.5 text-[10px] uppercase font-bold tracking-widest hover:bg-black hover:text-white transition-colors"
+                        title="Editar"
+                        className="border border-black p-2 text-black hover:bg-black hover:text-white transition-colors flex items-center justify-center"
                       >
-                        Editar
+                        <Pencil size={16} strokeWidth={2.5} />
                       </button>
                       <button
                         type="button"
                         onClick={() => handleDelete(project.id, project.title_es || project.title_en)}
-                        className="border border-red-500 text-red-500 px-3 py-1.5 text-[10px] uppercase font-bold tracking-widest hover:bg-red-500 hover:text-white transition-colors"
+                        title="Eliminar"
+                        className="border border-red-500 p-2 text-red-500 hover:bg-red-500 hover:text-white transition-colors flex items-center justify-center"
                       >
-                        Eliminar
+                        <Trash2 size={16} strokeWidth={2.5} />
                       </button>
                     </div>
                   </div>
@@ -482,7 +489,14 @@ export default function AdminPage() {
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-xs uppercase font-bold tracking-widest">Título (EN)</label>
-                <input required value={formFields.title_en} onChange={(e) => updateField('title_en', e.target.value)} className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+                <input required type="text" value={formFields.title_en} onChange={(e) => updateField('title_en', e.target.value)} className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors" />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-xs uppercase font-bold tracking-widest">Departamento / Autor</label>
+                <select value={formFields.department} onChange={(e) => updateField('department', e.target.value)} className="border border-black p-3 outline-none focus:bg-black focus:text-white transition-colors bg-transparent cursor-pointer">
+                  <option value="architecture" className="text-black bg-white">Arquitectura (Andrés)</option>
+                  <option value="design" className="text-black bg-white">Diseño Gráfico y Estrategia (Daniel)</option>
+                </select>
               </div>
             </div>
 

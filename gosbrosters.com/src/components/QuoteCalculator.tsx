@@ -65,7 +65,7 @@ type ServiceCategory = "architecture" | "branding" | "strategy";
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
-export default function QuoteCalculator() {
+export default function QuoteCalculator({ activeDepartment }: { activeDepartment?: 'architecture' | 'design' }) {
   const { language, t } = useLanguage();
 
   // Data
@@ -95,6 +95,19 @@ export default function QuoteCalculator() {
       .then(setPricing)
       .catch(console.error);
   }, []);
+
+  // Reset when department changes
+  useEffect(() => {
+    setService(null);
+    setArchType(null);
+    setSelectedRange(null);
+    setCustomArea("");
+    setUseCustomArea(false);
+    setBrandScope(null);
+    setClientSize(null);
+    setStratType(null);
+    setStep(1);
+  }, [activeDepartment]);
 
   /* ---- Navigation helpers ---- */
 
@@ -315,21 +328,24 @@ export default function QuoteCalculator() {
                       num: "01",
                       labelKey: "quote.architecture",
                       descKey: "quote.architectureDesc",
+                      dept: "architecture"
                     },
                     {
                       id: "branding" as ServiceCategory,
                       num: "02",
                       labelKey: "quote.branding",
                       descKey: "quote.brandingDesc",
+                      dept: "design"
                     },
                     {
                       id: "strategy" as ServiceCategory,
                       num: "03",
                       labelKey: "quote.strategy",
                       descKey: "quote.strategyDesc",
+                      dept: "design"
                     },
                   ] as const
-                ).map((svc) => (
+                ).filter(svc => !activeDepartment || svc.dept === activeDepartment).map((svc) => (
                   <button
                     key={svc.id}
                     type="button"
