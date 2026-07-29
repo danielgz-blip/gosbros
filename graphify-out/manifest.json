@@ -1,0 +1,242 @@
+{
+  ".opencode/package.json": {
+    "mtime": 1780369684.1810188,
+    "ast_hash": "878115d31c721840fc3330b89a3f8c20",
+    "semantic_hash": "878115d31c721840fc3330b89a3f8c20"
+  },
+  "gosbrosters.com/eslint.config.mjs": {
+    "mtime": 1778645482.3228445,
+    "ast_hash": "dfa1f5f6a7037bf39dc510f30b180002",
+    "semantic_hash": "dfa1f5f6a7037bf39dc510f30b180002"
+  },
+  "gosbrosters.com/next-env.d.ts": {
+    "mtime": 1782174784.0804982,
+    "ast_hash": "2a74d3909800ca5467fa83b0ab4a4890",
+    "semantic_hash": "2a74d3909800ca5467fa83b0ab4a4890"
+  },
+  "gosbrosters.com/next.config.ts": {
+    "mtime": 1779318419.5495584,
+    "ast_hash": "9b77af189a21a7a64e4bd7a426f64176",
+    "semantic_hash": "9b77af189a21a7a64e4bd7a426f64176"
+  },
+  "gosbrosters.com/package.json": {
+    "mtime": 1779749320.1799905,
+    "ast_hash": "0d7e4dfa6cb75ec343417497ca8c28ed",
+    "semantic_hash": "0d7e4dfa6cb75ec343417497ca8c28ed"
+  },
+  "gosbrosters.com/postcss.config.mjs": {
+    "mtime": 1778645482.3341725,
+    "ast_hash": "239f3ebf717465dc636818a1a619398d",
+    "semantic_hash": "239f3ebf717465dc636818a1a619398d"
+  },
+  "gosbrosters.com/src/app/about/page.tsx": {
+    "mtime": 1782171417.1287596,
+    "ast_hash": "c07883e3997d6925a5f7c15b0a72515a",
+    "semantic_hash": ""
+  },
+  "gosbrosters.com/src/app/admin/page.tsx": {
+    "mtime": 1784585184.0247202,
+    "ast_hash": "4863cdc186e59e92e26141592b3e0126",
+    "semantic_hash": ""
+  },
+  "gosbrosters.com/src/app/api/projects/route.ts": {
+    "mtime": 1779318323.1099005,
+    "ast_hash": "68189941b7b1281a7b96e4c0a5c2ffec",
+    "semantic_hash": "68189941b7b1281a7b96e4c0a5c2ffec"
+  },
+  "gosbrosters.com/src/app/api/upload/route.ts": {
+    "mtime": 1779749350.9498086,
+    "ast_hash": "e6eef827eaf93cb0466b1132be2c473b",
+    "semantic_hash": "e6eef827eaf93cb0466b1132be2c473b"
+  },
+  "gosbrosters.com/src/app/archive/page.tsx": {
+    "mtime": 1780369140.9561448,
+    "ast_hash": "a0cef9837ea1c63498aa20f757ecf768",
+    "semantic_hash": "a0cef9837ea1c63498aa20f757ecf768"
+  },
+  "gosbrosters.com/src/app/contact/page.tsx": {
+    "mtime": 1782171417.782226,
+    "ast_hash": "c4d129c48d7c775b0779adb3929347b4",
+    "semantic_hash": ""
+  },
+  "gosbrosters.com/src/app/layout.tsx": {
+    "mtime": 1780364000.798753,
+    "ast_hash": "6e9ae7f77cd080ae2d44182782187120",
+    "semantic_hash": "6e9ae7f77cd080ae2d44182782187120"
+  },
+  "gosbrosters.com/src/app/page.tsx": {
+    "mtime": 1782174254.1111777,
+    "ast_hash": "6c3b04ad1ce412b251d546f3bddc4739",
+    "semantic_hash": ""
+  },
+  "gosbrosters.com/src/app/works/[id]/page.tsx": {
+    "mtime": 1780369142.2130475,
+    "ast_hash": "55032c791610888dccd082a54c80a24a",
+    "semantic_hash": "55032c791610888dccd082a54c80a24a"
+  },
+  "gosbrosters.com/src/app/works/page.tsx": {
+    "mtime": 1782171419.9563284,
+    "ast_hash": "f63ceeff3c6f9db1d211b67e5e3c617d",
+    "semantic_hash": ""
+  },
+  "gosbrosters.com/src/components/CustomCursor.tsx": {
+    "mtime": 1778709762.3910322,
+    "ast_hash": "c16684dc7e1f35bfa8e83b8099759946",
+    "semantic_hash": "c16684dc7e1f35bfa8e83b8099759946"
+  },
+  "gosbrosters.com/src/components/Footer.tsx": {
+    "mtime": 1780367531.3376372,
+    "ast_hash": "267039b416be3b81b362d018552a1857",
+    "semantic_hash": "267039b416be3b81b362d018552a1857"
+  },
+  "gosbrosters.com/src/components/Hero.tsx": {
+    "mtime": 1784584827.3846612,
+    "ast_hash": "9492e85681c9f9c90c35f2d64474e51b",
+    "semantic_hash": ""
+  },
+  "gosbrosters.com/src/components/LanguageContext.tsx": {
+    "mtime": 1779318162.7417445,
+    "ast_hash": "e44312486ec3705395332d19fa486f26",
+    "semantic_hash": "e44312486ec3705395332d19fa486f26"
+  },
+  "gosbrosters.com/src/components/MaskReveal.tsx": {
+    "mtime": 1778645586.4616425,
+    "ast_hash": "8417e613cada54dcbc42faed8832e524",
+    "semantic_hash": "8417e613cada54dcbc42faed8832e524"
+  },
+  "gosbrosters.com/src/components/Navbar.tsx": {
+    "mtime": 1782171442.1631472,
+    "ast_hash": "bf3664ba1c4fb17f59c7ed6025aa522f",
+    "semantic_hash": ""
+  },
+  "gosbrosters.com/src/components/translations.ts": {
+    "mtime": 1784587672.387542,
+    "ast_hash": "8a550871ab1557691668ce75e9738304",
+    "semantic_hash": ""
+  },
+  "gosbrosters.com/src/data/projects.json": {
+    "mtime": 1779750497.6601076,
+    "ast_hash": "c3fb9a58c8957ae02eb908b3552babfc",
+    "semantic_hash": "c3fb9a58c8957ae02eb908b3552babfc"
+  },
+  "gosbrosters.com/tsconfig.json": {
+    "mtime": 1778645482.5641422,
+    "ast_hash": "ee17fd1c97c735e9f3564e3f5251f125",
+    "semantic_hash": "ee17fd1c97c735e9f3564e3f5251f125"
+  },
+  ".gemini/skills/website-builder/SKILL.md": {
+    "mtime": 1779314195.6924336,
+    "ast_hash": "53c9a2de17be5d636d78fd2d322e6b2c",
+    "semantic_hash": "53c9a2de17be5d636d78fd2d322e6b2c"
+  },
+  ".opencode/skill/website-builder/SKILL.md": {
+    "mtime": 1779314195.6924336,
+    "ast_hash": "53c9a2de17be5d636d78fd2d322e6b2c",
+    "semantic_hash": "53c9a2de17be5d636d78fd2d322e6b2c"
+  },
+  "DESIGN.md": {
+    "mtime": 1780363092.7531672,
+    "ast_hash": "bcab569fd819e3915f257b92f4ef1f18",
+    "semantic_hash": "bcab569fd819e3915f257b92f4ef1f18"
+  },
+  "SKILL.md": {
+    "mtime": 1778645077.1443832,
+    "ast_hash": "2400fb9dce27d6f864241771ffa79c99",
+    "semantic_hash": "2400fb9dce27d6f864241771ffa79c99"
+  },
+  "example.com/index.html": {
+    "mtime": 1778627413.2424047,
+    "ast_hash": "279751ada4b08ad9dfbf969945852de5",
+    "semantic_hash": "279751ada4b08ad9dfbf969945852de5"
+  },
+  "gosbrosters.com/AGENTS.md": {
+    "mtime": 1778645537.1841972,
+    "ast_hash": "9e09241799026ac05be315a2f0b50055",
+    "semantic_hash": "9e09241799026ac05be315a2f0b50055"
+  },
+  "gosbrosters.com/CLAUDE.md": {
+    "mtime": 1778645537.1848629,
+    "ast_hash": "5c27369b226fcf2be8a6cfe52224e767",
+    "semantic_hash": "5c27369b226fcf2be8a6cfe52224e767"
+  },
+  "gosbrosters.com/README.md": {
+    "mtime": 1778645482.3135934,
+    "ast_hash": "f15aaa42d5d299d091b1171097ea56ad",
+    "semantic_hash": "f15aaa42d5d299d091b1171097ea56ad"
+  },
+  "gosbrosters.com/auge.html": {
+    "mtime": 1778708379.5847661,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "gosbrosters.com/brand_voice.md": {
+    "mtime": 1779318137.8095114,
+    "ast_hash": "79102bdd31c3622fb5fa1841e5a1d924",
+    "semantic_hash": "79102bdd31c3622fb5fa1841e5a1d924"
+  },
+  "gosbros logo.svg": {
+    "mtime": 1778714087.6328905,
+    "ast_hash": "58408675b633c6c9ed2eec805e143a90",
+    "semantic_hash": "58408675b633c6c9ed2eec805e143a90"
+  },
+  "gosbrosters.com/public/Architecture_Remodel_01.jpg": {
+    "mtime": 1778645683.6129193,
+    "ast_hash": "b41e978e4313da49a11ffd95c78c5e20",
+    "semantic_hash": "b41e978e4313da49a11ffd95c78c5e20"
+  },
+  "gosbrosters.com/public/Branding_Project_01.jpg": {
+    "mtime": 1778645698.0567267,
+    "ast_hash": "5f6f1a47b838f9482271df823bd6ea27",
+    "semantic_hash": "5f6f1a47b838f9482271df823bd6ea27"
+  },
+  "gosbrosters.com/public/Hero_Placeholder.jpg": {
+    "mtime": 1778645793.8402464,
+    "ast_hash": "e71a34cdd18103ab3c379162582e0481",
+    "semantic_hash": "e71a34cdd18103ab3c379162582e0481"
+  },
+  "gosbrosters.com/public/file.svg": {
+    "mtime": 1778645482.3371725,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71"
+  },
+  "gosbrosters.com/public/globe.svg": {
+    "mtime": 1778645482.3415382,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": "2aaafa6a49b6563925fe440891e32717"
+  },
+  "gosbrosters.com/public/gosbros-logo.svg": {
+    "mtime": 1778714087.6328905,
+    "ast_hash": "58408675b633c6c9ed2eec805e143a90",
+    "semantic_hash": "58408675b633c6c9ed2eec805e143a90"
+  },
+  "gosbrosters.com/public/next.svg": {
+    "mtime": 1778645482.345651,
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": "8e061864f388b47f33a1c3780831193e"
+  },
+  "gosbrosters.com/public/vercel.svg": {
+    "mtime": 1778645482.3491712,
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": "c0af2f507b369b085b35ef4bbe3bcf1e"
+  },
+  "gosbrosters.com/public/window.svg": {
+    "mtime": 1778645482.3521683,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": "a2760511c65806022ad20adf74370ff3"
+  },
+  "gosbrosters.com/src/app/api/pricing/route.ts": {
+    "mtime": 1782174136.0382411,
+    "ast_hash": "14cea08c28f9c98d78898dfda965bd96",
+    "semantic_hash": ""
+  },
+  "gosbrosters.com/src/components/QuoteCalculator.tsx": {
+    "mtime": 1782175649.530424,
+    "ast_hash": "f8bd21fa496420e8943ad59a27af5c1e",
+    "semantic_hash": ""
+  },
+  "gosbrosters.com/src/data/pricing.json": {
+    "mtime": 1782174135.9612305,
+    "ast_hash": "0338051de19f0d290a2654539535792d",
+    "semantic_hash": ""
+  }
+}

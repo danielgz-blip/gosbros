@@ -55,12 +55,9 @@ export default function WorksClient({ projects }: { projects: any[] }) {
                     </h3>
                     <span className="font-sans font-bold text-xs md:text-sm">({project.year})</span>
                   </div>
-                  <p className="font-serif italic text-gray-500 text-sm mb-3">
-                    {language === 'es' ? project.category_es : project.category_en}
-                  </p>
-                  <p className={`font-sans text-body font-medium leading-[1.2] tracking-tight md:max-w-[75%]`}>
-                    {language === 'es' ? project.desc_es : project.desc_en}
-                  </p>
+                    <p className="font-serif italic text-gray-500 text-sm">
+                      {language === 'es' ? project.category_es : project.category_en}
+                    </p>
                 </div>
               </Link>
             );
