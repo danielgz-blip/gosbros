@@ -45,12 +45,17 @@ export default function HomeClient({ projects }: { projects: any[] }) {
             {featuredProjects.map((project, index) => {
               const isLarge = project.size === "large";
               const colClass = isLarge ? "w-full md:w-[65%]" : "w-full md:w-[35%]";
+              const desc = language === 'es' ? project.desc_es : project.desc_en;
+              const words = desc ? desc.split(' ') : [];
+              const truncatedDesc = words.length > 25 ? words.slice(0, 25).join(' ') + '...' : desc;
+              const hasMore = words.length > 25;
               
               return (
                 <div 
                   key={project.id}
                   className={`${colClass} flex flex-col gap-4 group cursor-pointer`}
                   data-cursor-text={t('home.view')}
+                  onClick={() => window.location.href = `/works/${project.id}`}
                 >
                   <div className={`relative w-full overflow-hidden bg-gray-200 ${isLarge ? 'aspect-[4/3] md:aspect-[16/10]' : 'aspect-[4/3]'}`}>
                     <Image
@@ -72,7 +77,12 @@ export default function HomeClient({ projects }: { projects: any[] }) {
                       {language === 'es' ? project.category_es : project.category_en}
                     </p>
                     <p className={`font-sans text-body font-medium leading-[1.2] tracking-tight ${isLarge ? 'md:max-w-[75%]' : ''}`}>
-                      {language === 'es' ? project.desc_es : project.desc_en}
+                      {truncatedDesc}
+                      {hasMore && (
+                        <span className="ml-2 font-bold underline hover:opacity-70 transition-opacity whitespace-nowrap">
+                          {language === 'es' ? 'Ver más' : 'Read more'}
+                        </span>
+                      )}
                     </p>
                   </div>
                 </div>
