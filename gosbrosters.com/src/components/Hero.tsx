@@ -24,7 +24,10 @@ export default function Hero({ projects }: { projects: any[] }) {
   const [step, setStep] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
-  const slideshowProjects = projects.slice(0, 5);
+  // Only show projects from the active department (missing department = architecture)
+  const slideshowProjects = projects
+    .filter(p => (p.department || 'architecture') === department)
+    .slice(0, 5);
 
   useEffect(() => {
     const t1 = setTimeout(() => setStep(1), 500);     // Show "WE ARE"
@@ -38,6 +41,13 @@ export default function Hero({ projects }: { projects: any[] }) {
     };
   }, []);
 
+  // Reset slideshow position when switching department
+  const [slideshowDept, setSlideshowDept] = useState(department);
+  if (slideshowDept !== department) {
+    setSlideshowDept(department);
+    setCurrentImageIndex(0);
+  }
+
   useEffect(() => {
     if (slideshowProjects.length <= 1) return;
     
@@ -46,7 +56,7 @@ export default function Hero({ projects }: { projects: any[] }) {
     }, 4000); // Change image every 4 seconds
 
     return () => clearInterval(interval);
-  }, [slideshowProjects.length]);
+  }, [department, slideshowProjects.length]);
 
   return (
     <section ref={containerRef} className="relative w-full h-[100vh] bg-[#C4C4C4] overflow-hidden flex flex-col justify-center items-center">
@@ -59,13 +69,13 @@ export default function Hero({ projects }: { projects: any[] }) {
         <AnimatePresence mode="popLayout">
           <motion.img
             key={currentImageIndex}
-            src={slideshowProjects[currentImageIndex]?.image}
+            src={slideshowProjects.length ? slideshowProjects[currentImageIndex % slideshowProjects.length]?.image : undefined}
             initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-cover"
-            alt={slideshowProjects[currentImageIndex]?.title_en || "Project Hero"}
+            alt={slideshowProjects.length ? slideshowProjects[currentImageIndex % slideshowProjects.length]?.title_en || "Project Hero" : "Project Hero"}
           />
         </AnimatePresence>
       </motion.div>
