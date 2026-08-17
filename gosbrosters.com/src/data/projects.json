@@ -1,27 +1,789 @@
 [
   {
-    "id": "casa-brutale",
-    "year": "2026",
-    "title_es": "Casa Brutale",
-    "title_en": "Casa Brutale",
+    "id": "dermica-brand-identity",
+    "year": "2024",
+    "title_es": "Dermica — Brand Identity 2024",
+    "title_en": "Dermica — Brand Identity 2024",
+    "category_es": "Identidad, Branding",
+    "category_en": "Identity, Branding",
+    "sector_es": "Belleza, Skincare",
+    "sector_en": "Beauty, Skincare",
+    "material_es": "Acabados de Lujo, Detalles en Oro",
+    "material_en": "Luxury Finishes, Gold Details",
+    "cost_ethos_es": "Elegancia Accesible, Precisión Clínica",
+    "cost_ethos_en": "Accessible Elegance, Clinical Precision",
+    "desc_es": "Identidad de marca para Dermica: un sistema visual de lujo sobrio para skincare, con detalles en oro y una elegancia clínica que respira calidad.",
+    "desc_en": "Brand identity for Dermica: a sober luxury visual system for skincare, with gold details and a clinical elegance that breathes quality.",
+    "image": "/projects/Dermica-Brand-Identity-2024/cover.webp",
+    "featured": false,
+    "size": "large",
+    "department": "design",
+    "content": [
+      {
+        "id": "01",
+        "type": "media",
+        "url": "/projects/Dermica-Brand-Identity-2024/01.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "02",
+        "type": "media",
+        "url": "/projects/Dermica-Brand-Identity-2024/02.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "03",
+        "type": "media",
+        "url": "/projects/Dermica-Brand-Identity-2024/03.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "04",
+        "type": "media",
+        "url": "/projects/Dermica-Brand-Identity-2024/04.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "05",
+        "type": "media",
+        "url": "/projects/Dermica-Brand-Identity-2024/05.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "06",
+        "type": "media",
+        "url": "/projects/Dermica-Brand-Identity-2024/06.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "07",
+        "type": "media",
+        "url": "/projects/Dermica-Brand-Identity-2024/07.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "08",
+        "type": "media",
+        "url": "/projects/Dermica-Brand-Identity-2024/08.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "09",
+        "type": "media",
+        "url": "/projects/Dermica-Brand-Identity-2024/09.webp",
+        "mediaFormat": "horizontal"
+      }
+    ]
+  },
+  {
+    "id": "grupo-pecuario-san-antonio",
+    "year": "2021",
+    "title_es": "Grupo Pecuario San Antonio S.A de C.V.",
+    "title_en": "Grupo Pecuario San Antonio S.A de C.V.",
+    "category_es": "Branding, Identidad",
+    "category_en": "Branding, Identity",
+    "sector_es": "Alimentos, Agroindustria",
+    "sector_en": "Food, Agribusiness",
+    "material_es": "Sistema de Identidad, Empaque",
+    "material_en": "Identity System, Packaging",
+    "cost_ethos_es": "Rentabilidad Rural, Confianza Masiva",
+    "cost_ethos_en": "Rural Affordability, Mass Trust",
+    "desc_es": "Identidad de marca para Grupo Pecuario San Antonio S.A. de C.V., productora de pollo y alimentos. Un sistema visual cercano y robusto que conecta la tradición agropecuaria con la confianza comercial.",
+    "desc_en": "Brand identity for Grupo Pecuario San Antonio S.A. de C.V., a poultry and food producer. A warm, robust visual system that connects farming tradition with commercial trust.",
+    "image": "/projects/Grupo-Pecuario-San-Antonio-SA-de-CV/cover.webp",
+    "featured": false,
+    "size": "large",
+    "department": "design",
+    "content": [
+      {
+        "id": "01",
+        "type": "media",
+        "url": "/projects/Grupo-Pecuario-San-Antonio-SA-de-CV/01.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "02",
+        "type": "media",
+        "url": "/projects/Grupo-Pecuario-San-Antonio-SA-de-CV/02.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "03",
+        "type": "media",
+        "url": "/projects/Grupo-Pecuario-San-Antonio-SA-de-CV/03.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "04",
+        "type": "media",
+        "url": "/projects/Grupo-Pecuario-San-Antonio-SA-de-CV/04.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "05",
+        "type": "media",
+        "url": "/projects/Grupo-Pecuario-San-Antonio-SA-de-CV/05.webp",
+        "mediaFormat": "horizontal"
+      }
+    ]
+  },
+  {
+    "id": "hax-brand-identity",
+    "year": "2024",
+    "title_es": "HAX — Brand Identity 2025",
+    "title_en": "HAX — Brand Identity 2025",
+    "category_es": "Identidad, Sistema Visual",
+    "category_en": "Identity, Visual System",
+    "sector_es": "Motorsport, Motociclismo",
+    "sector_en": "Motorsport",
+    "material_es": "Tipografía, Gráficos de Competencia",
+    "material_en": "Typography, Racing Graphics",
+    "cost_ethos_es": "Velocidad Visual, Consistencia Total",
+    "cost_ethos_en": "Visual Speed, Total Consistency",
+    "desc_es": "Sistema de identidad para HAX, marca de cascos de motociclismo inspirada en la cultura prehispánica. Tipografía, color y gráficos de competencia que fusionan herencia y velocidad.",
+    "desc_en": "Identity system for HAX, a motorcycle helmet brand inspired by pre-Hispanic culture. Typography, color and racing graphics that fuse heritage with speed.",
+    "image": "/projects/HAX-Brand-Identity-2025/cover.webp",
+    "featured": true,
+    "size": "large",
+    "department": "design",
+    "content": [
+      {
+        "id": "01",
+        "type": "media",
+        "url": "/projects/HAX-Brand-Identity-2025/01.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "02",
+        "type": "media",
+        "url": "/projects/HAX-Brand-Identity-2025/02.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "03",
+        "type": "media",
+        "url": "/projects/HAX-Brand-Identity-2025/03.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "04",
+        "type": "media",
+        "url": "/projects/HAX-Brand-Identity-2025/04.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "05",
+        "type": "media",
+        "url": "/projects/HAX-Brand-Identity-2025/05.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "06",
+        "type": "media",
+        "url": "/projects/HAX-Brand-Identity-2025/06.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "07",
+        "type": "media",
+        "url": "/projects/HAX-Brand-Identity-2025/07.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "08",
+        "type": "media",
+        "url": "/projects/HAX-Brand-Identity-2025/08.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "09",
+        "type": "media",
+        "url": "/projects/HAX-Brand-Identity-2025/09.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "10",
+        "type": "media",
+        "url": "/projects/HAX-Brand-Identity-2025/10.webp",
+        "mediaFormat": "horizontal"
+      }
+    ]
+  },
+  {
+    "id": "hax-helmet-quick-start-guide",
+    "year": "2024",
+    "title_es": "HAX — Motorcycle Helmet Quick Start Guide",
+    "title_en": "HAX — Motorcycle Helmet Quick Start Guide",
+    "category_es": "Diseño Editorial, Manual de Usuario",
+    "category_en": "Editorial Design, User Manual",
+    "sector_es": "Motorsport, Seguridad",
+    "sector_en": "Motorsport, Safety",
+    "material_es": "Infografía, Diagramas Técnicos",
+    "material_en": "Infographics, Technical Diagrams",
+    "cost_ethos_es": "Onboarding Simple, Información Clara",
+    "cost_ethos_en": "Simple Onboarding, Clear Information",
+    "desc_es": "Guía de inicio rápido para el casco HAX. Un manual visual que simplifica el onboarding, reduce solicitudes de soporte y eleva la profesionalidad de la marca: instrucciones claras de armado y uso, preguntas frecuentes resueltas por adelantado y un recorrido visual que acelera la adopción del producto.",
+    "desc_en": "A well-crafted user guide offers several key advantages: Simplifies Onboarding: New users can get started quickly without feeling overwhelmed, as the guide provides clear instructions for setup and use. Reduces Customer Support Requests: By addressing common questions and troubleshooting issues upfront, the guide minimizes the need for users to contact customer service, saving time and resources. Boosts Customer Satisfaction: When users feel empowered to use the product efficiently, their satisfaction increases, leading to more positive reviews and recommendations. Increases Product Adoption: A user-friendly guide can speed up the learning curve, making users more likely to engage with and fully utilize all features of the product. Enhances Brand Professionalism: A detailed and visually appealing guide reflects a commitment to quality, strengthening the brand’s credibility and trustworthiness.",
+    "image": "/projects/HAX-Motorcycle-Helmet-Quick-Start-Guide/cover.webp",
+    "featured": false,
+    "size": "large",
+    "department": "design",
+    "content": [
+      {
+        "id": "01",
+        "type": "media",
+        "url": "/projects/HAX-Motorcycle-Helmet-Quick-Start-Guide/01.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "02",
+        "type": "media",
+        "url": "/projects/HAX-Motorcycle-Helmet-Quick-Start-Guide/02.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "03",
+        "type": "media",
+        "url": "/projects/HAX-Motorcycle-Helmet-Quick-Start-Guide/03.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "04",
+        "type": "media",
+        "url": "/projects/HAX-Motorcycle-Helmet-Quick-Start-Guide/04.webp",
+        "mediaFormat": "horizontal"
+      }
+    ]
+  },
+  {
+    "id": "hax-exploded-view",
+    "year": "2024",
+    "title_es": "HAX — Exploded View Animation",
+    "title_en": "HAX — Exploded View Animation",
+    "category_es": "Ilustración 3D, Animación",
+    "category_en": "3D Illustration, Animation",
+    "sector_es": "Motorsport, Técnica",
+    "sector_en": "Motorsport, Technical",
+    "material_es": "Modelado 3D, Vista Explosionada",
+    "material_en": "3D Modeling, Exploded View",
+    "cost_ethos_es": "Claridad Técnica, Impacto Visual",
+    "cost_ethos_en": "Technical Clarity, Visual Impact",
+    "desc_es": "Visualización técnica en 3D del ensamblaje del casco HAX: cada componente, capa por capa, en una animación de vista explosionada que explica la ingeniería detrás del producto.",
+    "desc_en": "Technical 3D visualization of the HAX helmet assembly: every component, layer by layer, in an exploded-view animation that explains the engineering behind the product.",
+    "image": "/projects/HAX-Exploded-View-Animation/cover.webp",
+    "featured": false,
+    "size": "large",
+    "department": "design",
+    "content": [
+      {
+        "id": "01",
+        "type": "media",
+        "url": "/projects/HAX-Exploded-View-Animation/01.webp",
+        "mediaFormat": "horizontal"
+      }
+    ]
+  },
+  {
+    "id": "hax-prehispanic-collection",
+    "year": "2024",
+    "title_es": "HAX — Prehispanic Collection Preview",
+    "title_en": "HAX — Prehispanic Collection Preview",
+    "category_es": "Identidad, Campaña",
+    "category_en": "Identity, Campaign",
+    "sector_es": "Cascos, Accesorios",
+    "sector_en": "Helmets, Accessories",
+    "material_es": "Iconografía Ancestral, Visuales de Lanzamiento",
+    "material_en": "Ancestral Iconography, Launch Visuals",
+    "cost_ethos_es": "Herencia Mexicana, Diseño Contemporáneo",
+    "cost_ethos_en": "Mexican Heritage, Contemporary Design",
+    "desc_es": "Avance de la colección prehispánica HAX: piezas y visuales que reinterpretan la iconografía ancestral en cascos y accesorios de motociclismo.",
+    "desc_en": "Preview of the HAX pre-Hispanic collection: pieces and visuals that reinterpret ancestral iconography across motorcycle helmets and accessories.",
+    "image": "/projects/HAX-Prehispanic-Collection-Preview/cover.webp",
+    "featured": false,
+    "size": "large",
+    "department": "design",
+    "content": [
+      {
+        "id": "01",
+        "type": "media",
+        "url": "/projects/HAX-Prehispanic-Collection-Preview/01.webp",
+        "mediaFormat": "horizontal"
+      }
+    ]
+  },
+  {
+    "id": "supper-brand-identity",
+    "year": "2025",
+    "title_es": "SUPPER — Brand Identity 2025",
+    "title_en": "SUPPER — Brand Identity 2025",
+    "category_es": "Identidad, Sistema Visual",
+    "category_en": "Identity, Visual System",
+    "sector_es": "Marca Independiente",
+    "sector_en": "Independent Brand",
+    "material_es": "Lenguaje Gráfico, Sistema Completo",
+    "material_en": "Graphic Language, Complete System",
+    "cost_ethos_es": "Audacia Editorial, Rigor Sistemático",
+    "cost_ethos_en": "Editorial Boldness, Systematic Rigor",
+    "desc_es": "Sistema de identidad visual para SUPPER: un lenguaje gráfico audaz y contemporáneo desplegado a lo largo de catorce piezas, del símbolo a las aplicaciones.",
+    "desc_en": "Visual identity system for SUPPER: a bold, contemporary graphic language deployed across fourteen pieces, from symbol to applications.",
+    "image": "/projects/SUPPER-Brand-Identity-2025/cover.webp",
+    "featured": true,
+    "size": "large",
+    "department": "design",
+    "content": [
+      {
+        "id": "01",
+        "type": "media",
+        "url": "/projects/SUPPER-Brand-Identity-2025/01.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "02",
+        "type": "media",
+        "url": "/projects/SUPPER-Brand-Identity-2025/02.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "03",
+        "type": "media",
+        "url": "/projects/SUPPER-Brand-Identity-2025/03.webp",
+        "mediaFormat": "vertical"
+      },
+      {
+        "id": "04",
+        "type": "media",
+        "url": "/projects/SUPPER-Brand-Identity-2025/04.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "05",
+        "type": "media",
+        "url": "/projects/SUPPER-Brand-Identity-2025/05.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "06",
+        "type": "media",
+        "url": "/projects/SUPPER-Brand-Identity-2025/06.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "07",
+        "type": "media",
+        "url": "/projects/SUPPER-Brand-Identity-2025/07.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "08",
+        "type": "media",
+        "url": "/projects/SUPPER-Brand-Identity-2025/08.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "09",
+        "type": "media",
+        "url": "/projects/SUPPER-Brand-Identity-2025/09.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "10",
+        "type": "media",
+        "url": "/projects/SUPPER-Brand-Identity-2025/10.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "11",
+        "type": "media",
+        "url": "/projects/SUPPER-Brand-Identity-2025/11.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "12",
+        "type": "media",
+        "url": "/projects/SUPPER-Brand-Identity-2025/12.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "13",
+        "type": "media",
+        "url": "/projects/SUPPER-Brand-Identity-2025/13.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "14",
+        "type": "media",
+        "url": "/projects/SUPPER-Brand-Identity-2025/14.webp",
+        "mediaFormat": "horizontal"
+      }
+    ]
+  },
+  {
+    "id": "tomboy-feme-brand-identity",
+    "year": "2025",
+    "title_es": "Tomboy Feme — Brand Identity",
+    "title_en": "Tomboy Feme — Brand Identity",
+    "category_es": "Identidad, Branding",
+    "category_en": "Identity, Branding",
+    "sector_es": "Moda, Lujo",
+    "sector_en": "Fashion, Luxury",
+    "material_es": "Arte Final, Editorial de Moda",
+    "material_en": "Artwork, Fashion Editorial",
+    "cost_ethos_es": "Actitud de Pasarela, Rigor de Alta Moda",
+    "cost_ethos_en": "Runway Attitude, High Fashion Rigor",
+    "desc_es": "Identidad para Tomboy Feme, marca de moda que disuelve los límites entre lo masculino y lo femenino con una estética de lujo descarado.",
+    "desc_en": "Identity for Tomboy Feme, a fashion brand dissolving the line between masculine and feminine with a shamelessly luxurious aesthetic.",
+    "image": "/projects/Tomboy-Feme-Brand-Identity/cover.webp",
+    "featured": false,
+    "size": "large",
+    "department": "design",
+    "content": [
+      {
+        "id": "01",
+        "type": "media",
+        "url": "/projects/Tomboy-Feme-Brand-Identity/01.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "02",
+        "type": "media",
+        "url": "/projects/Tomboy-Feme-Brand-Identity/02.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "03",
+        "type": "media",
+        "url": "/projects/Tomboy-Feme-Brand-Identity/03.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "04",
+        "type": "media",
+        "url": "/projects/Tomboy-Feme-Brand-Identity/04.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "05",
+        "type": "media",
+        "url": "/projects/Tomboy-Feme-Brand-Identity/05.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "06",
+        "type": "media",
+        "url": "/projects/Tomboy-Feme-Brand-Identity/06.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "07",
+        "type": "media",
+        "url": "/projects/Tomboy-Feme-Brand-Identity/07.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "08",
+        "type": "media",
+        "url": "/projects/Tomboy-Feme-Brand-Identity/08.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "09",
+        "type": "media",
+        "url": "/projects/Tomboy-Feme-Brand-Identity/09.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "10",
+        "type": "media",
+        "url": "/projects/Tomboy-Feme-Brand-Identity/10.webp",
+        "mediaFormat": "horizontal"
+      }
+    ]
+  },
+  {
+    "id": "eire-packaging",
+    "year": "2025",
+    "title_es": "Eire — Packaging Design",
+    "title_en": "Eire — Packaging Design",
+    "category_es": "Empaque, Identidad",
+    "category_en": "Packaging, Identity",
+    "sector_es": "Belleza, Cosmética",
+    "sector_en": "Beauty, Cosmetics",
+    "material_es": "Envases, Etiquetas",
+    "material_en": "Jars, Labels",
+    "cost_ethos_es": "Estante Premium, Costo Controlado",
+    "cost_ethos_en": "Premium Shelf, Controlled Cost",
+    "desc_es": "Diseño de empaque para Eire: envases y etiquetas con una elegancia silenciosa pensada para destacar en el punto de venta.",
+    "desc_en": "Packaging design for Eire: jars and labels with a quiet elegance made to stand out at the point of sale.",
+    "image": "/projects/Eire-Packaging-Design/cover.webp",
+    "featured": false,
+    "size": "large",
+    "department": "design",
+    "content": [
+      {
+        "id": "01",
+        "type": "media",
+        "url": "/projects/Eire-Packaging-Design/01.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "02",
+        "type": "media",
+        "url": "/projects/Eire-Packaging-Design/02.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "03",
+        "type": "media",
+        "url": "/projects/Eire-Packaging-Design/03.webp",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "04",
+        "type": "media",
+        "url": "/projects/Eire-Packaging-Design/04.webp",
+        "mediaFormat": "horizontal"
+      }
+    ]
+  },
+  {
+    "title_es": "Show Room Hax Helmets",
+    "title_en": "Show Room Hax Helmets",
+    "category_es": "Arquitectura, Interiores",
+    "category_en": "Architectura, Interior",
+    "sector_es": "Comercial",
+    "sector_en": "Comercial",
+    "material_es": "Acabados aparentes",
+    "material_en": "Exposed materials",
+    "cost_ethos_es": "Industrial con acabados calidos",
+    "cost_ethos_en": "Industrial with Warm Finishes",
+    "desc_es": "Showroom de estilo industrial contemporáneo diseñado para ofrecer una experiencia funcional y atractiva. La integración de madera, acero, ladrillo aparente y cristal crea un ambiente cálido y sofisticado, mientras que la iluminación arquitectónica y la distribución abierta realzan la exhibición de los productos. Como elemento distintivo, se desarrolló un mural conceptual que fortalece la identidad del espacio y su carácter visual.",
+    "desc_en": "A contemporary industrial showroom designed to provide a functional and engaging customer experience. The integration of wood, steel, exposed brick, and glass creates a warm yet sophisticated atmosphere, while the architectural lighting and open layout enhance product display. A custom conceptual mural was also designed to reinforce the space's identity and visual character.",
+    "year": 2022,
+    "size": "large",
+    "featured": true,
+    "department": "architecture",
+    "id": "show-room-hax-helmets",
+    "image": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/RHE%2001.png",
+    "content": [
+      {
+        "id": "17848635584720",
+        "type": "media",
+        "url": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/RHE%2002.png",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "17848635682300",
+        "type": "media",
+        "url": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/6f92180e-c6a5-4698-95e4-38e4b5c9b4e0.jpg",
+        "mediaFormat": "horizontal"
+      }
+    ]
+  },
+  {
+    "title_es": "Residencia OM 43",
+    "title_en": "OM 43 Residence",
+    "category_es": "Arquitectura, Proyecto",
+    "category_en": "Arquitectura, Proyecto",
+    "sector_es": "Residencial",
+    "sector_en": "Residential",
+    "material_es": "Estuco afinado & ceramica",
+    "material_en": "White plaster and ceramic",
+    "cost_ethos_es": "Minimalista",
+    "cost_ethos_en": "Minimalist",
+    "desc_es": "Residencia OM es una remodelación integral que redefine una vivienda existente mediante una arquitectura contemporánea de líneas limpias, volúmenes puros y materiales sobrios. La propuesta incorpora celosías geométricas de carácter mexicano, reorganiza los espacios alrededor de un patio central e integra luz natural, vegetación y grandes superficies acristaladas para potenciar la conexión interior-exterior y crear una residencia elegante, funcional y atemporal.",
+    "desc_en": "OM Residence is a comprehensive renovation that redefines an existing home through contemporary architecture characterized by clean lines, pure volumes, and refined materials. The proposal incorporates geometric screens with a distinctly Mexican character, reorganizes the spaces around a central courtyard, and integrates natural light, vegetation, and expansive glazed surfaces to enhance the indoor-outdoor connection and create an elegant, functional, and timeless residence.",
+    "year": 2022,
+    "size": "large",
+    "featured": true,
+    "department": "architecture",
+    "id": "om-43-residence",
+    "image": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/R1FOM43.png",
+    "content": [
+      {
+        "id": "17848385011670",
+        "type": "media",
+        "url": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/R2OM43.png",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "17865763892070",
+        "type": "media",
+        "url": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/Om43%20render%20comedor.png",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "17865764035800",
+        "type": "media",
+        "url": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/Om43%20render%20cocina.png",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "17848636093370",
+        "type": "media",
+        "url": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/R4OM43.png",
+        "mediaFormat": "horizontal"
+      }
+    ]
+  },
+  {
+    "title_es": "Condominio San Miguel ",
+    "title_en": "San Miguel Residential Condominium",
+    "category_es": "Arquitectura, urbano",
+    "category_en": "Architecture, Urban",
+    "sector_es": "Residencial & Comercial",
+    "sector_en": "Residential and comercial",
+    "material_es": "Concreto aparente y estuco",
+    "material_en": "Exposed concrete and white plaster",
+    "cost_ethos_es": "Minimalista",
+    "cost_ethos_en": "Minimalist",
+    "desc_es": "Condominio san Miguel. \nEl proyecto consiste en el desarrollo de un condominio de uso mixto, integrado por un conjunto habitacional de 22 viviendas y un centro comercial compuesto por dos niveles de comercio y un nivel de oficinas.\n\nLa propuesta busca generar una integración equilibrada entre vivienda, actividad comercial y espacios de trabajo, incorporando áreas verdes, espacios recreativos y cuerpos de agua que aportan calidad ambiental y una conexión armónica entre arquitectura y paisaje.\n\nEl diseño responde a una visión contemporánea de desarrollo urbano, priorizando la funcionalidad, la convivencia de los usuarios y una imagen arquitectónica coherente con su entorno.",
+    "desc_en": "San Miguel Condominium Complex\nThe project consists of the development of a mixed-use condominium, integrating a residential complex with 22 homes and a commercial center composed of two retail levels and one office level.\n\nThe proposal seeks to create a balanced integration between residential, commercial, and workspaces, incorporating green areas, recreational spaces, and water features that enhance environmental quality and establish a harmonious connection between architecture and landscape.\n\nThe design responds to a contemporary urban development vision, prioritizing functionality, user experience, and a coherent architectural identity that complements its surroundings.",
+    "year": 2026,
+    "size": "large",
+    "featured": true,
+    "department": "architecture",
+    "id": "san-miguel-residential-condominium",
+    "image": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/RCO02.png",
+    "content": [
+      {
+        "id": "17847649235700",
+        "type": "media",
+        "url": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/RCO01.png",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "17847660088870",
+        "type": "media",
+        "url": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/RCO05.png",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "17858992173400",
+        "type": "media",
+        "url": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/RCC4.png",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "17865038094260",
+        "type": "media",
+        "url": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/sm%20render%20act.png",
+        "mediaFormat": "horizontal"
+      }
+    ]
+  },
+  {
+    "title_es": "Residencia LT",
+    "title_en": "LT Residence",
+    "category_es": "Arquitectura",
+    "category_en": "Architecture",
+    "sector_es": "Residencial",
+    "sector_en": "Residential",
+    "material_es": "Aplanado Rustico",
+    "material_en": "Rough stuco finish",
+    "cost_ethos_es": "Minimalista",
+    "cost_ethos_en": "Minimalist",
+    "desc_es": "Residencia LT\nUbicada en Morelos, a orillas de un lago, Residencia LT fue concebida como un refugio contemporáneo que integra la arquitectura con el paisaje, aprovechando las vistas, la iluminación natural y la conexión entre interiores y exteriores.\n\nEl proyecto combina líneas limpias con materiales atemporales como concreto aparente, piedra natural, madera y cristal, creando ambientes cálidos, elegantes y funcionales. Sus áreas sociales, terrazas, alberca y espacios de convivencia se orientan hacia el lago, fortaleciendo la relación con el entorno.\n\nResidencia S busca equilibrar confort, privacidad y contemplación, integrando arquitectura, naturaleza y calidad de vida.",
+    "desc_en": "Residencia LT\nLocated in Morelos, on the shores of a lake, Residencia LT was conceived as a contemporary retreat that integrates architecture with the landscape, taking full advantage of the views, natural light, and connection between indoor and outdoor spaces.\n\nThe project combines clean lines with timeless materials such as exposed concrete, natural stone, wood, and glass, creating warm, elegant, and functional environments. Its social areas, terraces, pool, and gathering spaces are oriented toward the lake, strengthening the connection with the surrounding nature.\n\nResidencia S seeks to balance comfort, privacy, and contemplation, bringing together architecture, nature, and quality of life.",
+    "year": 2020,
+    "size": "large",
+    "featured": true,
+    "department": "architecture",
+    "id": "s-residence",
+    "image": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/TR02.png",
+    "content": [
+      {
+        "id": "17847506265750",
+        "type": "media",
+        "url": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/TR04%20%282%29.png",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "17866562530000",
+        "type": "media",
+        "url": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/TR%2002%20Sa.png",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "17866555967470",
+        "type": "media",
+        "url": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/TR%2003Com.png",
+        "mediaFormat": "horizontal"
+      }
+    ]
+  },
+  {
+    "title_es": "Residencia Duraznos",
+    "title_en": "Duraznos Residence",
+    "category_es": "Arquitectura",
+    "category_en": "Architecture",
+    "sector_es": "Residencial",
+    "sector_en": "Residential",
+    "material_es": "Concreto aparente",
+    "material_en": "Exposed Concrete",
+    "cost_ethos_es": "Minimalista",
+    "cost_ethos_en": "Minimalist",
+    "desc_es": "Duraznos N8 representa la transformación integral de una vivienda mediante una propuesta arquitectónica contemporánea que optimiza la distribución, potencia la iluminación natural y fortalece la relación entre los espacios interiores. La remodelación integra materiales de alta calidad, detalles constructivos cuidadosamente resueltos y una estética minimalista que privilegia la funcionalidad, la amplitud y el confort.",
+    "desc_en": "Duraznos N8 is a comprehensive residential renovation that reimagines an existing home through a contemporary architectural vision. The project optimizes spatial organization, maximizes natural light, and enhances the relationship between interior spaces. A refined palette of premium materials, meticulously detailed construction, and a minimalist design language come together to create a residence defined by functionality, openness, and timeless elegance.",
+    "year": 2025,
+    "size": "large",
+    "featured": true,
+    "id": "duraznos-residence",
+    "image": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/RB01.png",
+    "content": [
+      {
+        "id": "17847480944960",
+        "type": "media",
+        "url": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/RB02.png",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "17847483269960",
+        "type": "media",
+        "url": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/RB03.png",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "1784748433197",
+        "type": "text",
+        "text_es": "Duraznos N8 es un proyecto de remodelación integral concebido para transformar una residencia existente en un espacio contemporáneo, funcional y luminoso. La intervención redefine la distribución arquitectónica mediante una mejor integración de las áreas sociales y privadas, privilegiando la amplitud visual, la entrada de luz natural y una circulación más eficiente.\n\nLa propuesta incorpora una imagen arquitectónica de líneas puras y volúmenes limpios, complementada por una cuidadosa selección de materiales, carpinterías, acabados y elementos de iluminación que aportan calidez, elegancia y permanencia. Cada espacio fue diseñado para equilibrar estética, confort y funcionalidad, generando una vivienda acorde con las necesidades de la vida contemporánea.\n\nEl resultado es una residencia renovada que combina diseño atemporal, claridad espacial y una identidad arquitectónica sólida, elevando significativamente la calidad del habitar.",
+        "text_en": "Duraznos N8 is a comprehensive residential renovation project designed to transform an existing home into a contemporary, functional, and light-filled living environment. The intervention redefines the architectural layout by enhancing the relationship between public and private spaces, maximizing natural light, improving circulation, and creating a greater sense of openness throughout the residence.\n\nThe design embraces clean geometric forms and a timeless architectural language, complemented by a carefully curated selection of materials, custom millwork, refined finishes, and integrated lighting. Every design decision was guided by the balance between aesthetics, comfort, and functionality, resulting in spaces that are both elegant and highly livable.\n\nThe final outcome is a renewed residence that reflects a contemporary lifestyle while preserving a timeless architectural identity through simplicity, precision, and attention to detail."
+      }
+    ]
+  },
+  {
+    "title_es": "Residencia Valle",
+    "title_en": "Valle Residencie",
     "category_es": "Arquitectura, Interiores",
     "category_en": "Architecture, Interior",
     "sector_es": "Residencial Modular",
     "sector_en": "Modular Residential",
-    "material_es": "Concreto Expuesto, Acero Reciclado",
-    "material_en": "Exposed Concrete, Recycled Steel",
-    "cost_ethos_es": "Eficiencia Espacial, Sin Acabados Supérfluos",
-    "cost_ethos_en": "Spatial Efficiency, Zero Superfluous Finishes",
-    "desc_es": "Descifra el código. Confía en lo desconocido. ¿Te atreves a vivir en Casa Brutale? Una obra arquitectónica que elimina el exceso decorativo en favor de la pureza estructural.",
-    "desc_en": "Crack the code. Trust the unknown. Do you dare to live in Casa Brutale? An architectural work that strips decorative excess in favor of structural purity.",
-    "image": "/Architecture_Remodel_01.jpg",
-    "featured": true,
+    "material_es": "Concreto Expuesto, Acero ",
+    "material_en": "Exposed Concrete, Steel",
+    "cost_ethos_es": "Minimalista, moderno",
+    "cost_ethos_en": "Minimalist",
+    "desc_es": "Un proyecto residencial de arquitectura contemporánea concebido para ofrecer un equilibrio entre privacidad, iluminación natural y funcionalidad. La propuesta se desarrolla a partir de una composición de volúmenes puros y una fachada definida por celosías metálicas que filtran la luz, generan profundidad y aportan una identidad arquitectónica distintiva.\n\nEl diseño integra materiales de alta calidad, una paleta sobria y detalles cuidadosamente resueltos que resaltan la limpieza formal y la elegancia atemporal. La distribución privilegia espacios amplios, confortables y eficientes, fortaleciendo la relación entre el interior y el exterior para responder a las necesidades de la vida contemporánea.",
+    "desc_en": "A contemporary residential project designed to achieve a balance between privacy, natural light, and functionality. The proposal is defined by clean geometric volumes and a façade featuring metal lattice screens that filter daylight, create depth, and establish a distinctive architectural identity.\n\nThe design incorporates premium materials, a restrained palette, and carefully crafted details that emphasize timeless elegance and minimalist aesthetics. The spatial layout prioritizes open, comfortable, and efficient living environments while strengthening the relationship between indoor and outdoor spaces to meet the demands of contemporary living.",
+    "year": 2025,
     "size": "large",
-    "content": []
+    "featured": true,
+    "id": "casa-brutale",
+    "image": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/tx01.png",
+    "content": [
+      {
+        "id": "17847524070600",
+        "type": "media",
+        "url": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/tx02.png",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "17847524103191",
+        "type": "media",
+        "url": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/tx04.png",
+        "mediaFormat": "horizontal"
+      }
+    ]
   },
   {
-    "id": "auge-identity",
-    "year": "2026",
     "title_es": "Auge Design",
     "title_en": "Auge Design",
     "category_es": "Identidad, Sistema Visual",
@@ -34,69 +796,58 @@
     "cost_ethos_en": "Scalable System, Zero Overhead",
     "desc_es": "Reacondicionado como símbolo de estatus: cómo reposicionamos una categoría entera con grillas asimétricas radicales y transparencia total.",
     "desc_en": "Refurbished as a status symbol: how we repositioned an entire category using radical asymmetric grids and total transparency.",
-    "image": "/Branding_Project_01.jpg",
-    "featured": true,
+    "year": "2026",
     "size": "small",
-    "content": []
-  },
-  {
-    "id": "don-molinico",
-    "year": "2025",
-    "title_es": "Don Molinico",
-    "title_en": "Don Molinico",
-    "category_es": "Empaque, Branding",
-    "category_en": "Packaging, Branding",
-    "sector_es": "Bienes de Consumo",
-    "sector_en": "FMCG",
-    "material_es": "Cartón Reciclado, Tinta de un solo color",
-    "material_en": "Recycled Cardboard, Single-color ink",
-    "cost_ethos_es": "Producción de bajo costo, Alto Impacto",
-    "cost_ethos_en": "Low-cost production, High Impact",
-    "desc_es": "Rediseño de empaque enfocado en colores primarios vibrantes y tipografía rústica. La máxima atención con la mínima inversión.",
-    "desc_en": "Packaging redesign focused on vibrant primary colors and rustic typography. Maximum attention with minimal investment.",
-    "image": "/Hero_Placeholder.jpg",
     "featured": true,
-    "size": "large",
+    "department": "design",
+    "id": "auge-identity",
+    "image": "/Branding_Project_01.jpg",
     "content": []
   },
   {
+    "title_es": "Estudio Loft LV",
+    "title_en": "Loft Studio",
+    "category_es": "Arquitectura",
+    "category_en": "Arquitectura",
+    "sector_es": "Privado",
+    "sector_en": "Privado",
+    "material_es": "Concreto aparente",
+    "material_en": "Exposed concrete",
+    "cost_ethos_es": "Minimalista",
+    "cost_ethos_en": "Minimalist",
+    "desc_es": "Estudio Loft es una vivienda contemporánea diseñada para integrar el hogar y un espacio de estudio en una misma propuesta arquitectónica. Su diseño minimalista, basado en volúmenes puros y materiales como acero, madera y cristal, privilegia la amplitud, la iluminación natural y la flexibilidad de cada espacio. Cuenta con un amplio estacionamiento, áreas sociales abiertas y una generosa terraza con pérgola que fortalece la conexión entre el interior y el exterior, creando ambientes luminosos, funcionales y elegantes para habitar, trabajar y convivir.",
+    "desc_en": "Studio Loft is a contemporary residence designed to seamlessly combine a home with a creative studio in a single architectural concept. Defined by clean volumes and a refined palette of steel, wood, and glass, the design emphasizes spacious interiors, abundant natural light, and flexible living areas. The project features a generous parking area, open social spaces, and a large rooftop terrace with a pergola that strengthens the connection between indoors and outdoors, creating elegant, functional, and inspiring environments for living, working, and gathering.",
+    "year": 2026,
+    "size": "small",
+    "featured": true,
+    "department": "architecture",
     "id": "via-publica",
-    "year": "2025",
-    "title_es": "Vía Pública",
-    "title_en": "Vía Pública",
-    "category_es": "Urbanismo, Infraestructura",
-    "category_en": "Urbanism, Infrastructure",
-    "sector_es": "Sector Público",
-    "sector_en": "Public Sector",
-    "material_es": "Pino Crudo, Ensamblajes Modulares",
-    "material_en": "Raw Pine, Modular Assemblies",
-    "cost_ethos_es": "Dominio Público, Construcción sin residuos",
-    "cost_ethos_en": "Public Domain, Zero-waste build",
-    "desc_es": "Activación de espacio público diseñada para proporcionar mobiliario urbano modular de alta utilidad con un costo municipal mínimo.",
-    "desc_en": "A public space activation designed to provide high-utility modular urban furniture at minimal municipal cost.",
-    "image": "/Architecture_Remodel_01.jpg",
-    "featured": true,
-    "size": "small",
-    "content": []
-  },
-  {
-    "id": "estudio-cero",
-    "year": "2024",
-    "title_es": "Estudio Cero",
-    "title_en": "Estudio Cero",
-    "category_es": "Arquitectura, Identidad",
-    "category_en": "Architecture, Identity",
-    "sector_es": "Espacios de Trabajo",
-    "sector_en": "Workspaces",
-    "material_es": "Contenedores Marítimos, Aluminio Recuperado",
-    "material_en": "Shipping Containers, Salvaged Aluminum",
-    "cost_ethos_es": "Modularidad extrema, Costo Honestamente Bajo",
-    "cost_ethos_en": "Extreme Modularity, Honestly Low Cost",
-    "desc_es": "Un estudio creativo modular, de bajo costo y ultrarfuncional, integrado de manera nativa con su propia identidad industrial personalizada.",
-    "desc_en": "A low-cost, ultra-functional modular creative studio natively integrated with its own custom industrial identity.",
-    "image": "/Branding_Project_01.jpg",
-    "featured": false,
-    "size": "large",
-    "gallery": []
+    "image": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/LVRF.png",
+    "content": [
+      {
+        "id": "17858902442120",
+        "type": "media",
+        "url": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/LVRE.png",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "17858902973240",
+        "type": "media",
+        "url": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/LVRI2.png",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "17847540730830",
+        "type": "media",
+        "url": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/LVR03.png",
+        "mediaFormat": "horizontal"
+      },
+      {
+        "id": "17847538929800",
+        "type": "media",
+        "url": "https://42lliuhodu8ifgwx.public.blob.vercel-storage.com/LVR02.png",
+        "mediaFormat": "horizontal"
+      }
+    ]
   }
 ]
