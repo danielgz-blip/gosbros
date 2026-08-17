@@ -9,8 +9,8 @@ export async function getProjects() {
     const exactMatch = blobs.find(b => b.pathname === 'data/projects.json');
     
     if (exactMatch) {
-      // Fetch the latest blob content and tag it so we can revalidate it on save
-      const res = await fetch(exactMatch.url, { next: { tags: ['projects'] } });
+      // Fetch latest blob content with no-store so admin writes always read fresh data
+      const res = await fetch(exactMatch.url, { cache: 'no-store' });
       if (res.ok) {
         return res.json();
       }
@@ -29,8 +29,8 @@ export async function getPricing() {
     const exactMatch = blobs.find(b => b.pathname === 'data/pricing.json');
     
     if (exactMatch) {
-      // Fetch the latest blob content and tag it so we can revalidate it on save
-      const res = await fetch(exactMatch.url, { next: { tags: ['pricing'] } });
+      // Fetch latest blob content with no-store so admin writes always read fresh data
+      const res = await fetch(exactMatch.url, { cache: 'no-store' });
       if (res.ok) {
         return res.json();
       }
