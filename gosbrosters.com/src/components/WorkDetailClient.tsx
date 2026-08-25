@@ -117,17 +117,18 @@ export default function WorkDetailClient({ projects }: { projects: any[] }) {
 
                 if (block.type === 'embed' && block.url) {
                   return (
-                    <div key={block.id || index} className="w-full md:col-span-2 flex flex-col gap-6">
-                      <div className="w-full relative overflow-hidden border border-black bg-white" style={{ height: 'min(75vh, 900px)' }}>
-                        <iframe
-                          src={block.url}
-                          title={`${title} on Behance`}
-                          className="w-full h-full"
-                          loading="lazy"
-                          allow="clipboard-write"
-                          referrerPolicy="strict-origin-when-cross-origin"
-                        />
-                      </div>
+                    <div key={block.id || index} className="w-full md:col-span-2 flex flex-col items-center gap-6">
+                      <iframe
+                        src={block.url}
+                        title={`${title} on Behance`}
+                        width={404}
+                        height={316}
+                        className="max-w-full"
+                        allowFullScreen
+                        loading="lazy"
+                        allow="clipboard-write"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                      />
                       {block.behanceUrl && (
                         <a
                           href={block.behanceUrl}
