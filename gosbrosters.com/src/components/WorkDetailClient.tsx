@@ -134,9 +134,9 @@ export default function WorkDetailClient({ projects }: { projects: any[] }) {
                           href={block.behanceUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full md:w-fit bg-black text-white px-8 py-4 text-xs font-sans font-bold uppercase tracking-widest hover:bg-[#ff0080] transition-colors duration-500 flex items-center justify-center gap-2"
+                          className="w-full md:w-fit bg-[#053EFF] text-white px-8 py-4 rounded-full text-xs font-sans font-bold uppercase tracking-widest hover:bg-[#ff0080] transition-colors duration-500 flex items-center justify-center gap-2"
                         >
-                          {language === 'es' ? 'Ver proyecto completo en Behance' : 'View full project on Behance'} <span className="text-lg leading-none">&nearr;</span>
+                          {language === 'es' ? 'Ver proyecto completo en Behance' : 'View full project on Behance'} <span className="text-lg leading-none">&#8599;</span>
                         </a>
                       )}
                     </div>
