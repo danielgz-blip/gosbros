@@ -8,11 +8,12 @@ import { Eye, Pencil, Trash2 } from "lucide-react";
 
 type ContentBlock = {
   id: string;
-  type: 'media' | 'text';
+  type: 'media' | 'text' | 'embed';
   url?: string;
   mediaFormat?: 'horizontal' | 'vertical';
   text_es?: string;
   text_en?: string;
+  behanceUrl?: string;
 };
 
 type Project = {
@@ -256,6 +257,20 @@ export default function AdminPage() {
   };
 
   const updateTextBlock = (id: string, field: 'text_es' | 'text_en', value: string) => {
+    setContentBlocks(prev => prev.map(block => 
+      block.id === id ? { ...block, [field]: value } : block
+    ));
+  };
+
+  // --- Embed block ---
+  const handleAddEmbed = () => {
+    setContentBlocks(prev => [
+      ...prev,
+      { id: Date.now().toString(), type: 'embed', url: '', behanceUrl: '' }
+    ]);
+  };
+
+  const updateEmbedBlock = (id: string, field: 'url' | 'behanceUrl', value: string) => {
     setContentBlocks(prev => prev.map(block => 
       block.id === id ? { ...block, [field]: value } : block
     ));
@@ -611,7 +626,7 @@ export default function AdminPage() {
                     <div className="flex-grow flex flex-col gap-2">
                       <div className="flex justify-between items-center mb-2">
                         <span className="text-[10px] font-bold uppercase tracking-widest bg-black text-white px-2 py-1">
-                          {block.type === 'media' ? `Medio ${block.mediaFormat === 'vertical' ? 'Vertical' : 'Horizontal'}` : 'Bloque de Texto'}
+                          {block.type === 'media' ? `Medio ${block.mediaFormat === 'vertical' ? 'Vertical' : 'Horizontal'}` : block.type === 'text' ? 'Bloque de Texto' : 'Embed (Behance)'}
                         </span>
                         <button type="button" onClick={() => removeBlock(block.id)} className="text-[10px] uppercase font-bold text-red-500 hover:text-red-700">
                           Eliminar
@@ -649,6 +664,29 @@ export default function AdminPage() {
                           />
                         </div>
                       )}
+
+                      {block.type === 'embed' && (
+                        <div className="flex flex-col gap-4">
+                          <div className="flex flex-col gap-1">
+                            <label className="text-[10px] uppercase font-bold tracking-widest text-gray-500">URL Embed (iframe)</label>
+                            <input 
+                              placeholder="https://www.behance.net/embed/project/12345678?ilo0=1"
+                              value={block.url || ''} 
+                              onChange={(e) => updateEmbedBlock(block.id, 'url', e.target.value)}
+                              className="border border-gray-300 p-2 text-sm w-full outline-none focus:border-black"
+                            />
+                          </div>
+                          <div className="flex flex-col gap-1">
+                            <label className="text-[10px] uppercase font-bold tracking-widest text-gray-500">URL del Proyecto en Behance (enlace externo)</label>
+                            <input 
+                              placeholder="https://www.behance.net/gallery/12345678/Slug"
+                              value={block.behanceUrl || ''} 
+                              onChange={(e) => updateEmbedBlock(block.id, 'behanceUrl', e.target.value)}
+                              className="border border-gray-300 p-2 text-sm w-full outline-none focus:border-black"
+                            />
+                          </div>
+                        </div>
+                      )}
                     </div>
 
                   </div>
@@ -666,6 +704,9 @@ export default function AdminPage() {
                 <div className="flex flex-wrap gap-4">
                   <button type="button" onClick={handleAddText} className="border border-black px-4 py-2 text-xs uppercase font-bold tracking-widest hover:bg-black hover:text-white transition-colors">
                     + Agregar Texto
+                  </button>
+                  <button type="button" onClick={handleAddEmbed} className="border border-black px-4 py-2 text-xs uppercase font-bold tracking-widest hover:bg-black hover:text-white transition-colors">
+                    + Agregar Embed (Behance)
                   </button>
                   <div className="relative flex-grow max-w-[300px]">
                     <input type="file" multiple accept="image/*,video/*" onChange={handleAddMedia} className="absolute inset-0 opacity-0 cursor-pointer" />

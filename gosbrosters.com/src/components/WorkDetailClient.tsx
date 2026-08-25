@@ -115,6 +115,33 @@ export default function WorkDetailClient({ projects }: { projects: any[] }) {
                   );
                 }
 
+                if (block.type === 'embed' && block.url) {
+                  return (
+                    <div key={block.id || index} className="w-full md:col-span-2 flex flex-col gap-6">
+                      <div className="w-full relative overflow-hidden border border-black bg-white" style={{ height: 'min(75vh, 900px)' }}>
+                        <iframe
+                          src={block.url}
+                          title={`${title} on Behance`}
+                          className="w-full h-full"
+                          loading="lazy"
+                          allow="clipboard-write"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                        />
+                      </div>
+                      {block.behanceUrl && (
+                        <a
+                          href={block.behanceUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full md:w-fit bg-black text-white px-8 py-4 text-xs font-sans font-bold uppercase tracking-widest hover:bg-[#ff0080] transition-colors duration-500 flex items-center justify-center gap-2"
+                        >
+                          {language === 'es' ? 'Ver proyecto completo en Behance' : 'View full project on Behance'} <span className="text-lg leading-none">&nearr;</span>
+                        </a>
+                      )}
+                    </div>
+                  );
+                }
+
                 return null;
               })}
             </div>

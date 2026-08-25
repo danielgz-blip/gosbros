@@ -20,58 +20,10 @@
     "department": "design",
     "content": [
       {
-        "id": "01",
-        "type": "media",
-        "url": "/projects/Dermica-Brand-Identity-2024/01.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "02",
-        "type": "media",
-        "url": "/projects/Dermica-Brand-Identity-2024/02.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "03",
-        "type": "media",
-        "url": "/projects/Dermica-Brand-Identity-2024/03.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "04",
-        "type": "media",
-        "url": "/projects/Dermica-Brand-Identity-2024/04.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "05",
-        "type": "media",
-        "url": "/projects/Dermica-Brand-Identity-2024/05.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "06",
-        "type": "media",
-        "url": "/projects/Dermica-Brand-Identity-2024/06.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "07",
-        "type": "media",
-        "url": "/projects/Dermica-Brand-Identity-2024/07.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "08",
-        "type": "media",
-        "url": "/projects/Dermica-Brand-Identity-2024/08.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "09",
-        "type": "media",
-        "url": "/projects/Dermica-Brand-Identity-2024/09.webp",
-        "mediaFormat": "horizontal"
+        "id": "behance-embed",
+        "type": "embed",
+        "url": "https://www.behance.net/embed/project/215417247?ilo0=1",
+        "behanceUrl": "https://www.behance.net/gallery/215417247/Dermica-Brand-Identity-2024"
       }
     ]
   },
@@ -96,34 +48,10 @@
     "department": "design",
     "content": [
       {
-        "id": "01",
-        "type": "media",
-        "url": "/projects/Grupo-Pecuario-San-Antonio-SA-de-CV/01.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "02",
-        "type": "media",
-        "url": "/projects/Grupo-Pecuario-San-Antonio-SA-de-CV/02.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "03",
-        "type": "media",
-        "url": "/projects/Grupo-Pecuario-San-Antonio-SA-de-CV/03.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "04",
-        "type": "media",
-        "url": "/projects/Grupo-Pecuario-San-Antonio-SA-de-CV/04.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "05",
-        "type": "media",
-        "url": "/projects/Grupo-Pecuario-San-Antonio-SA-de-CV/05.webp",
-        "mediaFormat": "horizontal"
+        "id": "behance-embed",
+        "type": "embed",
+        "url": "https://www.behance.net/embed/project/122289813?ilo0=1",
+        "behanceUrl": "https://www.behance.net/gallery/122289813/Grupo-Pecuario-San-Antonio-SA-de-CV"
       }
     ]
   },
@@ -148,64 +76,10 @@
     "department": "design",
     "content": [
       {
-        "id": "01",
-        "type": "media",
-        "url": "/projects/HAX-Brand-Identity-2025/01.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "02",
-        "type": "media",
-        "url": "/projects/HAX-Brand-Identity-2025/02.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "03",
-        "type": "media",
-        "url": "/projects/HAX-Brand-Identity-2025/03.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "04",
-        "type": "media",
-        "url": "/projects/HAX-Brand-Identity-2025/04.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "05",
-        "type": "media",
-        "url": "/projects/HAX-Brand-Identity-2025/05.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "06",
-        "type": "media",
-        "url": "/projects/HAX-Brand-Identity-2025/06.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "07",
-        "type": "media",
-        "url": "/projects/HAX-Brand-Identity-2025/07.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "08",
-        "type": "media",
-        "url": "/projects/HAX-Brand-Identity-2025/08.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "09",
-        "type": "media",
-        "url": "/projects/HAX-Brand-Identity-2025/09.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "10",
-        "type": "media",
-        "url": "/projects/HAX-Brand-Identity-2025/10.webp",
-        "mediaFormat": "horizontal"
+        "id": "behance-embed",
+        "type": "embed",
+        "url": "https://www.behance.net/embed/project/196852059?ilo0=1",
+        "behanceUrl": "https://www.behance.net/gallery/196852059/HAX-Brand-Identity-2025"
       }
     ]
   },
@@ -230,28 +104,10 @@
     "department": "design",
     "content": [
       {
-        "id": "01",
-        "type": "media",
-        "url": "/projects/HAX-Motorcycle-Helmet-Quick-Start-Guide/01.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "02",
-        "type": "media",
-        "url": "/projects/HAX-Motorcycle-Helmet-Quick-Start-Guide/02.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "03",
-        "type": "media",
-        "url": "/projects/HAX-Motorcycle-Helmet-Quick-Start-Guide/03.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "04",
-        "type": "media",
-        "url": "/projects/HAX-Motorcycle-Helmet-Quick-Start-Guide/04.webp",
-        "mediaFormat": "horizontal"
+        "id": "behance-embed",
+        "type": "embed",
+        "url": "https://www.behance.net/embed/project/207798289?ilo0=1",
+        "behanceUrl": "https://www.behance.net/gallery/207798289/HAX-Motorcycle-Helmet-Quick-Start-Guide"
       }
     ]
   },
@@ -276,10 +132,10 @@
     "department": "design",
     "content": [
       {
-        "id": "01",
-        "type": "media",
-        "url": "/projects/HAX-Exploded-View-Animation/01.webp",
-        "mediaFormat": "horizontal"
+        "id": "behance-embed",
+        "type": "embed",
+        "url": "https://www.behance.net/embed/project/207802373?ilo0=1",
+        "behanceUrl": "https://www.behance.net/gallery/207802373/HAX-Exploded-View-Animation"
       }
     ]
   },
@@ -304,10 +160,10 @@
     "department": "design",
     "content": [
       {
-        "id": "01",
-        "type": "media",
-        "url": "/projects/HAX-Prehispanic-Collection-Preview/01.webp",
-        "mediaFormat": "horizontal"
+        "id": "behance-embed",
+        "type": "embed",
+        "url": "https://www.behance.net/embed/project/214540995?ilo0=1",
+        "behanceUrl": "https://www.behance.net/gallery/214540995/HAX-Prehispanic-Collection-Preview"
       }
     ]
   },
@@ -332,88 +188,10 @@
     "department": "design",
     "content": [
       {
-        "id": "01",
-        "type": "media",
-        "url": "/projects/SUPPER-Brand-Identity-2025/01.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "02",
-        "type": "media",
-        "url": "/projects/SUPPER-Brand-Identity-2025/02.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "03",
-        "type": "media",
-        "url": "/projects/SUPPER-Brand-Identity-2025/03.webp",
-        "mediaFormat": "vertical"
-      },
-      {
-        "id": "04",
-        "type": "media",
-        "url": "/projects/SUPPER-Brand-Identity-2025/04.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "05",
-        "type": "media",
-        "url": "/projects/SUPPER-Brand-Identity-2025/05.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "06",
-        "type": "media",
-        "url": "/projects/SUPPER-Brand-Identity-2025/06.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "07",
-        "type": "media",
-        "url": "/projects/SUPPER-Brand-Identity-2025/07.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "08",
-        "type": "media",
-        "url": "/projects/SUPPER-Brand-Identity-2025/08.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "09",
-        "type": "media",
-        "url": "/projects/SUPPER-Brand-Identity-2025/09.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "10",
-        "type": "media",
-        "url": "/projects/SUPPER-Brand-Identity-2025/10.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "11",
-        "type": "media",
-        "url": "/projects/SUPPER-Brand-Identity-2025/11.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "12",
-        "type": "media",
-        "url": "/projects/SUPPER-Brand-Identity-2025/12.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "13",
-        "type": "media",
-        "url": "/projects/SUPPER-Brand-Identity-2025/13.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "14",
-        "type": "media",
-        "url": "/projects/SUPPER-Brand-Identity-2025/14.webp",
-        "mediaFormat": "horizontal"
+        "id": "behance-embed",
+        "type": "embed",
+        "url": "https://www.behance.net/embed/project/217670441?ilo0=1",
+        "behanceUrl": "https://www.behance.net/gallery/217670441/SUPPER-Brand-Identity-2025"
       }
     ]
   },
@@ -438,64 +216,10 @@
     "department": "design",
     "content": [
       {
-        "id": "01",
-        "type": "media",
-        "url": "/projects/Tomboy-Feme-Brand-Identity/01.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "02",
-        "type": "media",
-        "url": "/projects/Tomboy-Feme-Brand-Identity/02.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "03",
-        "type": "media",
-        "url": "/projects/Tomboy-Feme-Brand-Identity/03.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "04",
-        "type": "media",
-        "url": "/projects/Tomboy-Feme-Brand-Identity/04.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "05",
-        "type": "media",
-        "url": "/projects/Tomboy-Feme-Brand-Identity/05.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "06",
-        "type": "media",
-        "url": "/projects/Tomboy-Feme-Brand-Identity/06.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "07",
-        "type": "media",
-        "url": "/projects/Tomboy-Feme-Brand-Identity/07.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "08",
-        "type": "media",
-        "url": "/projects/Tomboy-Feme-Brand-Identity/08.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "09",
-        "type": "media",
-        "url": "/projects/Tomboy-Feme-Brand-Identity/09.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "10",
-        "type": "media",
-        "url": "/projects/Tomboy-Feme-Brand-Identity/10.webp",
-        "mediaFormat": "horizontal"
+        "id": "behance-embed",
+        "type": "embed",
+        "url": "https://www.behance.net/embed/project/220065629?ilo0=1",
+        "behanceUrl": "https://www.behance.net/gallery/220065629/Tomboy-Feme-Brand-Identity"
       }
     ]
   },
@@ -520,28 +244,10 @@
     "department": "design",
     "content": [
       {
-        "id": "01",
-        "type": "media",
-        "url": "/projects/Eire-Packaging-Design/01.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "02",
-        "type": "media",
-        "url": "/projects/Eire-Packaging-Design/02.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "03",
-        "type": "media",
-        "url": "/projects/Eire-Packaging-Design/03.webp",
-        "mediaFormat": "horizontal"
-      },
-      {
-        "id": "04",
-        "type": "media",
-        "url": "/projects/Eire-Packaging-Design/04.webp",
-        "mediaFormat": "horizontal"
+        "id": "behance-embed",
+        "type": "embed",
+        "url": "https://www.behance.net/embed/project/220927321?ilo0=1",
+        "behanceUrl": "https://www.behance.net/gallery/220927321/Eire-Packaging-Design"
       }
     ]
   },
